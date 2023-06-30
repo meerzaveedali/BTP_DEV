@@ -1,0 +1,41 @@
+<core:FragmentDefinition xmlns:core="sap.ui.core" xmlns="sap.m">
+
+<Dialog id="_IDGenDialog1"  title="Approval History">
+<Table id="_IDGenTable01" items="{approvalHistory>/}">
+<columns>
+<Column id="_IDGenColumn01">
+<Label id="_IDGenLabel01" text="Fiscal Year"></Label>
+</Column>
+<Column id="_IDGenColumn02">
+<Label id="_IDGenLabel02" text="Business Function"></Label>
+</Column>
+<Column id="_IDGenColumn03">
+<Label id="_IDGenLabel03" text="Approver"></Label>
+</Column>
+<Column id="_IDGenColumn04">
+<Label id="_IDGenLabel04" text="Status"></Label>
+</Column>
+<Column id="_IDGenColumn05">
+<Label id="_IDGenLabel05" text="Comments"></Label>
+</Column>
+<Column id="_IDGenColumn06">
+<Label id="_IDGenLabel06" text="Date"></Label>
+</Column>
+</columns>
+<items>
+<ColumnListItem >
+<Text text="{approvalHistory>fiscalYear}"/>
+<Text text="{approvalHistory>businessFunction}"/>
+<Text text="{approvalHistory>approver}"/>
+<Text text="{approvalHistory>status}"/>
+<Text text="{approvalHistory>comments}"/>
+<Text text="{approvalHistory>date}"/>
+</ColumnListItem>
+</items>
+</Table>
+<endButton>
+<Button id="_IDGenButton011" text="Close" type="Emphasized" press="onClose"></Button>
+</endButton>
+</Dialog>
+
+</core:FragmentDefinition>

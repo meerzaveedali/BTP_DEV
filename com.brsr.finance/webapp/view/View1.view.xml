@@ -1,0 +1,159 @@
+<mvc:View controllerName="com.brsr.finance.controller.View1"
+    xmlns:ui="sap.ui.table"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns:core="sap.ui.core"
+    xmlns:m="sap.m"
+    xmlns="sap.uxap"
+    xmlns:u="sap.ui.unified"
+    height="100%"
+    xmlns:layout="sap.ui.layout"
+    xmlns:f="sap.ui.layout.form"
+    xmlns:table="sap.ui.table"
+    xmlns:html="http://www.w3.org/1999/xhtml">
+   
+    <ObjectPageLayout upperCaseAnchorBar="false" id="ObjectPageLayout" enableLazyLoading="false" showFooter="true" class="sapUiSizeCompact">
+    <headerTitle>
+        <ObjectPageDynamicHeaderTitle id="_IDGenObjectPageDynamicHeaderTitle1">
+            <heading>                 
+                <m:Title id="_IDGenTitle1" text="Finance" wrapping="true" />
+            </heading>
+
+            <actions>
+             <m:Button id="_IDGenButton3"  icon="sap-icon://history" text="Approval History" type="Emphasized" visible="false" press="onApprovalHistory" />
+                
+                <!-- <m:Button text="Update Draft" id="id_updateDraft" press="onUpdateDraft" type="Emphasized" icon="sap-icon://write-new-document"
+                    iconFirst="true" width="auto" enabled="true" visible="false" iconDensityAware="false"/>
+                <m:Button text="Delete Draft" id="id_deleteDraft" press="onDeleteDraft" type="Emphasized" icon="sap-icon://sys-cancel" iconFirst="true"
+                    width="auto" enabled="true" visible="false" iconDensityAware="false"/> -->
+                <!-- <m:Button type="Emphasized" press="onNavBack" icon="sap-icon://nav-back"/> -->
+            </actions>
+        </ObjectPageDynamicHeaderTitle>
+    </headerTitle>
+    <sections>
+    <ObjectPageSection id="_IDGenObjectPageSection1" title="">
+    <subSections>
+    <ObjectPageSubSection id="_IDGenObjectPageSubSection1" title="">
+        <blocks>
+            <f:SimpleForm
+                id="SimpleFormDisplay480_Trial"
+                editable="true"
+                layout="ResponsiveGridLayout"
+                labelSpanXL="4"
+                labelSpanL="4"
+                labelSpanM="4"
+                labelSpanS="12"
+                adjustLabelSpan="true"
+                emptySpanXL="0"
+                emptySpanL="0"
+                emptySpanM="0"
+                emptySpanS="0"
+                columnsXL="3"
+                columnsL="3"
+                columnsM="3"
+                singleContainerFullSize="false">
+                
+                <core:Title id="_IDGenTitle2" text="" />
+                <m:Label text="Fiscal Year" required="true" id="id_sublabunit" design="Bold" />
+                <m:Select  change="onFChange" id="id_fiscalyear" enabled="{/Enabled}" editable="{/Editable}" forceSelection="false"  items="{
+                path: '/ProductCollection',
+                sorter: { path: 'Name' }
+                }">
+                <core:Item id="_IDGenItem1" key="{ProductId1}" text="{Name}" />
+                </m:Select>
+
+                
+            <m:Button text="Submit" id="id_saveDraft" press="onSubmitHeader" type="Emphasized" width="100px" enabled="true" visible="true" iconDensityAware="false" />	
+            </f:SimpleForm>
+        </blocks>
+    </ObjectPageSubSection>
+    </subSections>
+    </ObjectPageSection>
+
+    <ObjectPageSection id="_IDGenObjectPageSection2" visible="false">
+    <subSections>
+        <ObjectPageSubSection id="_IDGenObjectPageSubSection2" >
+            <blocks>
+            <layout:VerticalLayout id="_IDGenVerticalLayout1" class="sapUiContentPadding">
+                    <m:Label text="1.Provide the measures undertaken by the entity to ensure that statutory dues have been deducted and deposited by the value chain partners."
+                    id="id_q1" design="Bold" wrapping="true" />
+                    
+                    <m:TextArea id="id_answ1" rows="3" placeholder="Your Answer..." cols="200" maxLength="2500" showExceededText="true" liveChange="handleLiveChange1" />
+                    
+                    <m:Label required="true" text="2. Describe the processes for identifying key stakeholder groups of the entity."
+                        id="id_q2" design="Bold" wrapping="true" />
+                    <m:TextArea id="id_answ2" rows="3" placeholder="Your Answer..." cols="200" maxLength="1500" showExceededText="true" liveChange="handleLiveChange2" />
+
+                    <m:Label required="true" text="3. List stakeholder groups identified as key for your entity and the frequency of engagement with each stakeholder group."
+                        id="id_q3" design="Bold" wrapping="true" />
+                    <!-- <m:TextArea id="id_answ3" rows="3" placeholder="Your Answer..." cols="200" maxLength="5000" showExceededText="true" liveChange="handleLiveChang3" /> -->
+                    <m:Table id="_IDGenTable1" mode="Delete" delete="deleteRowTab1">
+                    <m:headerToolbar>
+                    <m:Toolbar id="_IDGenToolBar1">	  
+                    <m:ToolbarSpacer id="_IDGenToolbarSpacer2" />	
+                    <m:Button id="toggleInfoToolbar"
+                        icon="sap-icon://add"
+                        type="Emphasized"
+                        press="onAddRow1L" />
+                        </m:Toolbar>
+                    </m:headerToolbar>
+                    <m:columns>
+
+                    <m:Column id="_IDGenColumn1" width="" >
+                    <m:Text wrapping="true" id="_IDGenLabel1" text="Stakeholder Group" />
+                    </m:Column>
+                    
+                    <m:Column id="_IDGenColumn2" width="" >
+                    <m:Text wrapping="true" id="_IDGenLabel2" text="Whether identified as vulnerable and marginalized group (Yes/No)" />
+                    </m:Column>
+
+                    
+                    <m:Column id="_IDGenColumn3" width="">
+                    <m:Text wrapping="true" id="_IDGenLabel3" text="Channels of communication (Email, SMS, NewsPaper, Pamplates, Advertisement, community meetings, notice board, website), others" />
+                    </m:Column>
+
+                    <m:Column id="_IDGenColumn4" width="" >
+                    <m:Text wrapping="true" id="_IDGenLabel4" text="Frequency of engagement (Annually/ Half/ Yearly/ Quarterly/ others - please specify)" />
+                    </m:Column>
+
+                    <m:Column id="_IDGenColumn5" width="" >
+                    <m:Text wrapping="true" id="_IDGenLabel5" text="Purpose and scope of engagement including key topics and concerns raised during sunch engagement" />
+                    </m:Column>
+
+                   
+                    </m:columns>
+                    
+                    
+                  
+                    </m:Table>
+                    <m:Label  text="4.Provide the processes for consultation between stakeholders and the Board on economic, environmental, and social topics or if consultation is delegated, how is feedback from such consultations provided to the Board."
+                        id="id_q4" design="Bold" wrapping="true" />
+                    <m:TextArea id="id_answ4" rows="3" placeholder="Your Answer..." cols="200" maxLength="1500" showExceededText="true" liveChange="handleLiveChang3" />
+                    
+                    <m:Label  text="5.Whether stakeholder consultation is used to support the identification and management of environmental, and social topics (Yes / No). If so, provide details of instances as to how the inputs received from stakeholders on these topics were incorporated into policies and activities of the entity."
+                        id="id_q5" design="Bold" wrapping="true" />
+                    <m:TextArea id="id_answ5" rows="3" placeholder="Your Answer..." cols="200" maxLength="1500" showExceededText="true" liveChange="handleLiveChange5" />
+                    
+                    <m:Label text="6.Provide details of instances of engagement with, and actions taken to, address the concerns of vulnerable/ marginalized stakeholder groups"
+                        id="id_q6" design="Bold" wrapping="true" />
+                    <m:TextArea id="id_answ6" rows="3" placeholder="Your Answer..." cols="200" maxLength="1500" showExceededText="true" liveChange="handleLiveChange6" />
+                    
+                
+                    
+            </layout:VerticalLayout>
+            </blocks>
+        </ObjectPageSubSection>
+        </subSections>
+        </ObjectPageSection>       
+        </sections>
+        <footer>
+        <m:OverflowToolbar id="_IDGenOverflowToolbar1" width="100%" height="46px" design="Auto" enabled="true" visible="true">
+            <m:content>
+                <m:Button id="messagePopoverBtn" visible="false" type="Emphasized" icon="sap-icon://message-popup" text="" press=".handleMessagePopoverPress" ariaHasPopup="Dialog" />
+                <m:ToolbarSpacer id="_IDGenToolbarSpacer1" width="" />
+                <m:Button id="_IDGenButton0" text="Save as Draft" icon="sap-icon://notes" iconFirst="false" type="Transparent" width="auto" enabled="true" visible="true" press="onSave" />
+                <m:Button id="_IDGenButton1" text="Submit For Approval" icon="sap-icon://open-command-field" iconFirst="false" type="Transparent" width="auto" enabled="true" visible="true" press="FormValidate" />
+            </m:content>
+        </m:OverflowToolbar>
+        </footer>
+    </ObjectPageLayout>
+</mvc:View>

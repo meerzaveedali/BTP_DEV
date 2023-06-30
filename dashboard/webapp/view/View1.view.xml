@@ -1,0 +1,202 @@
+<mvc:View controllerName="dashboard.controller.View1"
+    xmlns:ui="sap.ui.table"
+    xmlns:layout="sap.ui.layout"
+    xmlns:mvc="sap.ui.core.mvc"
+    	xmlns:mic="sap.suite.ui.microchart"
+    xmlns:core="sap.ui.core"
+    xmlns:m="sap.m"
+    xmlns:viz="sap.viz.ui5.controls"
+    xmlns:viz.feeds="sap.viz.ui5.controls.common.feeds"
+    xmlns:viz.data="sap.viz.ui5.data" 
+    xmlns="sap.uxap"
+    xmlns:u="sap.ui.unified"
+    height="100%"
+    xmlns:f="sap.ui.layout.form"
+    xmlns:table="sap.ui.table"
+    xmlns:html="http://www.w3.org/1999/xhtml">
+
+    <ObjectPageLayout upperCaseAnchorBar="false" id="ObjectPageLayout" enableLazyLoading="false" showFooter="true" class="sapUiSizeCompact">
+    <headerTitle>
+        <ObjectPageDynamicHeaderTitle id="_IDGenObjectPageDynamicHeaderTitle1">
+            <heading>                 
+                <m:Title id="_IDGenTitle1" text="BRSR Dashboard" wrapping="true" />
+            </heading>
+        </ObjectPageDynamicHeaderTitle>
+    </headerTitle>
+    <sections>
+    <ObjectPageSection id="_IDGenObjectPageSection1" title="">
+    <subSections>
+    <ObjectPageSubSection id="_IDGenObjectPageSubSection1" title="">
+    <layout:FixFlex id='chartFixFlex' >
+    <layout:fixContent>
+     
+    <m:VBox id="_IDGenHBox1" >
+   <m:HBox id="_IDGenHBox2" >
+   <viz:Popover id="idPopOver" validateFieldGroup="onValidate" ></viz:Popover>
+    <viz:VizFrame id="idVizFrame" vizType="donut"  legendVisible="false" vizProperties="{
+        plotArea:{
+                   dataLabel:{visible: true, type: 'name'}, 
+		   drawingEffect: 'glossy'  
+	          },
+         title: {text : 'Business function Chart 2023-24', visible : true}}"
+              uiConfig="{applicationSet:'fiori'}"  height="280px" >
+            <viz:dataset>
+                <viz.data:FlattenedDataset id="_IDGenFlattenedDataset1" data="{BRSR>/BFStatus}" >
+                    <viz.data:dimensions>
+                        <viz.data:DimensionDefinition id="_IDGenDimensionDefinition1" name="businessfunction" value="{BRSR>businessFunction}"></viz.data:DimensionDefinition>
+                         <viz.data:DimensionDefinition id="_IDGenDimensionDefinition2" name="Status"  value="{BRSR>Status}"></viz.data:DimensionDefinition>
+                    </viz.data:dimensions>
+                    <!-- <viz.data:dimensions>
+                        <viz.data:DimensionDefinition id="_IDGenDimensionDefinition2" name="Status" value="{BRSR>Status}"></viz.data:DimensionDefinition>
+                        
+                    </viz.data:dimensions> -->
+                    <viz.data:measures> 
+                        <viz.data:MeasureDefinition id="_IDGenMeasureDefinition1" name="measure"  value="{BRSR>measure}"></viz.data:MeasureDefinition>
+                    </viz.data:measures>
+                </viz.data:FlattenedDataset>
+            </viz:dataset>
+            <viz:feeds>
+                    <!-- <viz.feeds:FeedItem id="_IDGenFeedItem1" uid="categoryAxis" type="Dimension" values="ProductName"></viz.feeds:FeedItem>
+                <viz.feeds:FeedItem id="_IDGenFeedItem2" uid="valueAxis" type="Measure" values="ProductPrice"></viz.feeds:FeedItem> -->
+                <viz.feeds:FeedItem id="_IDGenFeedItem1" uid="size" type="Measure" values="measure"></viz.feeds:FeedItem>
+                <viz.feeds:FeedItem id="_IDGenFeedItem2" uid="color" type="Dimension" values="businessfunction"></viz.feeds:FeedItem>
+                <viz.feeds:FeedItem id="_IDGenFeedItem3" uid="color" type="Dimension" values="Status"></viz.feeds:FeedItem>
+            </viz:feeds>
+            
+        </viz:VizFrame>
+        <viz:Popover id="idPopOver2" validateFieldGroup="onValidate" ></viz:Popover>
+        <viz:VizFrame id="idVizFrame1" class="sapUiSmallMarginEnd" vizType="donut" 
+         legendVisible="false"
+         vizProperties="{
+             plotArea:{
+                   dataLabel:{visible: true, type: 'name'}, 
+		   drawingEffect: 'glossy'  
+	          },
+             title: {text : 'BSRS Pie Chart', visible : true}}"
+              uiConfig="{applicationSet:'fiori'}" height="280px">
+            <viz:dataset>
+                <viz.data:FlattenedDataset id="_IDGenFlattenedDataset12" data="{BRSR>/FyStatus}">
+                    <viz.data:dimensions>
+                        <viz.data:DimensionDefinition id="_IDGenDimensionDefinition13" name="Status" value="{BRSR>BRSRStatus}"></viz.data:DimensionDefinition>
+                        <viz.data:DimensionDefinition id="_IDGenDimensionDefinition14" name="fiscalYear" value="{BRSR>fiscalYear}"></viz.data:DimensionDefinition>
+                    </viz.data:dimensions>
+                    <viz.data:measures> 
+                        <viz.data:MeasureDefinition id="_IDGenMeasureDefinition14" name="Fiscal Year" value="{BRSR>measure}"></viz.data:MeasureDefinition>
+                    </viz.data:measures>
+                </viz.data:FlattenedDataset>
+            </viz:dataset>
+            <viz:feeds>
+                    <!-- <viz.feeds:FeedItem id="_IDGenFeedItem1" uid="categoryAxis" type="Dimension" values="ProductName"></viz.feeds:FeedItem>
+                <viz.feeds:FeedItem id="_IDGenFeedItem2" uid="valueAxis" type="Measure" values="ProductPrice"></viz.feeds:FeedItem> -->
+                <viz.feeds:FeedItem id="_IDGenFeedItem11" uid="size" type="Measure" values="Fiscal Year"></viz.feeds:FeedItem>
+                <viz.feeds:FeedItem id="_IDGenFeedItem22" uid="color" type="Dimension" values="Status"></viz.feeds:FeedItem>
+                <viz.feeds:FeedItem id="_IDGenFeedItem33" uid="color" type="Dimension" values="fiscalYear"></viz.feeds:FeedItem>
+            </viz:feeds>
+            
+         </viz:VizFrame>
+
+          </m:HBox>  
+        
+        
+         <m:Table id="_IDGenTable1" items="{BRSR>/BFStatus}" class="sapUiSmallMarginEnd">
+                    <m:headerToolbar>
+			<m:Toolbar id="_IDGenToolbar2">
+				<m:Title id="_IDGenTitle2" text="Business Functions 2023-24" level="H2"/>
+				<m:ToolbarSpacer id="_IDGenToolbarSpacer4" />
+				
+			</m:Toolbar>
+		</m:headerToolbar>
+                    <m:columns>
+
+                    <m:Column id="_IDGenColumn1" width="" >
+                    <m:Text wrapping="true" id="_IDGenLabel1" text="Fiscal year" />
+                    </m:Column>
+                    
+                    <m:Column id="_IDGenColumn2" width="" >
+                    <m:Text wrapping="true" id="_IDGenLabel2" text="Business function" />
+                    </m:Column>
+
+                    
+                    <m:Column id="_IDGenColumn3" width="">
+                    <m:Text wrapping="true" id="_IDGenLabel3" text="status" />
+                    </m:Column>
+                    
+                    </m:columns>
+
+                    <m:items>
+                    <m:ColumnListItem id="_IDGenColumnListItem1" >
+                    <m:Text id="_IDGenText1" text="{BRSR>fiscalYear}"></m:Text>
+                    <m:Text id="_IDGenText2" text="{BRSR>businessFunction}"></m:Text>
+                    <m:ObjectStatus id="_IDGenObjectStatus1"
+			class="sapUiSmallMarginBottom"
+			text="{BRSR>Status}"
+			icon="sap-icon://alert"
+			state="{BRSR>state}" />
+                    
+                    
+                    </m:ColumnListItem>
+                    </m:items>
+                    
+                    
+                  
+                    </m:Table>
+
+                    <m:Table id="_IDGenTable2" items="{BRSR>/FyStatus}">
+                    <m:headerToolbar>
+			<m:Toolbar id="_IDGenToolbar3">
+				<m:Title id="_IDGenTitle4" text="Fiscal Year Status" level="H2"/>
+				<m:ToolbarSpacer id="_IDGenToolbarSpacer5" />
+				
+			</m:Toolbar>
+		</m:headerToolbar>
+                    <m:columns>
+
+                    <m:Column id="_IDGenColumn4"  width="" >
+                    <m:Text id="_IDGenText4" wrapping="true"  text="Fiscal year" />
+                    </m:Column>
+                    
+                    <m:Column id="_IDGenColumn5"  width="" >
+                    <m:Text id="_IDGenText5" wrapping="true"  text="BSRS Status" />
+                    </m:Column>
+
+                    
+                    
+                    
+                    </m:columns>
+
+                    <m:items>
+                    <m:ColumnListItem id="_IDGenColumnListItem2"  >
+                    <m:Text id="_IDGenText7"  text="{BRSR>fiscalYear}"></m:Text>
+                    <m:ObjectStatus id="_IDGenObjectStatus2"
+			class="sapUiSmallMarginBottom"
+			text="{BRSR>BRSRStatus}"
+			icon="sap-icon://alert"
+			state="{BRSR>state}" />
+                    
+                    </m:ColumnListItem>
+                    </m:items>
+                    
+                    
+                  
+                    </m:Table>
+       
+        
+                    </m:VBox>
+      </layout:fixContent>
+    </layout:FixFlex>
+    </ObjectPageSubSection>
+    </subSections>
+    </ObjectPageSection>
+    </sections>
+
+    <!-- <sections>
+    <ObjectPageSection id="_IDGenObjectPageSection2" title="">
+    <subSections>
+    <ObjectPageSubSection id="_IDGenObjectPageSubSection2" title="">
+   
+    </ObjectPageSubSection>
+    </subSections>
+    </ObjectPageSection>
+    </sections> -->
+    </ObjectPageLayout>
+</mvc:View>

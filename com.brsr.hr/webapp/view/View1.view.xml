@@ -1,0 +1,454 @@
+<mvc:View controllerName="com.brsr.hr.controller.View1"
+    xmlns:ui="sap.ui.table"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns:core="sap.ui.core"
+    xmlns:m="sap.m"
+    xmlns="sap.uxap"
+    xmlns:u="sap.ui.unified"
+    height="100%"
+    xmlns:layout="sap.ui.layout"
+    xmlns:f="sap.ui.layout.form"
+    xmlns:table="sap.ui.table"
+    xmlns:html="http://www.w3.org/1999/xhtml">
+    <ObjectPageLayout upperCaseAnchorBar="false" id="ObjectPageLayout" enableLazyLoading="false" showFooter="true" class="sapUiSizeCompact">
+    <headerTitle>
+        <ObjectPageDynamicHeaderTitle id="_IDGenObjectPageDynamicHeaderTitle1">
+            <heading>                 
+                <m:Title id="_IDGenTitle1" text="Human Resource(HR)" wrapping="true" />
+            </heading>
+
+            <actions>
+             <m:Button id="_IDGenButton3"  icon="sap-icon://history" text="Approval History" type="Emphasized" visible="false" press="onApprovalHistory" />
+                
+                <!-- <m:Button text="Update Draft" id="id_updateDraft" press="onUpdateDraft" type="Emphasized" icon="sap-icon://write-new-document"
+                    iconFirst="true" width="auto" enabled="true" visible="false" iconDensityAware="false"/>
+                <m:Button text="Delete Draft" id="id_deleteDraft" press="onDeleteDraft" type="Emphasized" icon="sap-icon://sys-cancel" iconFirst="true"
+                    width="auto" enabled="true" visible="false" iconDensityAware="false"/> -->
+                <!-- <m:Button type="Emphasized" press="onNavBack" icon="sap-icon://nav-back"/> -->
+            </actions>
+        </ObjectPageDynamicHeaderTitle>
+    </headerTitle>
+    <sections>
+    <ObjectPageSection id="_IDGenObjectPageSection1" title="">
+    <subSections>
+    <ObjectPageSubSection id="_IDGenObjectPageSubSection1" title="">
+        <blocks>
+            <f:SimpleForm
+                id="SimpleFormDisplay480_Trial"
+                editable="true"
+                layout="ResponsiveGridLayout"
+                labelSpanXL="4"
+                labelSpanL="4"
+                labelSpanM="4"
+                labelSpanS="12"
+                adjustLabelSpan="true"
+                emptySpanXL="0"
+                emptySpanL="0"
+                emptySpanM="0"
+                emptySpanS="0"
+                columnsXL="3"
+                columnsL="3"
+                columnsM="3"
+                singleContainerFullSize="false">
+                
+                <core:Title id="_IDGenTitle2" text="" />
+                <m:Label text="Fiscal Year" required="true" id="id_sublabunit" design="Bold" />
+                <m:Select  change="onFChange" id="id_fiscalyear" enabled="{/Enabled}" editable="{/Editable}" forceSelection="false"  items="{
+                path: '/ProductCollection',
+                sorter: { path: 'Name' }
+                }">
+                <core:Item id="_IDGenItem1" key="{ProductId1}" text="{Name}" />
+                </m:Select>
+
+                
+            <m:Button text="Submit" id="id_saveDraft" press="onSubmitHeader" type="Emphasized" width="100px" enabled="true" visible="true" iconDensityAware="false" />	
+            </f:SimpleForm>
+        </blocks>
+    </ObjectPageSubSection>
+    </subSections>
+    </ObjectPageSection>
+
+    <ObjectPageSection id="_IDGenObjectPageSection2" visible="false">
+    <subSections>
+        <ObjectPageSubSection id="_IDGenObjectPageSubSection2" >
+            <blocks>
+            <layout:VerticalLayout id="_IDGenVerticalLayout1" class="sapUiContentPadding">
+                    <m:Label  required="true" text="1. Are the premises / offices of the entity accessible to differently abled employees and workers, as per the requirements of the Rights of Persons with Disabilities Act, 2016? If not, whether any steps are being taken by the entity in this regard."
+                    id="id_q1" design="Bold" wrapping="true" />
+                    
+                    <m:TextArea id="id_answ1" rows="3" placeholder="Your Answer..." cols="200" maxLength="2500" showExceededText="true" liveChange="handleLiveChange1" />
+                    
+                    <m:Label required="true" text="2. Does the entity have an equal opportunity policy as per the Rights of Persons with Disabilities Act, 2016? If so, provide a web-link to the policy."
+                        id="id_q2" design="Bold" wrapping="true" />
+                    <m:TextArea id="id_answ2" rows="3" placeholder="Your Answer..." cols="200" maxLength="2500" showExceededText="true" liveChange="handleLiveChange2" />
+
+                    <m:Label required="true" text="3. Is there a mechanism available to receive and redress grievances for the following categories of employees and worker? If yes, give details of the mechanism in brief."
+                        id="id_q3" design="Bold" wrapping="true" />
+                    <!-- <m:TextArea id="id_answ3" rows="3" placeholder="Your Answer..." cols="200" maxLength="5000" showExceededText="true" liveChange="handleLiveChang3" /> -->
+                    <m:Table id="_IDGenTable1">
+                    <m:columns>
+
+                    <m:Column id="_IDGenColumn1" width="" >
+                    <m:Text wrapping="true" id="_IDGenLabel1" text="" />
+                    </m:Column>
+                    
+                    <m:Column id="_IDGenColumn2" width="" >
+                    <m:Text wrapping="true" id="_IDGenLabel2" text="Yes/No (If yes, then give details of the mechnaism in breif)" /> 
+                    </m:Column>
+
+                    </m:columns>
+
+                    <m:items>
+                    <m:ColumnListItem id="_IDGenColumnListItem1" >
+                    <m:cells>
+                    <m:Text id="_IDGenText101"  text="Permanent Workers"/>
+                    <m:TextArea id="_IDGenTextArea1"  rows="3" placeholder="Your Answer..." cols="200" maxLength="1500" showExceededText="true" liveChange="handleLiveChange1" />
+                    </m:cells>
+                    </m:ColumnListItem>
+                    <m:ColumnListItem id="_IDGenColumnListItem2" >
+                    <m:cells>
+                    <m:Text id="_IDGenText102"  text="Other than Permanent Workers"/>
+                    <m:TextArea id="_IDGenTextArea2"  rows="3" placeholder="Your Answer..." cols="200" maxLength="1500" showExceededText="true" liveChange="handleLiveChange1" />
+                    </m:cells>
+                    </m:ColumnListItem>
+                    <m:ColumnListItem id="_IDGenColumnListItem3" >
+                    <m:cells>
+                    <m:Text id="_IDGenText103"  text="Permanent Employees"/>
+                    <m:TextArea id="_IDGenTextArea3"  rows="3" placeholder="Your Answer..." cols="200" maxLength="1500" showExceededText="true" liveChange="handleLiveChange1" />
+                    </m:cells>
+                    </m:ColumnListItem>
+                    <m:ColumnListItem id="_IDGenColumnListItem4" >
+                    <m:cells>
+                    <m:Text id="_IDGenText104"  text="Other than Permanent Employees"/>
+                    <m:TextArea id="_IDGenTextArea4"  rows="3" placeholder="Your Answer..." cols="200" maxLength="1500" showExceededText="true" liveChange="handleLiveChange1" />
+                    </m:cells>
+                    </m:ColumnListItem>
+                    </m:items>
+                    
+                    </m:Table>
+                    <m:Label  text="4.Does the entity extend any life insurance or any compensatory package in the event of death of (A) Employees (Y/N) (B) Workers (Y/N)."
+                        id="id_q4" design="Bold" wrapping="true" />
+                    <m:TextArea id="id_answ4" rows="3" placeholder="Your Answer..." cols="200" maxLength="1500" showExceededText="true" liveChange="handleLiveChang3" />
+                    
+                    <m:Label  text="5.Does the entity provide transition assistance programs to facilitate continued
+                    employability and the management of career endings resulting from retirement or 
+                    termination of employment? (Yes/ No)"
+                        id="id_q5" design="Bold" wrapping="true" />
+                    <m:TextArea id="id_answ5" rows="3" placeholder="Your Answer..." cols="200" maxLength="2500" showExceededText="true" liveChange="handleLiveChange5" />
+                    
+                    <m:Label required="true" text="6.Do you have a focal point (Individual/ Committee) responsible for addressing human rights impacts or issues caused or contributed to by the business? (Yes/No)"
+                        id="id_q6" design="Bold" wrapping="true" />
+                    <m:TextArea id="id_answ6" rows="3" placeholder="Your Answer..." cols="200" maxLength="2500" showExceededText="true" liveChange="handleLiveChange6" />
+                    
+                    <m:Label required="true"  text="7.Describe the internal mechanisms in place to redress grievances related to human rights issues."
+                        id="id_q7" design="Bold" wrapping="true" />
+                    <m:TextArea id="id_answ7" rows="3" placeholder="Your Answer..." cols="200" maxLength="2500" showExceededText="true" liveChange="handleLiveChange6" />
+
+                    <m:Label required="true" text="8.Mechanisms to prevent adverse consequences to the complainant in discrimination and harassment cases."
+                        id="id_q8" design="Bold" wrapping="true" />
+                    <m:TextArea id="id_answ8" rows="3" placeholder="Your Answer..." cols="200" maxLength="2500" showExceededText="true" liveChange="handleLiveChange6" />
+
+                    <m:Label required="true" text="9.Do human rights requirements form part of your business agreements and contracts? (Yes/No)"
+                        id="id_q9" design="Bold" wrapping="true" />
+                    <m:TextArea id="id_answ9" rows="3" placeholder="Your Answer..." cols="200" maxLength="2500" showExceededText="true" liveChange="handleLiveChange6" />
+                    
+                    <m:Label required="true" text="10.Provide details of any corrective actions taken or underway to address significant risks / concerns arising from the assessments at Question 9 above."
+                        id="id_q10" design="Bold" wrapping="true" />
+                    <m:TextArea id="id_answ10" rows="3" placeholder="Your Answer..." cols="200" maxLength="2500" showExceededText="true" liveChange="handleLiveChange6" />
+                    
+                    <m:Label text="11.Details of a business process being modified / introduced as a result of addressing human rights grievances/complaints."
+                        id="id_q11" design="Bold" wrapping="true" />
+                    <m:TextArea id="id_answ11" rows="3" placeholder="Your Answer..." cols="200" maxLength="2500" showExceededText="true" liveChange="handleLiveChange6" />
+
+                    <m:Label text="12.Details of the scope and coverage of any Human rights due-diligence conducted."
+                        id="id_q12" design="Bold" wrapping="true" />
+                    <m:TextArea id="id_answ12" rows="3" placeholder="Your Answer..." cols="200" maxLength="2500" showExceededText="true" liveChange="handleLiveChange6" />
+
+                    <m:Label text="13.Is the premise/office of the entity accessible to differently abled visitors, as per the requirements of the Rights of Persons with Disabilities Act, 2016?"
+                        id="id_q13" design="Bold" wrapping="true" />
+                    <m:TextArea id="id_answ13" rows="3" placeholder="Your Answer..." cols="200" maxLength="1500" showExceededText="true" liveChange="handleLiveChange6" />
+                    
+                    <m:Label required="true" text="14.Details of Social Impact Assessments (SIA) of projects undertaken by the entity based on applicable laws, in the current financial year"
+                        id="id_q14" design="Bold" wrapping="true" />
+                    <!-- <m:TextArea id="id_answ14" rows="3" placeholder="Your Answer..." cols="200" maxLength="1500" showExceededText="true" liveChange="handleLiveChange6" /> -->
+                    <m:Table id="_IDGenTable2" mode="Delete" delete="deleteRowTab">
+                    <m:headerToolbar>
+                    <m:Toolbar id="_IDGenToolbar1">	  
+                    <m:ToolbarSpacer id="_IDGenToolbarSpacer3"  />	
+                    <m:Button id="_IDGenButton4" 
+                        icon="sap-icon://add"
+                        type="Emphasized"
+                        press="onAddRowQ14" />
+                        </m:Toolbar>
+                    </m:headerToolbar>
+                    <m:columns>
+
+                    <m:Column id="_IDGenColumn3"  width="" >
+                    <m:Text id="_IDGenText1" wrapping="true"  text="Name and brief details of project" />
+                    </m:Column>
+                    
+                    <m:Column id="_IDGenColumn4"  width="" >
+                    <m:Text id="_IDGenText2" wrapping="true"  text="SIA Notification No." />
+                    </m:Column>
+                    
+                    <m:Column id="_IDGenColumn5"  width="" >
+                    <m:Text id="_IDGenText3" wrapping="true"  text="Date of notification" />
+                    </m:Column>
+                    
+                    <m:Column id="_IDGenColumn6"  width="" >
+                    <m:Text id="_IDGenText4" wrapping="true"  text="Whelther conducted by independent external agency (Yes/No)" />
+                    </m:Column>
+
+                    <m:Column id="_IDGenColumn7"  width="" >
+                    <m:Text id="_IDGenText5" wrapping="true"  text="Results communicated in public domain(Yes/ No)" />
+                    </m:Column>
+
+                    <m:Column id="_IDGenColumn8"  width="" >
+                    <m:Text id="_IDGenText6" wrapping="true"  text="Relevant Web link" />
+                    </m:Column>
+                
+                    </m:columns>
+                    
+                    
+                  
+                    </m:Table>
+                    <m:Label  required="true" text="{i18n>q15}"
+                        id="id_q15" design="Bold" wrapping="true" />
+                    <!-- <m:TextArea id="id_answ15" rows="3" placeholder="Your Answer..." cols="200" maxLength="1500" showExceededText="true" liveChange="handleLiveChange6" /> -->
+                    <m:Table id="_IDGenTable3" mode="Delete" delete="deleteRowTab">
+                    <m:headerToolbar>
+                    <m:Toolbar id="_IDGenToolbar2">	  
+                    <m:ToolbarSpacer id="_IDGenToolbarSpacer4"  />	
+                    <m:Button id="_IDGenButton5" 
+                        icon="sap-icon://add"
+                        type="Emphasized"
+                        press="onAddRowQ15"  />
+                        </m:Toolbar>
+                    </m:headerToolbar>
+                    <m:columns>
+
+                    <m:Column id="_IDGenColumn9"  width="" >
+                    <m:Text id="_IDGenText7" wrapping="true"  text="S.No" />
+                    </m:Column>
+                    
+                    <m:Column id="_IDGenColumn10"  width="" >
+                    <m:Text id="_IDGenText8" wrapping="true"  text="{i18n>q15TableCol2}" />
+                    </m:Column>
+                    
+                    <m:Column id="_IDGenColumn11"  width="" >
+                    <m:Text id="_IDGenText9" wrapping="true"  text="State" />
+                    </m:Column>
+                    
+                    <m:Column id="_IDGenColumn12"  width="" >
+                    <m:Text id="_IDGenText10" wrapping="true"  text="District " />
+                    </m:Column>
+
+                    <m:Column id="_IDGenColumn13"  width="" >
+                    <m:Text id="_IDGenText11" wrapping="true"  text="No of Project Affected Families(PAFs)" />
+                    </m:Column>
+
+                    <m:Column id="_IDGenColumn14"  width="" >
+                    <m:Text id="_IDGenText12" wrapping="true"  text="{i18n>q14TableCol6}" />
+                    </m:Column>
+
+                    <m:Column id="_IDGenColumn15"  width="" >
+                    <m:Text id="_IDGenText13" wrapping="true"  text="Amount paid to PAF in the FY (In INR)" />
+                    </m:Column>
+                
+                    </m:columns>
+                 
+                    </m:Table>
+                    <m:Label required="true"  text="16.Describe the mechanisms to receive and redress grievances of the community."
+                        id="id_q16" design="Bold" wrapping="true" />
+                    <m:TextArea id="id_answ16" rows="3" placeholder="Your Answer..." cols="200" maxLength="2500" showExceededText="true" liveChange="handleLiveChange6" />
+
+                    <m:Label text="17.Provide details of actions taken to mitigate any negative social impacts identified in the Social Impact Assessments (Reference: Question 1 of Essential Indicators above)"
+                        id="id_q17" design="Bold" wrapping="true" />
+                    <!-- <m:TextArea id="id_answ17" rows="3" placeholder="Your Answer..." cols="200" maxLength="1500" showExceededText="true" liveChange="handleLiveChange6" /> -->
+                    <m:Table id="_IDGenTable4" mode="Delete" delete="deleteRowTab">
+                    <m:headerToolbar>
+                    <m:Toolbar id="_IDGenToolbar3">	  
+                    <m:ToolbarSpacer id="_IDGenToolbarSpacer5"  />	
+                    <m:Button id="_IDGenButton6" 
+                        icon="sap-icon://add"
+                        type="Emphasized"
+                        press="onAddRowQ17" />
+                        </m:Toolbar>
+                    </m:headerToolbar>
+                    <m:columns>
+
+                    <m:Column id="_IDGenColumn111"  width="" >
+                    <m:Text id="_IDGenText111"  wrapping="true"  text="Details of negative social impact identified" />
+                    </m:Column>
+                    
+                    <m:Column id="_IDGenColumn122" width="" >
+                    <m:Text id="_IDGenText122" wrapping="true"  text="Corrective action taken" />
+                    </m:Column>
+                    
+                    
+                
+                    </m:columns>
+                    
+                    
+                  
+                    </m:Table>
+                    
+                    <m:Label text="18.Provide the following information on CSR projects undertaken by your entity in designated aspirational districts as identified by government bodies"
+                        id="id_q18" design="Bold" wrapping="true" />
+                    <!-- <m:TextArea id="id_answ18" rows="3" placeholder="Your Answer..." cols="200" maxLength="1500" showExceededText="true" liveChange="handleLiveChange6" /> -->
+                    <m:Table id="_IDGenTable5" mode="Delete" delete="deleteRowTab">
+                    <m:headerToolbar>
+                    <m:Toolbar id="_IDGenToolbar4">	  
+                    <m:ToolbarSpacer id="_IDGenToolbarSpacer6"  />	
+                    <m:Button id="_IDGenButton7" 
+                        icon="sap-icon://add"
+                        type="Emphasized"
+                        press="onAddRowQ18" />
+                        </m:Toolbar>
+                    </m:headerToolbar>
+                    <m:columns>
+
+                    <m:Column id="_IDGenColumn011"  width="" >
+                    <m:Text id="_IDGenText011" wrapping="true"  text="S.No" />
+                    </m:Column>
+                    
+                    <m:Column id="_IDGenColumn012"  width="" >
+                    <m:Text id="_IDGenText012" wrapping="true"  text="State" />
+                    </m:Column>
+                    
+                    <m:Column id="_IDGenColumn013"  width="" >
+                    <m:Text id="_IDGenText013" wrapping="true"  text="Aspirational District " />
+                    </m:Column>
+                    
+                    <m:Column id="_IDGenColumn014"  width="" >
+                    <m:Text id="_IDGenText14" wrapping="true"  text="Amount spent (IN INR)  " />
+                    </m:Column>
+
+                    </m:columns>
+                
+                    </m:Table>
+                    <m:Label text="19.Details of the benefits derived and shared from the intellectual properties owned or acquired by your entity (in the current financial year), based on traditional knowledge:"
+                        id="id_q19" design="Bold" wrapping="true" />
+                    <!-- <m:TextArea id="id_answ19" rows="3" placeholder="Your Answer..." cols="200" maxLength="1500" showExceededText="true" liveChange="handleLiveChange6" /> -->
+                    <m:Table id="_IDGenTable6" mode="Delete" delete="deleteRowTab">
+                    <m:headerToolbar>
+                    <m:Toolbar id="_IDGenToolbar5">	  
+                    <m:ToolbarSpacer id="_IDGenToolbarSpacer7"  />	
+                    <m:Button id="_IDGenButton8" 
+                        icon="sap-icon://add"
+                        type="Emphasized"
+                        press="onAddRowQ19" />
+                        </m:Toolbar>
+                    </m:headerToolbar>
+                    <m:columns>
+
+                    <m:Column id="_IDGenColumn1111"  width="" >
+                    <m:Text id="_IDGenText1111" wrapping="true"  text="S.No" />
+                    </m:Column>
+                    
+                    <m:Column id="_IDGenColumn112"  width="" >
+                    <m:Text id="_IDGenText112" wrapping="true"  text="Intellectual property based on traditional knowledge" />
+                    </m:Column>
+                    
+                    <m:Column id="_IDGenColumn113"  width="" >
+                    <m:Text id="_IDGenText113" wrapping="true"  text="Owner/Acquired (Yes/No)" />
+                    </m:Column>
+                    
+                    <m:Column id="_IDGenColumn114"  width="" >
+                    <m:Text id="_IDGenText114" wrapping="true"  text="Benefit Shared (Yes/NO)" />
+                    </m:Column>
+
+                    <m:Column id="_IDGenColumn115"  width="" >
+                    <m:Text id="_IDGenText115" wrapping="true"  text="Basis of calculating benefit share" />
+                    </m:Column>
+                    </m:columns> 
+                  
+                    </m:Table>
+
+                    <m:Label text="20.Details of corrective actions taken or underway, based on any adverse order in intellectual property related disputes wherein usage of traditional knowledge is involved"
+                        id="id_q20" design="Bold" wrapping="true" />
+                    <!-- <m:TextArea id="id_answ20" rows="3" placeholder="Your Answer..." cols="200" maxLength="1500" showExceededText="true" liveChange="handleLiveChange6" /> -->
+                    <m:Table id="_IDGenTable7" mode="Delete" delete="deleteRowTab">
+                    <m:headerToolbar>
+                    <m:Toolbar id="_IDGenToolbar6">	  
+                    <m:ToolbarSpacer id="_IDGenToolbarSpacer8"  />	
+                    <m:Button id="_IDGenButton9" 
+                        icon="sap-icon://add"
+                        type="Emphasized"
+                        press="onAddRowQ20" />
+                        </m:Toolbar>
+                    </m:headerToolbar>
+                    <m:columns>
+
+                    <m:Column id="_IDGenColumn1122"  width="" >
+                    <m:Text id="_IDGenText1122" wrapping="true"  text="Name of authority" />
+                    </m:Column>
+                    
+                    <m:Column id="_IDGenColumn1222"  width="" >
+                    <m:Text id="_IDGenText1222" wrapping="true"  text="Brief of the case" />
+                    </m:Column>
+                    
+                    <m:Column id="_IDGenColumn1333"  width="" >
+                    <m:Text id="_IDGenText1333" wrapping="true"  text="Corrective action taken" />
+                    </m:Column>
+                
+                    </m:columns>
+                    </m:Table>
+                    <m:Label text="21.Details of beneficiaries of CSR Projects"
+                        id="id_q21" design="Bold" wrapping="true" />
+                    <!-- <m:TextArea id="id_answ21" rows="3" placeholder="Your Answer..." cols="200" maxLength="1500" showExceededText="true" liveChange="handleLiveChange6" /> -->
+                    <m:Table id="_IDGenTable8" mode="Delete" delete="deleteRowTab">
+                    <m:headerToolbar>
+                    <m:Toolbar id="_IDGenToolbar7">	  
+                    <m:ToolbarSpacer id="_IDGenToolbarSpacer9"  />	
+                    <m:Button id="_IDGenButton10" 
+                        icon="sap-icon://add"
+                        type="Emphasized"
+                        press="onAddRowQ21" />
+                        </m:Toolbar>
+                    </m:headerToolbar>
+                    <m:columns>
+
+                    <m:Column id="_IDGenColumn1123"  width="" >
+                    <m:Text id="_IDGenText1123" wrapping="true"  text="S.No" />
+                    </m:Column>
+                    
+                    <m:Column id="_IDGenColumn123"  width="" >
+                    <m:Text id="_IDGenText123" wrapping="true"  text="CSR Project" />
+                    </m:Column>
+                    
+                    <m:Column id="_IDGenColumn134"  width="" >
+                    <m:Text id="_IDGenText134" wrapping="true"  text="No. of persons benifitted from CSR Projects" />
+                    </m:Column>
+                    
+                    <m:Column id="_IDGenColumn145"  width="" >
+                    <m:Text id="_IDGenText145" wrapping="true"  text="% of beneficiaries from vulnerable and marginalized groups" />
+                    </m:Column>
+
+                    
+                
+                    </m:columns>
+                    
+                    
+                  
+                    </m:Table>
+                
+                    
+            </layout:VerticalLayout>
+            </blocks>
+        </ObjectPageSubSection>
+        </subSections>
+        </ObjectPageSection>       
+        </sections>
+        <footer>
+        <m:OverflowToolbar id="_IDGenOverflowToolbar1" width="100%" height="46px" design="Auto" enabled="true" visible="true">
+            <m:content>
+                <m:Button id="messagePopoverBtn" visible="false" type="Emphasized" icon="sap-icon://message-popup" text="" press=".handleMessagePopoverPress" ariaHasPopup="Dialog" />
+                <m:ToolbarSpacer id="_IDGenToolbarSpacer1" width="" />
+                <m:Button id="_IDGenButton0" text="Save as Draft" icon="sap-icon://notes" iconFirst="false" type="Transparent" width="auto" enabled="true" visible="true" press="onSave" />
+                <m:Button id="_IDGenButton1" text="Submit For Approval" icon="sap-icon://open-command-field" iconFirst="false" type="Transparent" width="auto" enabled="true" visible="true" press="FormValidate" />
+            </m:content>
+        </m:OverflowToolbar>
+        </footer>
+    </ObjectPageLayout>
+</mvc:View>

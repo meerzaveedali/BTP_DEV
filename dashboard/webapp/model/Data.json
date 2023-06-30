@@ -1,0 +1,83 @@
+{
+    "BFStatus" :[
+        {
+            "fiscalYear" : "2023-24",
+            "businessFunction" : "EHS",
+            "Status" : "Not Started",
+            "measure" : 14.28,
+            "state" : "Error"
+
+        },
+        {
+            "fiscalYear" : "2023-24",
+            "businessFunction" : "QualityAssurance",
+            "Status" : "Draft",
+            "measure" : 14.28,
+            "state" : "Warning"
+
+        },
+        {
+            "fiscalYear" : "2023-24",
+            "businessFunction" : "Finance",
+            "Status" : "Submited to L1",
+            "measure" : 14.28,
+            "state" : "Warning"
+
+        },
+        {
+            "fiscalYear" : "2023-24",
+            "businessFunction" : "IT",
+            "Status" : "L1 Approved",
+            "measure" : 14.28,
+            "state" : "Success"
+
+        },
+        {
+            "fiscalYear" : "2023-24",
+            "businessFunction" : "Compliace/Legal",
+            "Status" : "L1 Rejected",
+            "measure" : 14.28,
+            "state" : "Error"
+
+        },
+        {
+            "fiscalYear" : "2023-24",
+            "businessFunction" : "Procurement",
+            "Status" : "L2 Rejected",
+            "measure" : 14.28,
+            "state" : "Error"
+
+        },
+        {
+            "fiscalYear" : "2023-24",
+            "businessFunction" : "HR",
+            "Status" : "Submitted to L1",
+            "measure" : 14.28,
+            "state" : "Warning"
+
+        }
+
+
+    ],
+    "FyStatus": [{
+        "fiscalYear" : "2021-22",
+        "BRSRStatus" : "Completely Approved",
+        "measure" : 50,
+        "state" : "Success"
+
+     },
+    {
+        "fiscalYear" : "2021-22",
+        "BRSRStatus" : "Completely Approved",
+        "measure" : 20,
+        "state" : "Success"
+    },
+    {
+        "fiscalYear" : "2021-22",
+        "BRSRStatus" : "In Progress",
+        "measure" : 30,
+        "state" : "Error"
+    }
+]
+
+}

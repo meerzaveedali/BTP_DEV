@@ -1,0 +1,1377 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="1.0" xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx" xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" xmlns:sap="http://www.sap.com/Protocols/SAPData">
+    <edmx:Reference Uri="https://oasis-tcs.github.io/odata-vocabularies/vocabularies/Org.OData.Capabilities.V1.xml" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Alias="Capabilities" Namespace="Org.OData.Capabilities.V1"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="https://sap.github.io/odata-vocabularies/vocabularies/Common.xml" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Alias="Common" Namespace="com.sap.vocabularies.Common.v1"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="https://oasis-tcs.github.io/odata-vocabularies/vocabularies/Org.OData.Core.V1.xml" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Alias="Core" Namespace="Org.OData.Core.V1"/>
+    </edmx:Reference>
+    <edmx:DataServices m:DataServiceVersion="2.0">
+        <Schema Namespace="CatalogService" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+            <EntityContainer Name="EntityContainer" m:IsDefaultEntityContainer="true">
+                <EntitySet Name="qualitative_data" EntityType="CatalogService.qualitative_data"/>
+                <EntitySet Name="qualitative_data_quality_assurance" EntityType="CatalogService.qualitative_data_quality_assurance"/>
+                <EntitySet Name="qualitative_data_quality_assurance_principle2_leadership_1" EntityType="CatalogService.qualitative_data_quality_assurance_principle2_leadership_1"/>
+                <EntitySet Name="qualitative_data_quality_assurance_principle2_leadership_2" EntityType="CatalogService.qualitative_data_quality_assurance_principle2_leadership_2"/>
+                <EntitySet Name="qualitative_data_EHS" EntityType="CatalogService.qualitative_data_EHS"/>
+                <EntitySet Name="qualitative_data_EHS_principle6_essential_10" EntityType="CatalogService.qualitative_data_EHS_principle6_essential_10"/>
+                <EntitySet Name="qualitative_data_EHS_principle6_essential_11" EntityType="CatalogService.qualitative_data_EHS_principle6_essential_11"/>
+                <EntitySet Name="qualitative_data_EHS_principle6_essential_12" EntityType="CatalogService.qualitative_data_EHS_principle6_essential_12"/>
+                <EntitySet Name="qualitative_data_EHS_principle6_leadership_6" EntityType="CatalogService.qualitative_data_EHS_principle6_leadership_6"/>
+                <EntitySet Name="qualitative_data_IT" EntityType="CatalogService.qualitative_data_IT"/>
+                <EntitySet Name="qualitative_data_Procurement" EntityType="CatalogService.qualitative_data_Procurement"/>
+                <EntitySet Name="qualitative_data_Finance" EntityType="CatalogService.qualitative_data_Finance"/>
+                <EntitySet Name="qualitative_data_Finance_principle4_essential_2" EntityType="CatalogService.qualitative_data_Finance_principle4_essential_2"/>
+                <EntitySet Name="brsr_qualitative_data_Legal_Compliance" EntityType="CatalogService.brsr_qualitative_data_Legal_Compliance"/>
+                <EntitySet Name="brsr_qualitative_data_Legal_Compliance_principle1_essential_3" EntityType="CatalogService.brsr_qualitative_data_Legal_Compliance_principle1_essential_3"/>
+                <EntitySet Name="brsr_qualitative_data_Legal_Compliance_principle7_essential_1" EntityType="CatalogService.brsr_qualitative_data_Legal_Compliance_principle7_essential_1"/>
+                <EntitySet Name="brsr_qualitative_data_Legal_Compliance_principle7_essential_2" EntityType="CatalogService.brsr_qualitative_data_Legal_Compliance_principle7_essential_2"/>
+                <EntitySet Name="brsr_qualitative_data_Legal_Compliance_principle7_leadership_1" EntityType="CatalogService.brsr_qualitative_data_Legal_Compliance_principle7_leadership_1"/>
+                <EntitySet Name="brsr_qualitative_data_HR" EntityType="CatalogService.brsr_qualitative_data_HR"/>
+                <EntitySet Name="brsr_qualitative_data_HR_principle3_essential_6" EntityType="CatalogService.brsr_qualitative_data_HR_principle3_essential_6"/>
+                <EntitySet Name="brsr_qualitative_data_HR_principle8_essential_1" EntityType="CatalogService.brsr_qualitative_data_HR_principle8_essential_1"/>
+                <EntitySet Name="brsr_qualitative_data_HR_principle8_essential_2" EntityType="CatalogService.brsr_qualitative_data_HR_principle8_essential_2"/>
+                <EntitySet Name="brsr_qualitative_data_HR_principle8_leadership_1" EntityType="CatalogService.brsr_qualitative_data_HR_principle8_leadership_1"/>
+                <EntitySet Name="brsr_qualitative_data_HR_principle8_leadership_2" EntityType="CatalogService.brsr_qualitative_data_HR_principle8_leadership_2"/>
+                <EntitySet Name="brsr_qualitative_data_HR_principle8_leadership_4" EntityType="CatalogService.brsr_qualitative_data_HR_principle8_leadership_4"/>
+                <EntitySet Name="brsr_qualitative_data_HR_principle8_leadership_5" EntityType="CatalogService.brsr_qualitative_data_HR_principle8_leadership_5"/>
+                <EntitySet Name="brsr_qualitative_data_HR_principle8_leadership_6" EntityType="CatalogService.brsr_qualitative_data_HR_principle8_leadership_6"/>
+                <EntitySet Name="brsr_businessfunctions_approved_status" EntityType="CatalogService.brsr_businessfunctions_approved_status"/>
+                <EntitySet Name="brsr_businessfunctions_rejected_status" EntityType="CatalogService.brsr_businessfunctions_rejected_status"/>
+                <EntitySet Name="brsr_businessfunctions_submission_status" EntityType="CatalogService.brsr_businessfunctions_submission_status"/>
+                <EntitySet Name="brsr_businessfunctions_status" EntityType="CatalogService.brsr_businessfunctions_status"/>
+                <EntitySet Name="brsr_businessfunctions_approved_log" EntityType="CatalogService.brsr_businessfunctions_approved_log"/>
+                <EntitySet Name="brsr_businessfunctions_rejected_log" EntityType="CatalogService.brsr_businessfunctions_rejected_log"/>
+                <EntitySet Name="brsr_businessfunctions_approvalHistoryLog" EntityType="CatalogService.brsr_businessfunctions_approvalHistoryLog"/>
+                <EntitySet Name="email_status_CSO" EntityType="CatalogService.email_status_CSO"/>
+                <AssociationSet Name="qualitative_data_quality_assurance_up_" Association="CatalogService.qualitative_data_quality_assurance_up_">
+                    <End Role="qualitative_data_quality_assurance" EntitySet="qualitative_data_quality_assurance"/>
+                    <End Role="qualitative_data" EntitySet="qualitative_data"/>
+                </AssociationSet>
+                <AssociationSet Name="qualitative_data_quality_assurance_principle2_leadership_1_up_" Association="CatalogService.qualitative_data_quality_assurance_principle2_leadership_1_up_">
+                    <End Role="qualitative_data_quality_assurance_principle2_leadership_1" EntitySet="qualitative_data_quality_assurance_principle2_leadership_1"/>
+                    <End Role="qualitative_data_quality_assurance" EntitySet="qualitative_data_quality_assurance"/>
+                </AssociationSet>
+                <AssociationSet Name="qualitative_data_quality_assurance_principle2_leadership_2_up_" Association="CatalogService.qualitative_data_quality_assurance_principle2_leadership_2_up_">
+                    <End Role="qualitative_data_quality_assurance_principle2_leadership_2" EntitySet="qualitative_data_quality_assurance_principle2_leadership_2"/>
+                    <End Role="qualitative_data_quality_assurance" EntitySet="qualitative_data_quality_assurance"/>
+                </AssociationSet>
+                <AssociationSet Name="qualitative_data_EHS_up_" Association="CatalogService.qualitative_data_EHS_up_">
+                    <End Role="qualitative_data_EHS" EntitySet="qualitative_data_EHS"/>
+                    <End Role="qualitative_data" EntitySet="qualitative_data"/>
+                </AssociationSet>
+                <AssociationSet Name="qualitative_data_EHS_principle6_essential_10_up_" Association="CatalogService.qualitative_data_EHS_principle6_essential_10_up_">
+                    <End Role="qualitative_data_EHS_principle6_essential_10" EntitySet="qualitative_data_EHS_principle6_essential_10"/>
+                    <End Role="qualitative_data_EHS" EntitySet="qualitative_data_EHS"/>
+                </AssociationSet>
+                <AssociationSet Name="qualitative_data_EHS_principle6_essential_11_up_" Association="CatalogService.qualitative_data_EHS_principle6_essential_11_up_">
+                    <End Role="qualitative_data_EHS_principle6_essential_11" EntitySet="qualitative_data_EHS_principle6_essential_11"/>
+                    <End Role="qualitative_data_EHS" EntitySet="qualitative_data_EHS"/>
+                </AssociationSet>
+                <AssociationSet Name="qualitative_data_EHS_principle6_essential_12_up_" Association="CatalogService.qualitative_data_EHS_principle6_essential_12_up_">
+                    <End Role="qualitative_data_EHS_principle6_essential_12" EntitySet="qualitative_data_EHS_principle6_essential_12"/>
+                    <End Role="qualitative_data_EHS" EntitySet="qualitative_data_EHS"/>
+                </AssociationSet>
+                <AssociationSet Name="qualitative_data_EHS_principle6_leadership_6_up_" Association="CatalogService.qualitative_data_EHS_principle6_leadership_6_up_">
+                    <End Role="qualitative_data_EHS_principle6_leadership_6" EntitySet="qualitative_data_EHS_principle6_leadership_6"/>
+                    <End Role="qualitative_data_EHS" EntitySet="qualitative_data_EHS"/>
+                </AssociationSet>
+                <AssociationSet Name="qualitative_data_IT_up_" Association="CatalogService.qualitative_data_IT_up_">
+                    <End Role="qualitative_data_IT" EntitySet="qualitative_data_IT"/>
+                    <End Role="qualitative_data" EntitySet="qualitative_data"/>
+                </AssociationSet>
+                <AssociationSet Name="qualitative_data_Procurement_up_" Association="CatalogService.qualitative_data_Procurement_up_">
+                    <End Role="qualitative_data_Procurement" EntitySet="qualitative_data_Procurement"/>
+                    <End Role="qualitative_data" EntitySet="qualitative_data"/>
+                </AssociationSet>
+                <AssociationSet Name="qualitative_data_Finance_up_" Association="CatalogService.qualitative_data_Finance_up_">
+                    <End Role="qualitative_data_Finance" EntitySet="qualitative_data_Finance"/>
+                    <End Role="qualitative_data" EntitySet="qualitative_data"/>
+                </AssociationSet>
+                <AssociationSet Name="qualitative_data_Finance_principle4_essential_2_up_" Association="CatalogService.qualitative_data_Finance_principle4_essential_2_up_">
+                    <End Role="qualitative_data_Finance_principle4_essential_2" EntitySet="qualitative_data_Finance_principle4_essential_2"/>
+                    <End Role="qualitative_data_Finance" EntitySet="qualitative_data_Finance"/>
+                </AssociationSet>
+                <AssociationSet Name="brsr_qualitative_data_Legal_Compliance_up_" Association="CatalogService.brsr_qualitative_data_Legal_Compliance_up_">
+                    <End Role="brsr_qualitative_data_Legal_Compliance" EntitySet="brsr_qualitative_data_Legal_Compliance"/>
+                    <End Role="qualitative_data" EntitySet="qualitative_data"/>
+                </AssociationSet>
+                <AssociationSet Name="brsr_qualitative_data_Legal_Compliance_principle1_essential_3_up_" Association="CatalogService.brsr_qualitative_data_Legal_Compliance_principle1_essential_3_up_">
+                    <End Role="brsr_qualitative_data_Legal_Compliance_principle1_essential_3" EntitySet="brsr_qualitative_data_Legal_Compliance_principle1_essential_3"/>
+                    <End Role="brsr_qualitative_data_Legal_Compliance" EntitySet="brsr_qualitative_data_Legal_Compliance"/>
+                </AssociationSet>
+                <AssociationSet Name="brsr_qualitative_data_Legal_Compliance_principle7_essential_1_up_" Association="CatalogService.brsr_qualitative_data_Legal_Compliance_principle7_essential_1_up_">
+                    <End Role="brsr_qualitative_data_Legal_Compliance_principle7_essential_1" EntitySet="brsr_qualitative_data_Legal_Compliance_principle7_essential_1"/>
+                    <End Role="brsr_qualitative_data_Legal_Compliance" EntitySet="brsr_qualitative_data_Legal_Compliance"/>
+                </AssociationSet>
+                <AssociationSet Name="brsr_qualitative_data_Legal_Compliance_principle7_essential_2_up_" Association="CatalogService.brsr_qualitative_data_Legal_Compliance_principle7_essential_2_up_">
+                    <End Role="brsr_qualitative_data_Legal_Compliance_principle7_essential_2" EntitySet="brsr_qualitative_data_Legal_Compliance_principle7_essential_2"/>
+                    <End Role="brsr_qualitative_data_Legal_Compliance" EntitySet="brsr_qualitative_data_Legal_Compliance"/>
+                </AssociationSet>
+                <AssociationSet Name="brsr_qualitative_data_Legal_Compliance_principle7_leadership_1_up_" Association="CatalogService.brsr_qualitative_data_Legal_Compliance_principle7_leadership_1_up_">
+                    <End Role="brsr_qualitative_data_Legal_Compliance_principle7_leadership_1" EntitySet="brsr_qualitative_data_Legal_Compliance_principle7_leadership_1"/>
+                    <End Role="brsr_qualitative_data_Legal_Compliance" EntitySet="brsr_qualitative_data_Legal_Compliance"/>
+                </AssociationSet>
+                <AssociationSet Name="brsr_qualitative_data_HR_up_" Association="CatalogService.brsr_qualitative_data_HR_up_">
+                    <End Role="brsr_qualitative_data_HR" EntitySet="brsr_qualitative_data_HR"/>
+                    <End Role="qualitative_data" EntitySet="qualitative_data"/>
+                </AssociationSet>
+                <AssociationSet Name="brsr_qualitative_data_HR_principle3_essential_6_up_" Association="CatalogService.brsr_qualitative_data_HR_principle3_essential_6_up_">
+                    <End Role="brsr_qualitative_data_HR_principle3_essential_6" EntitySet="brsr_qualitative_data_HR_principle3_essential_6"/>
+                    <End Role="brsr_qualitative_data_HR" EntitySet="brsr_qualitative_data_HR"/>
+                </AssociationSet>
+                <AssociationSet Name="brsr_qualitative_data_HR_principle8_essential_1_up_" Association="CatalogService.brsr_qualitative_data_HR_principle8_essential_1_up_">
+                    <End Role="brsr_qualitative_data_HR_principle8_essential_1" EntitySet="brsr_qualitative_data_HR_principle8_essential_1"/>
+                    <End Role="brsr_qualitative_data_HR" EntitySet="brsr_qualitative_data_HR"/>
+                </AssociationSet>
+                <AssociationSet Name="brsr_qualitative_data_HR_principle8_essential_2_up_" Association="CatalogService.brsr_qualitative_data_HR_principle8_essential_2_up_">
+                    <End Role="brsr_qualitative_data_HR_principle8_essential_2" EntitySet="brsr_qualitative_data_HR_principle8_essential_2"/>
+                    <End Role="brsr_qualitative_data_HR" EntitySet="brsr_qualitative_data_HR"/>
+                </AssociationSet>
+                <AssociationSet Name="brsr_qualitative_data_HR_principle8_leadership_1_up_" Association="CatalogService.brsr_qualitative_data_HR_principle8_leadership_1_up_">
+                    <End Role="brsr_qualitative_data_HR_principle8_leadership_1" EntitySet="brsr_qualitative_data_HR_principle8_leadership_1"/>
+                    <End Role="brsr_qualitative_data_HR" EntitySet="brsr_qualitative_data_HR"/>
+                </AssociationSet>
+                <AssociationSet Name="brsr_qualitative_data_HR_principle8_leadership_2_up_" Association="CatalogService.brsr_qualitative_data_HR_principle8_leadership_2_up_">
+                    <End Role="brsr_qualitative_data_HR_principle8_leadership_2" EntitySet="brsr_qualitative_data_HR_principle8_leadership_2"/>
+                    <End Role="brsr_qualitative_data_HR" EntitySet="brsr_qualitative_data_HR"/>
+                </AssociationSet>
+                <AssociationSet Name="brsr_qualitative_data_HR_principle8_leadership_4_up_" Association="CatalogService.brsr_qualitative_data_HR_principle8_leadership_4_up_">
+                    <End Role="brsr_qualitative_data_HR_principle8_leadership_4" EntitySet="brsr_qualitative_data_HR_principle8_leadership_4"/>
+                    <End Role="brsr_qualitative_data_HR" EntitySet="brsr_qualitative_data_HR"/>
+                </AssociationSet>
+                <AssociationSet Name="brsr_qualitative_data_HR_principle8_leadership_5_up_" Association="CatalogService.brsr_qualitative_data_HR_principle8_leadership_5_up_">
+                    <End Role="brsr_qualitative_data_HR_principle8_leadership_5" EntitySet="brsr_qualitative_data_HR_principle8_leadership_5"/>
+                    <End Role="brsr_qualitative_data_HR" EntitySet="brsr_qualitative_data_HR"/>
+                </AssociationSet>
+                <AssociationSet Name="brsr_qualitative_data_HR_principle8_leadership_6_up_" Association="CatalogService.brsr_qualitative_data_HR_principle8_leadership_6_up_">
+                    <End Role="brsr_qualitative_data_HR_principle8_leadership_6" EntitySet="brsr_qualitative_data_HR_principle8_leadership_6"/>
+                    <End Role="brsr_qualitative_data_HR" EntitySet="brsr_qualitative_data_HR"/>
+                </AssociationSet>
+            </EntityContainer>
+            <EntityType Name="qualitative_data">
+                <Key>
+                    <PropertyRef Name="fiscalYear"/>
+                    <PropertyRef Name="businessFunction"/>
+                </Key>
+                <Property Name="fiscalYear" Type="Edm.String" Nullable="false"/>
+                <Property Name="businessFunction" Type="Edm.String" Nullable="false"/>
+                <Property Name="status" Type="Edm.String"/>
+                <Property Name="modifiedAt" Type="Edm.DateTimeOffset" Precision="7"/>
+                <NavigationProperty Name="quality_assurance" Relationship="CatalogService.qualitative_data_quality_assurance_up_" FromRole="qualitative_data" ToRole="qualitative_data_quality_assurance"/>
+                <NavigationProperty Name="EHS" Relationship="CatalogService.qualitative_data_EHS_up_" FromRole="qualitative_data" ToRole="qualitative_data_EHS"/>
+                <NavigationProperty Name="IT" Relationship="CatalogService.qualitative_data_IT_up_" FromRole="qualitative_data" ToRole="qualitative_data_IT"/>
+                <NavigationProperty Name="Procurement" Relationship="CatalogService.qualitative_data_Procurement_up_" FromRole="qualitative_data" ToRole="qualitative_data_Procurement"/>
+                <NavigationProperty Name="Finance" Relationship="CatalogService.qualitative_data_Finance_up_" FromRole="qualitative_data" ToRole="qualitative_data_Finance"/>
+                <NavigationProperty Name="Legal_Compliance" Relationship="CatalogService.brsr_qualitative_data_Legal_Compliance_up_" FromRole="qualitative_data" ToRole="brsr_qualitative_data_Legal_Compliance"/>
+                <NavigationProperty Name="HR" Relationship="CatalogService.brsr_qualitative_data_HR_up_" FromRole="qualitative_data" ToRole="brsr_qualitative_data_HR"/>
+            </EntityType>
+            <EntityType Name="qualitative_data_quality_assurance">
+                <Key>
+                    <PropertyRef Name="up__fiscalYear"/>
+                    <PropertyRef Name="up__businessFunction"/>
+                    <PropertyRef Name="principle"/>
+                    <PropertyRef Name="indicator"/>
+                    <PropertyRef Name="questionID"/>
+                </Key>
+                <NavigationProperty Name="up_" Relationship="CatalogService.qualitative_data_quality_assurance_up_" FromRole="qualitative_data_quality_assurance" ToRole="qualitative_data"/>
+                <Property Name="up__fiscalYear" Type="Edm.String" Nullable="false"/>
+                <Property Name="up__businessFunction" Type="Edm.String" Nullable="false"/>
+                <Property Name="principle" Type="Edm.String" Nullable="false"/>
+                <Property Name="indicator" Type="Edm.String" Nullable="false"/>
+                <Property Name="questionID" Type="Edm.String" Nullable="false"/>
+                <Property Name="answer" Type="Edm.String"/>
+                <NavigationProperty Name="principle2_leadership_1" Relationship="CatalogService.qualitative_data_quality_assurance_principle2_leadership_1_up_" FromRole="qualitative_data_quality_assurance" ToRole="qualitative_data_quality_assurance_principle2_leadership_1"/>
+                <NavigationProperty Name="principle2_leadership_2" Relationship="CatalogService.qualitative_data_quality_assurance_principle2_leadership_2_up_" FromRole="qualitative_data_quality_assurance" ToRole="qualitative_data_quality_assurance_principle2_leadership_2"/>
+            </EntityType>
+            <EntityType Name="qualitative_data_quality_assurance_principle2_leadership_1">
+                <Key>
+                    <PropertyRef Name="up__up__fiscalYear"/>
+                    <PropertyRef Name="up__up__businessFunction"/>
+                    <PropertyRef Name="up__principle"/>
+                    <PropertyRef Name="up__indicator"/>
+                    <PropertyRef Name="up__questionID"/>
+                    <PropertyRef Name="ID"/>
+                </Key>
+                <NavigationProperty Name="up_" Relationship="CatalogService.qualitative_data_quality_assurance_principle2_leadership_1_up_" FromRole="qualitative_data_quality_assurance_principle2_leadership_1" ToRole="qualitative_data_quality_assurance"/>
+                <Property Name="up__up__fiscalYear" Type="Edm.String" Nullable="false"/>
+                <Property Name="up__up__businessFunction" Type="Edm.String" Nullable="false"/>
+                <Property Name="up__principle" Type="Edm.String" Nullable="false"/>
+                <Property Name="up__indicator" Type="Edm.String" Nullable="false"/>
+                <Property Name="up__questionID" Type="Edm.String" Nullable="false"/>
+                <Property Name="ID" Type="Edm.Guid" Nullable="false"/>
+                <Property Name="nic_code" Type="Edm.String"/>
+                <Property Name="name_of_product_or_service" Type="Edm.String"/>
+                <Property Name="total_turnover_contributed" Type="Edm.String"/>
+                <Property Name="boundry_of_life_cycle_assessment" Type="Edm.String"/>
+                <Property Name="conducted_by_independent_external_agency" Type="Edm.String"/>
+                <Property Name="results_communicated_in_public_domain" Type="Edm.String"/>
+            </EntityType>
+            <EntityType Name="qualitative_data_quality_assurance_principle2_leadership_2">
+                <Key>
+                    <PropertyRef Name="up__up__fiscalYear"/>
+                    <PropertyRef Name="up__up__businessFunction"/>
+                    <PropertyRef Name="up__principle"/>
+                    <PropertyRef Name="up__indicator"/>
+                    <PropertyRef Name="up__questionID"/>
+                    <PropertyRef Name="ID"/>
+                </Key>
+                <NavigationProperty Name="up_" Relationship="CatalogService.qualitative_data_quality_assurance_principle2_leadership_2_up_" FromRole="qualitative_data_quality_assurance_principle2_leadership_2" ToRole="qualitative_data_quality_assurance"/>
+                <Property Name="up__up__fiscalYear" Type="Edm.String" Nullable="false"/>
+                <Property Name="up__up__businessFunction" Type="Edm.String" Nullable="false"/>
+                <Property Name="up__principle" Type="Edm.String" Nullable="false"/>
+                <Property Name="up__indicator" Type="Edm.String" Nullable="false"/>
+                <Property Name="up__questionID" Type="Edm.String" Nullable="false"/>
+                <Property Name="ID" Type="Edm.Guid" Nullable="false"/>
+                <Property Name="name_of_product_or_service" Type="Edm.String"/>
+                <Property Name="description_of_risk_or_concern" Type="Edm.String"/>
+                <Property Name="action_taken" Type="Edm.String"/>
+            </EntityType>
+            <EntityType Name="qualitative_data_EHS">
+                <Key>
+                    <PropertyRef Name="up__fiscalYear"/>
+                    <PropertyRef Name="up__businessFunction"/>
+                    <PropertyRef Name="principle"/>
+                    <PropertyRef Name="indicator"/>
+                    <PropertyRef Name="questionID"/>
+                </Key>
+                <NavigationProperty Name="up_" Relationship="CatalogService.qualitative_data_EHS_up_" FromRole="qualitative_data_EHS" ToRole="qualitative_data"/>
+                <Property Name="up__fiscalYear" Type="Edm.String" Nullable="false"/>
+                <Property Name="up__businessFunction" Type="Edm.String" Nullable="false"/>
+                <Property Name="principle" Type="Edm.String" Nullable="false"/>
+                <Property Name="indicator" Type="Edm.String" Nullable="false"/>
+                <Property Name="questionID" Type="Edm.String" Nullable="false"/>
+                <Property Name="answer" Type="Edm.String"/>
+                <NavigationProperty Name="principle6_essential_10" Relationship="CatalogService.qualitative_data_EHS_principle6_essential_10_up_" FromRole="qualitative_data_EHS" ToRole="qualitative_data_EHS_principle6_essential_10"/>
+                <NavigationProperty Name="principle6_essential_11" Relationship="CatalogService.qualitative_data_EHS_principle6_essential_11_up_" FromRole="qualitative_data_EHS" ToRole="qualitative_data_EHS_principle6_essential_11"/>
+                <NavigationProperty Name="principle6_essential_12" Relationship="CatalogService.qualitative_data_EHS_principle6_essential_12_up_" FromRole="qualitative_data_EHS" ToRole="qualitative_data_EHS_principle6_essential_12"/>
+                <NavigationProperty Name="principle6_leadership_6" Relationship="CatalogService.qualitative_data_EHS_principle6_leadership_6_up_" FromRole="qualitative_data_EHS" ToRole="qualitative_data_EHS_principle6_leadership_6"/>
+            </EntityType>
+            <EntityType Name="qualitative_data_EHS_principle6_essential_10">
+                <Key>
+                    <PropertyRef Name="up__up__fiscalYear"/>
+                    <PropertyRef Name="up__up__businessFunction"/>
+                    <PropertyRef Name="up__principle"/>
+                    <PropertyRef Name="up__indicator"/>
+                    <PropertyRef Name="up__questionID"/>
+                    <PropertyRef Name="ID"/>
+                </Key>
+                <NavigationProperty Name="up_" Relationship="CatalogService.qualitative_data_EHS_principle6_essential_10_up_" FromRole="qualitative_data_EHS_principle6_essential_10" ToRole="qualitative_data_EHS"/>
+                <Property Name="up__up__fiscalYear" Type="Edm.String" Nullable="false"/>
+                <Property Name="up__up__businessFunction" Type="Edm.String" Nullable="false"/>
+                <Property Name="up__principle" Type="Edm.String" Nullable="false"/>
+                <Property Name="up__indicator" Type="Edm.String" Nullable="false"/>
+                <Property Name="up__questionID" Type="Edm.String" Nullable="false"/>
+                <Property Name="ID" Type="Edm.Guid" Nullable="false"/>
+                <Property Name="sr_no" Type="Edm.String"/>
+                <Property Name="location_of_operations_offices" Type="Edm.String"/>
+                <Property Name="type_of_operations" Type="Edm.String"/>
+                <Property Name="conditions_of_environmental_approval" Type="Edm.String"/>
+            </EntityType>
+            <EntityType Name="qualitative_data_EHS_principle6_essential_11">
+                <Key>
+                    <PropertyRef Name="up__up__fiscalYear"/>
+                    <PropertyRef Name="up__up__businessFunction"/>
+                    <PropertyRef Name="up__principle"/>
+                    <PropertyRef Name="up__indicator"/>
+                    <PropertyRef Name="up__questionID"/>
+                    <PropertyRef Name="ID"/>
+                </Key>
+                <NavigationProperty Name="up_" Relationship="CatalogService.qualitative_data_EHS_principle6_essential_11_up_" FromRole="qualitative_data_EHS_principle6_essential_11" ToRole="qualitative_data_EHS"/>
+                <Property Name="up__up__fiscalYear" Type="Edm.String" Nullable="false"/>
+                <Property Name="up__up__businessFunction" Type="Edm.String" Nullable="false"/>
+                <Property Name="up__principle" Type="Edm.String" Nullable="false"/>
+                <Property Name="up__indicator" Type="Edm.String" Nullable="false"/>
+                <Property Name="up__questionID" Type="Edm.String" Nullable="false"/>
+                <Property Name="ID" Type="Edm.Guid" Nullable="false"/>
+                <Property Name="name_brief_details_of_project" Type="Edm.String"/>
+                <Property Name="eia_notification_no" Type="Edm.String"/>
+                <Property Name="date" Type="Edm.String"/>
+                <Property Name="conducted_by_independent_external_agency" Type="Edm.String"/>
+                <Property Name="results_communicated_in_public_domain" Type="Edm.String"/>
+                <Property Name="relevant_web_link" Type="Edm.String"/>
+            </EntityType>
+            <EntityType Name="qualitative_data_EHS_principle6_essential_12">
+                <Key>
+                    <PropertyRef Name="up__up__fiscalYear"/>
+                    <PropertyRef Name="up__up__businessFunction"/>
+                    <PropertyRef Name="up__principle"/>
+                    <PropertyRef Name="up__indicator"/>
+                    <PropertyRef Name="up__questionID"/>
+                    <PropertyRef Name="ID"/>
+                </Key>
+                <NavigationProperty Name="up_" Relationship="CatalogService.qualitative_data_EHS_principle6_essential_12_up_" FromRole="qualitative_data_EHS_principle6_essential_12" ToRole="qualitative_data_EHS"/>
+                <Property Name="up__up__fiscalYear" Type="Edm.String" Nullable="false"/>
+                <Property Name="up__up__businessFunction" Type="Edm.String" Nullable="false"/>
+                <Property Name="up__principle" Type="Edm.String" Nullable="false"/>
+                <Property Name="up__indicator" Type="Edm.String" Nullable="false"/>
+                <Property Name="up__questionID" Type="Edm.String" Nullable="false"/>
+                <Property Name="ID" Type="Edm.Guid" Nullable="false"/>
+                <Property Name="sr_no" Type="Edm.String"/>
+                <Property Name="guidelines_not_compiled_with" Type="Edm.String"/>
+                <Property Name="details_of_non_compliance" Type="Edm.String"/>
+                <Property Name="action_taken_by_regulatory_agencies" Type="Edm.String"/>
+                <Property Name="corrective_action" Type="Edm.String"/>
+            </EntityType>
+            <EntityType Name="qualitative_data_EHS_principle6_leadership_6">
+                <Key>
+                    <PropertyRef Name="up__up__fiscalYear"/>
+                    <PropertyRef Name="up__up__businessFunction"/>
+                    <PropertyRef Name="up__principle"/>
+                    <PropertyRef Name="up__indicator"/>
+                    <PropertyRef Name="up__questionID"/>
+                    <PropertyRef Name="ID"/>
+                </Key>
+                <NavigationProperty Name="up_" Relationship="CatalogService.qualitative_data_EHS_principle6_leadership_6_up_" FromRole="qualitative_data_EHS_principle6_leadership_6" ToRole="qualitative_data_EHS"/>
+                <Property Name="up__up__fiscalYear" Type="Edm.String" Nullable="false"/>
+                <Property Name="up__up__businessFunction" Type="Edm.String" Nullable="false"/>
+                <Property Name="up__principle" Type="Edm.String" Nullable="false"/>
+                <Property Name="up__indicator" Type="Edm.String" Nullable="false"/>
+                <Property Name="up__questionID" Type="Edm.String" Nullable="false"/>
+                <Property Name="ID" Type="Edm.Guid" Nullable="false"/>
+                <Property Name="sr_no" Type="Edm.String"/>
+                <Property Name="initiative_undertaken" Type="Edm.String"/>
+                <Property Name="details_of_initiative" Type="Edm.String"/>
+                <Property Name="outcome_of_initiative" Type="Edm.String"/>
+            </EntityType>
+            <EntityType Name="qualitative_data_IT">
+                <Key>
+                    <PropertyRef Name="up__fiscalYear"/>
+                    <PropertyRef Name="up__businessFunction"/>
+                    <PropertyRef Name="principle"/>
+                    <PropertyRef Name="indicator"/>
+                    <PropertyRef Name="questionID"/>
+                </Key>
+                <NavigationProperty Name="up_" Relationship="CatalogService.qualitative_data_IT_up_" FromRole="qualitative_data_IT" ToRole="qualitative_data"/>
+                <Property Name="up__fiscalYear" Type="Edm.String" Nullable="false"/>
+                <Property Name="up__businessFunction" Type="Edm.String" Nullable="false"/>
+                <Property Name="principle" Type="Edm.String" Nullable="false"/>
+                <Property Name="indicator" Type="Edm.String" Nullable="false"/>
+                <Property Name="questionID" Type="Edm.String" Nullable="false"/>
+                <Property Name="answer" Type="Edm.String"/>
+            </EntityType>
+            <EntityType Name="qualitative_data_Procurement">
+                <Key>
+                    <PropertyRef Name="up__fiscalYear"/>
+                    <PropertyRef Name="up__businessFunction"/>
+                    <PropertyRef Name="principle"/>
+                    <PropertyRef Name="indicator"/>
+                    <PropertyRef Name="questionID"/>
+                </Key>
+                <NavigationProperty Name="up_" Relationship="CatalogService.qualitative_data_Procurement_up_" FromRole="qualitative_data_Procurement" ToRole="qualitative_data"/>
+                <Property Name="up__fiscalYear" Type="Edm.String" Nullable="false"/>
+                <Property Name="up__businessFunction" Type="Edm.String" Nullable="false"/>
+                <Property Name="principle" Type="Edm.String" Nullable="false"/>
+                <Property Name="indicator" Type="Edm.String" Nullable="false"/>
+                <Property Name="questionID" Type="Edm.String" Nullable="false"/>
+                <Property Name="answer" Type="Edm.String"/>
+            </EntityType>
+            <EntityType Name="qualitative_data_Finance">
+                <Key>
+                    <PropertyRef Name="up__fiscalYear"/>
+                    <PropertyRef Name="up__businessFunction"/>
+                    <PropertyRef Name="principle"/>
+                    <PropertyRef Name="indicator"/>
+                    <PropertyRef Name="questionID"/>
+                </Key>
+                <NavigationProperty Name="up_" Relationship="CatalogService.qualitative_data_Finance_up_" FromRole="qualitative_data_Finance" ToRole="qualitative_data"/>
+                <Property Name="up__fiscalYear" Type="Edm.String" Nullable="false"/>
+                <Property Name="up__businessFunction" Type="Edm.String" Nullable="false"/>
+                <Property Name="principle" Type="Edm.String" Nullable="false"/>
+                <Property Name="indicator" Type="Edm.String" Nullable="false"/>
+                <Property Name="questionID" Type="Edm.String" Nullable="false"/>
+                <Property Name="answer" Type="Edm.String"/>
+                <NavigationProperty Name="principle4_essential_2" Relationship="CatalogService.qualitative_data_Finance_principle4_essential_2_up_" FromRole="qualitative_data_Finance" ToRole="qualitative_data_Finance_principle4_essential_2"/>
+            </EntityType>
+            <EntityType Name="qualitative_data_Finance_principle4_essential_2">
+                <Key>
+                    <PropertyRef Name="up__up__fiscalYear"/>
+                    <PropertyRef Name="up__up__businessFunction"/>
+                    <PropertyRef Name="up__principle"/>
+                    <PropertyRef Name="up__indicator"/>
+                    <PropertyRef Name="up__questionID"/>
+                    <PropertyRef Name="ID"/>
+                </Key>
+                <NavigationProperty Name="up_" Relationship="CatalogService.qualitative_data_Finance_principle4_essential_2_up_" FromRole="qualitative_data_Finance_principle4_essential_2" ToRole="qualitative_data_Finance"/>
+                <Property Name="up__up__fiscalYear" Type="Edm.String" Nullable="false"/>
+                <Property Name="up__up__businessFunction" Type="Edm.String" Nullable="false"/>
+                <Property Name="up__principle" Type="Edm.String" Nullable="false"/>
+                <Property Name="up__indicator" Type="Edm.String" Nullable="false"/>
+                <Property Name="up__questionID" Type="Edm.String" Nullable="false"/>
+                <Property Name="ID" Type="Edm.Guid" Nullable="false"/>
+                <Property Name="stakeholder_group" Type="Edm.String"/>
+                <Property Name="identifies_as_vulnerable_marginalized_group" Type="Edm.String"/>
+                <Property Name="channels_of_communication" Type="Edm.String"/>
+                <Property Name="frequency_of_engagement" Type="Edm.String"/>
+                <Property Name="purpose_scope_of_engagement" Type="Edm.String"/>
+            </EntityType>
+            <EntityType Name="brsr_qualitative_data_Legal_Compliance">
+                <Key>
+                    <PropertyRef Name="up__fiscalYear"/>
+                    <PropertyRef Name="up__businessFunction"/>
+                    <PropertyRef Name="principle"/>
+                    <PropertyRef Name="indicator"/>
+                    <PropertyRef Name="questionID"/>
+                </Key>
+                <NavigationProperty Name="up_" Relationship="CatalogService.brsr_qualitative_data_Legal_Compliance_up_" FromRole="brsr_qualitative_data_Legal_Compliance" ToRole="qualitative_data"/>
+                <Property Name="up__fiscalYear" Type="Edm.String" Nullable="false"/>
+                <Property Name="up__businessFunction" Type="Edm.String" Nullable="false"/>
+                <Property Name="principle" Type="Edm.String" Nullable="false"/>
+                <Property Name="indicator" Type="Edm.String" Nullable="false"/>
+                <Property Name="questionID" Type="Edm.String" Nullable="false"/>
+                <Property Name="answer" Type="Edm.String"/>
+                <Property Name="principle1_essential_6_cur_yr_number_directors" Type="Edm.String"/>
+                <Property Name="principle1_essential_6_cur_yr_remark_directors" Type="Edm.String"/>
+                <Property Name="principle1_essential_6_prv_yr_number_directors" Type="Edm.String"/>
+                <Property Name="principle1_essential_6_prv_yr_remark_directors" Type="Edm.String"/>
+                <Property Name="principle1_essential_6_cur_yr_number_kmps" Type="Edm.String"/>
+                <Property Name="principle1_essential_6_cur_yr_remarks_kmps" Type="Edm.String"/>
+                <Property Name="principle1_essential_6_prv_yr_number_kmps" Type="Edm.String"/>
+                <Property Name="principle1_essential_6_prv_yr_remarks_kmps" Type="Edm.String"/>
+                <NavigationProperty Name="principle1_essential_3" Relationship="CatalogService.brsr_qualitative_data_Legal_Compliance_principle1_essential_3_up_" FromRole="brsr_qualitative_data_Legal_Compliance" ToRole="brsr_qualitative_data_Legal_Compliance_principle1_essential_3"/>
+                <NavigationProperty Name="principle7_essential_1" Relationship="CatalogService.brsr_qualitative_data_Legal_Compliance_principle7_essential_1_up_" FromRole="brsr_qualitative_data_Legal_Compliance" ToRole="brsr_qualitative_data_Legal_Compliance_principle7_essential_1"/>
+                <NavigationProperty Name="principle7_essential_2" Relationship="CatalogService.brsr_qualitative_data_Legal_Compliance_principle7_essential_2_up_" FromRole="brsr_qualitative_data_Legal_Compliance" ToRole="brsr_qualitative_data_Legal_Compliance_principle7_essential_2"/>
+                <NavigationProperty Name="principle7_leadership_1" Relationship="CatalogService.brsr_qualitative_data_Legal_Compliance_principle7_leadership_1_up_" FromRole="brsr_qualitative_data_Legal_Compliance" ToRole="brsr_qualitative_data_Legal_Compliance_principle7_leadership_1"/>
+            </EntityType>
+            <EntityType Name="brsr_qualitative_data_Legal_Compliance_principle1_essential_3">
+                <Key>
+                    <PropertyRef Name="up__up__fiscalYear"/>
+                    <PropertyRef Name="up__up__businessFunction"/>
+                    <PropertyRef Name="up__principle"/>
+                    <PropertyRef Name="up__indicator"/>
+                    <PropertyRef Name="up__questionID"/>
+                    <PropertyRef Name="ID"/>
+                </Key>
+                <NavigationProperty Name="up_" Relationship="CatalogService.brsr_qualitative_data_Legal_Compliance_principle1_essential_3_up_" FromRole="brsr_qualitative_data_Legal_Compliance_principle1_essential_3" ToRole="brsr_qualitative_data_Legal_Compliance"/>
+                <Property Name="up__up__fiscalYear" Type="Edm.String" Nullable="false"/>
+                <Property Name="up__up__businessFunction" Type="Edm.String" Nullable="false"/>
+                <Property Name="up__principle" Type="Edm.String" Nullable="false"/>
+                <Property Name="up__indicator" Type="Edm.String" Nullable="false"/>
+                <Property Name="up__questionID" Type="Edm.String" Nullable="false"/>
+                <Property Name="ID" Type="Edm.Guid" Nullable="false"/>
+                <Property Name="case_details" Type="Edm.String"/>
+                <Property Name="name_regulatory_agencies" Type="Edm.String"/>
+            </EntityType>
+            <EntityType Name="brsr_qualitative_data_Legal_Compliance_principle7_essential_1">
+                <Key>
+                    <PropertyRef Name="up__up__fiscalYear"/>
+                    <PropertyRef Name="up__up__businessFunction"/>
+                    <PropertyRef Name="up__principle"/>
+                    <PropertyRef Name="up__indicator"/>
+                    <PropertyRef Name="up__questionID"/>
+                    <PropertyRef Name="ID"/>
+                </Key>
+                <NavigationProperty Name="up_" Relationship="CatalogService.brsr_qualitative_data_Legal_Compliance_principle7_essential_1_up_" FromRole="brsr_qualitative_data_Legal_Compliance_principle7_essential_1" ToRole="brsr_qualitative_data_Legal_Compliance"/>
+                <Property Name="up__up__fiscalYear" Type="Edm.String" Nullable="false"/>
+                <Property Name="up__up__businessFunction" Type="Edm.String" Nullable="false"/>
+                <Property Name="up__principle" Type="Edm.String" Nullable="false"/>
+                <Property Name="up__indicator" Type="Edm.String" Nullable="false"/>
+                <Property Name="up__questionID" Type="Edm.String" Nullable="false"/>
+                <Property Name="ID" Type="Edm.Guid" Nullable="false"/>
+                <Property Name="sr_no" Type="Edm.String"/>
+                <Property Name="name_of_trade_industy_associations" Type="Edm.String"/>
+                <Property Name="reach_of_trade_industy_associations" Type="Edm.String"/>
+            </EntityType>
+            <EntityType Name="brsr_qualitative_data_Legal_Compliance_principle7_essential_2">
+                <Key>
+                    <PropertyRef Name="up__up__fiscalYear"/>
+                    <PropertyRef Name="up__up__businessFunction"/>
+                    <PropertyRef Name="up__principle"/>
+                    <PropertyRef Name="up__indicator"/>
+                    <PropertyRef Name="up__questionID"/>
+                    <PropertyRef Name="ID"/>
+                </Key>
+                <NavigationProperty Name="up_" Relationship="CatalogService.brsr_qualitative_data_Legal_Compliance_principle7_essential_2_up_" FromRole="brsr_qualitative_data_Legal_Compliance_principle7_essential_2" ToRole="brsr_qualitative_data_Legal_Compliance"/>
+                <Property Name="up__up__fiscalYear" Type="Edm.String" Nullable="false"/>
+                <Property Name="up__up__businessFunction" Type="Edm.String" Nullable="false"/>
+                <Property Name="up__principle" Type="Edm.String" Nullable="false"/>
+                <Property Name="up__indicator" Type="Edm.String" Nullable="false"/>
+                <Property Name="up__questionID" Type="Edm.String" Nullable="false"/>
+                <Property Name="ID" Type="Edm.Guid" Nullable="false"/>
+                <Property Name="name_of_authority" Type="Edm.String"/>
+                <Property Name="brief_of_case" Type="Edm.String"/>
+                <Property Name="corrective_actions_taken" Type="Edm.String"/>
+            </EntityType>
+            <EntityType Name="brsr_qualitative_data_Legal_Compliance_principle7_leadership_1">
+                <Key>
+                    <PropertyRef Name="up__up__fiscalYear"/>
+                    <PropertyRef Name="up__up__businessFunction"/>
+                    <PropertyRef Name="up__principle"/>
+                    <PropertyRef Name="up__indicator"/>
+                    <PropertyRef Name="up__questionID"/>
+                    <PropertyRef Name="ID"/>
+                </Key>
+                <NavigationProperty Name="up_" Relationship="CatalogService.brsr_qualitative_data_Legal_Compliance_principle7_leadership_1_up_" FromRole="brsr_qualitative_data_Legal_Compliance_principle7_leadership_1" ToRole="brsr_qualitative_data_Legal_Compliance"/>
+                <Property Name="up__up__fiscalYear" Type="Edm.String" Nullable="false"/>
+                <Property Name="up__up__businessFunction" Type="Edm.String" Nullable="false"/>
+                <Property Name="up__principle" Type="Edm.String" Nullable="false"/>
+                <Property Name="up__indicator" Type="Edm.String" Nullable="false"/>
+                <Property Name="up__questionID" Type="Edm.String" Nullable="false"/>
+                <Property Name="ID" Type="Edm.Guid" Nullable="false"/>
+                <Property Name="sr_no" Type="Edm.String"/>
+                <Property Name="public_policy_advocated" Type="Edm.String"/>
+                <Property Name="method_resorted_for_advocacy" Type="Edm.String"/>
+                <Property Name="information_available_in_public_domain" Type="Edm.String"/>
+                <Property Name="frequency_of_review_by_board" Type="Edm.String"/>
+                <Property Name="web_link" Type="Edm.String"/>
+            </EntityType>
+            <EntityType Name="brsr_qualitative_data_HR">
+                <Key>
+                    <PropertyRef Name="up__fiscalYear"/>
+                    <PropertyRef Name="up__businessFunction"/>
+                    <PropertyRef Name="principle"/>
+                    <PropertyRef Name="indicator"/>
+                    <PropertyRef Name="questionID"/>
+                </Key>
+                <NavigationProperty Name="up_" Relationship="CatalogService.brsr_qualitative_data_HR_up_" FromRole="brsr_qualitative_data_HR" ToRole="qualitative_data"/>
+                <Property Name="up__fiscalYear" Type="Edm.String" Nullable="false"/>
+                <Property Name="up__businessFunction" Type="Edm.String" Nullable="false"/>
+                <Property Name="principle" Type="Edm.String" Nullable="false"/>
+                <Property Name="indicator" Type="Edm.String" Nullable="false"/>
+                <Property Name="questionID" Type="Edm.String" Nullable="false"/>
+                <Property Name="answer" Type="Edm.String"/>
+                <NavigationProperty Name="principle3_essential_6" Relationship="CatalogService.brsr_qualitative_data_HR_principle3_essential_6_up_" FromRole="brsr_qualitative_data_HR" ToRole="brsr_qualitative_data_HR_principle3_essential_6"/>
+                <NavigationProperty Name="principle8_essential_1" Relationship="CatalogService.brsr_qualitative_data_HR_principle8_essential_1_up_" FromRole="brsr_qualitative_data_HR" ToRole="brsr_qualitative_data_HR_principle8_essential_1"/>
+                <NavigationProperty Name="principle8_essential_2" Relationship="CatalogService.brsr_qualitative_data_HR_principle8_essential_2_up_" FromRole="brsr_qualitative_data_HR" ToRole="brsr_qualitative_data_HR_principle8_essential_2"/>
+                <NavigationProperty Name="principle8_leadership_1" Relationship="CatalogService.brsr_qualitative_data_HR_principle8_leadership_1_up_" FromRole="brsr_qualitative_data_HR" ToRole="brsr_qualitative_data_HR_principle8_leadership_1"/>
+                <NavigationProperty Name="principle8_leadership_2" Relationship="CatalogService.brsr_qualitative_data_HR_principle8_leadership_2_up_" FromRole="brsr_qualitative_data_HR" ToRole="brsr_qualitative_data_HR_principle8_leadership_2"/>
+                <NavigationProperty Name="principle8_leadership_4" Relationship="CatalogService.brsr_qualitative_data_HR_principle8_leadership_4_up_" FromRole="brsr_qualitative_data_HR" ToRole="brsr_qualitative_data_HR_principle8_leadership_4"/>
+                <NavigationProperty Name="principle8_leadership_5" Relationship="CatalogService.brsr_qualitative_data_HR_principle8_leadership_5_up_" FromRole="brsr_qualitative_data_HR" ToRole="brsr_qualitative_data_HR_principle8_leadership_5"/>
+                <NavigationProperty Name="principle8_leadership_6" Relationship="CatalogService.brsr_qualitative_data_HR_principle8_leadership_6_up_" FromRole="brsr_qualitative_data_HR" ToRole="brsr_qualitative_data_HR_principle8_leadership_6"/>
+            </EntityType>
+            <EntityType Name="brsr_qualitative_data_HR_principle3_essential_6">
+                <Key>
+                    <PropertyRef Name="up__up__fiscalYear"/>
+                    <PropertyRef Name="up__up__businessFunction"/>
+                    <PropertyRef Name="up__principle"/>
+                    <PropertyRef Name="up__indicator"/>
+                    <PropertyRef Name="up__questionID"/>
+                    <PropertyRef Name="ID"/>
+                </Key>
+                <NavigationProperty Name="up_" Relationship="CatalogService.brsr_qualitative_data_HR_principle3_essential_6_up_" FromRole="brsr_qualitative_data_HR_principle3_essential_6" ToRole="brsr_qualitative_data_HR"/>
+                <Property Name="up__up__fiscalYear" Type="Edm.String" Nullable="false"/>
+                <Property Name="up__up__businessFunction" Type="Edm.String" Nullable="false"/>
+                <Property Name="up__principle" Type="Edm.String" Nullable="false"/>
+                <Property Name="up__indicator" Type="Edm.String" Nullable="false"/>
+                <Property Name="up__questionID" Type="Edm.String" Nullable="false"/>
+                <Property Name="ID" Type="Edm.Guid" Nullable="false"/>
+                <Property Name="permanent_workers" Type="Edm.String"/>
+                <Property Name="other_than_permanent_workers" Type="Edm.String"/>
+                <Property Name="permanent_employees" Type="Edm.String"/>
+                <Property Name="other_than_permanent_employees" Type="Edm.String"/>
+            </EntityType>
+            <EntityType Name="brsr_qualitative_data_HR_principle8_essential_1">
+                <Key>
+                    <PropertyRef Name="up__up__fiscalYear"/>
+                    <PropertyRef Name="up__up__businessFunction"/>
+                    <PropertyRef Name="up__principle"/>
+                    <PropertyRef Name="up__indicator"/>
+                    <PropertyRef Name="up__questionID"/>
+                    <PropertyRef Name="ID"/>
+                </Key>
+                <NavigationProperty Name="up_" Relationship="CatalogService.brsr_qualitative_data_HR_principle8_essential_1_up_" FromRole="brsr_qualitative_data_HR_principle8_essential_1" ToRole="brsr_qualitative_data_HR"/>
+                <Property Name="up__up__fiscalYear" Type="Edm.String" Nullable="false"/>
+                <Property Name="up__up__businessFunction" Type="Edm.String" Nullable="false"/>
+                <Property Name="up__principle" Type="Edm.String" Nullable="false"/>
+                <Property Name="up__indicator" Type="Edm.String" Nullable="false"/>
+                <Property Name="up__questionID" Type="Edm.String" Nullable="false"/>
+                <Property Name="ID" Type="Edm.Guid" Nullable="false"/>
+                <Property Name="name_brief_details_of_project" Type="Edm.String"/>
+                <Property Name="sia_notification_no" Type="Edm.String"/>
+                <Property Name="date" Type="Edm.String"/>
+                <Property Name="conducted_by_independent_external_agency" Type="Edm.String"/>
+                <Property Name="results_communicated_in_public_domain" Type="Edm.String"/>
+                <Property Name="relevant_web_link" Type="Edm.String"/>
+            </EntityType>
+            <EntityType Name="brsr_qualitative_data_HR_principle8_essential_2">
+                <Key>
+                    <PropertyRef Name="up__up__fiscalYear"/>
+                    <PropertyRef Name="up__up__businessFunction"/>
+                    <PropertyRef Name="up__principle"/>
+                    <PropertyRef Name="up__indicator"/>
+                    <PropertyRef Name="up__questionID"/>
+                    <PropertyRef Name="ID"/>
+                </Key>
+                <NavigationProperty Name="up_" Relationship="CatalogService.brsr_qualitative_data_HR_principle8_essential_2_up_" FromRole="brsr_qualitative_data_HR_principle8_essential_2" ToRole="brsr_qualitative_data_HR"/>
+                <Property Name="up__up__fiscalYear" Type="Edm.String" Nullable="false"/>
+                <Property Name="up__up__businessFunction" Type="Edm.String" Nullable="false"/>
+                <Property Name="up__principle" Type="Edm.String" Nullable="false"/>
+                <Property Name="up__indicator" Type="Edm.String" Nullable="false"/>
+                <Property Name="up__questionID" Type="Edm.String" Nullable="false"/>
+                <Property Name="ID" Type="Edm.Guid" Nullable="false"/>
+                <Property Name="sr_no" Type="Edm.String"/>
+                <Property Name="name_of_project" Type="Edm.String"/>
+                <Property Name="state" Type="Edm.String"/>
+                <Property Name="district" Type="Edm.String"/>
+                <Property Name="no_of_project_affected_families" Type="Edm.String"/>
+                <Property Name="percentage_of_pafs_covered_by_rnr" Type="Edm.String"/>
+                <Property Name="amounts_paid_to_pafs" Type="Edm.String"/>
+            </EntityType>
+            <EntityType Name="brsr_qualitative_data_HR_principle8_leadership_1">
+                <Key>
+                    <PropertyRef Name="up__up__fiscalYear"/>
+                    <PropertyRef Name="up__up__businessFunction"/>
+                    <PropertyRef Name="up__principle"/>
+                    <PropertyRef Name="up__indicator"/>
+                    <PropertyRef Name="up__questionID"/>
+                    <PropertyRef Name="ID"/>
+                </Key>
+                <NavigationProperty Name="up_" Relationship="CatalogService.brsr_qualitative_data_HR_principle8_leadership_1_up_" FromRole="brsr_qualitative_data_HR_principle8_leadership_1" ToRole="brsr_qualitative_data_HR"/>
+                <Property Name="up__up__fiscalYear" Type="Edm.String" Nullable="false"/>
+                <Property Name="up__up__businessFunction" Type="Edm.String" Nullable="false"/>
+                <Property Name="up__principle" Type="Edm.String" Nullable="false"/>
+                <Property Name="up__indicator" Type="Edm.String" Nullable="false"/>
+                <Property Name="up__questionID" Type="Edm.String" Nullable="false"/>
+                <Property Name="ID" Type="Edm.Guid" Nullable="false"/>
+                <Property Name="details_of_negative_social_impact" Type="Edm.String"/>
+                <Property Name="corrective_actions_taken" Type="Edm.String"/>
+            </EntityType>
+            <EntityType Name="brsr_qualitative_data_HR_principle8_leadership_2">
+                <Key>
+                    <PropertyRef Name="up__up__fiscalYear"/>
+                    <PropertyRef Name="up__up__businessFunction"/>
+                    <PropertyRef Name="up__principle"/>
+                    <PropertyRef Name="up__indicator"/>
+                    <PropertyRef Name="up__questionID"/>
+                    <PropertyRef Name="ID"/>
+                </Key>
+                <NavigationProperty Name="up_" Relationship="CatalogService.brsr_qualitative_data_HR_principle8_leadership_2_up_" FromRole="brsr_qualitative_data_HR_principle8_leadership_2" ToRole="brsr_qualitative_data_HR"/>
+                <Property Name="up__up__fiscalYear" Type="Edm.String" Nullable="false"/>
+                <Property Name="up__up__businessFunction" Type="Edm.String" Nullable="false"/>
+                <Property Name="up__principle" Type="Edm.String" Nullable="false"/>
+                <Property Name="up__indicator" Type="Edm.String" Nullable="false"/>
+                <Property Name="up__questionID" Type="Edm.String" Nullable="false"/>
+                <Property Name="ID" Type="Edm.Guid" Nullable="false"/>
+                <Property Name="sr_no" Type="Edm.String"/>
+                <Property Name="state" Type="Edm.String"/>
+                <Property Name="aspirational_district" Type="Edm.String"/>
+                <Property Name="amount_spent" Type="Edm.String"/>
+            </EntityType>
+            <EntityType Name="brsr_qualitative_data_HR_principle8_leadership_4">
+                <Key>
+                    <PropertyRef Name="up__up__fiscalYear"/>
+                    <PropertyRef Name="up__up__businessFunction"/>
+                    <PropertyRef Name="up__principle"/>
+                    <PropertyRef Name="up__indicator"/>
+                    <PropertyRef Name="up__questionID"/>
+                    <PropertyRef Name="ID"/>
+                </Key>
+                <NavigationProperty Name="up_" Relationship="CatalogService.brsr_qualitative_data_HR_principle8_leadership_4_up_" FromRole="brsr_qualitative_data_HR_principle8_leadership_4" ToRole="brsr_qualitative_data_HR"/>
+                <Property Name="up__up__fiscalYear" Type="Edm.String" Nullable="false"/>
+                <Property Name="up__up__businessFunction" Type="Edm.String" Nullable="false"/>
+                <Property Name="up__principle" Type="Edm.String" Nullable="false"/>
+                <Property Name="up__indicator" Type="Edm.String" Nullable="false"/>
+                <Property Name="up__questionID" Type="Edm.String" Nullable="false"/>
+                <Property Name="ID" Type="Edm.Guid" Nullable="false"/>
+                <Property Name="sr_no" Type="Edm.String"/>
+                <Property Name="intellectual_property_based_on_traditional_knowledge" Type="Edm.String"/>
+                <Property Name="owned_acquired" Type="Edm.String"/>
+                <Property Name="benefit_shared" Type="Edm.String"/>
+                <Property Name="basis_of_calculationg_benefits_shared" Type="Edm.String"/>
+            </EntityType>
+            <EntityType Name="brsr_qualitative_data_HR_principle8_leadership_5">
+                <Key>
+                    <PropertyRef Name="up__up__fiscalYear"/>
+                    <PropertyRef Name="up__up__businessFunction"/>
+                    <PropertyRef Name="up__principle"/>
+                    <PropertyRef Name="up__indicator"/>
+                    <PropertyRef Name="up__questionID"/>
+                    <PropertyRef Name="ID"/>
+                </Key>
+                <NavigationProperty Name="up_" Relationship="CatalogService.brsr_qualitative_data_HR_principle8_leadership_5_up_" FromRole="brsr_qualitative_data_HR_principle8_leadership_5" ToRole="brsr_qualitative_data_HR"/>
+                <Property Name="up__up__fiscalYear" Type="Edm.String" Nullable="false"/>
+                <Property Name="up__up__businessFunction" Type="Edm.String" Nullable="false"/>
+                <Property Name="up__principle" Type="Edm.String" Nullable="false"/>
+                <Property Name="up__indicator" Type="Edm.String" Nullable="false"/>
+                <Property Name="up__questionID" Type="Edm.String" Nullable="false"/>
+                <Property Name="ID" Type="Edm.Guid" Nullable="false"/>
+                <Property Name="name_of_authority" Type="Edm.String"/>
+                <Property Name="brief_of_case" Type="Edm.String"/>
+                <Property Name="corrective_actions_taken" Type="Edm.String"/>
+            </EntityType>
+            <EntityType Name="brsr_qualitative_data_HR_principle8_leadership_6">
+                <Key>
+                    <PropertyRef Name="up__up__fiscalYear"/>
+                    <PropertyRef Name="up__up__businessFunction"/>
+                    <PropertyRef Name="up__principle"/>
+                    <PropertyRef Name="up__indicator"/>
+                    <PropertyRef Name="up__questionID"/>
+                    <PropertyRef Name="ID"/>
+                </Key>
+                <NavigationProperty Name="up_" Relationship="CatalogService.brsr_qualitative_data_HR_principle8_leadership_6_up_" FromRole="brsr_qualitative_data_HR_principle8_leadership_6" ToRole="brsr_qualitative_data_HR"/>
+                <Property Name="up__up__fiscalYear" Type="Edm.String" Nullable="false"/>
+                <Property Name="up__up__businessFunction" Type="Edm.String" Nullable="false"/>
+                <Property Name="up__principle" Type="Edm.String" Nullable="false"/>
+                <Property Name="up__indicator" Type="Edm.String" Nullable="false"/>
+                <Property Name="up__questionID" Type="Edm.String" Nullable="false"/>
+                <Property Name="ID" Type="Edm.Guid" Nullable="false"/>
+                <Property Name="sr_no" Type="Edm.String"/>
+                <Property Name="csr_project" Type="Edm.String"/>
+                <Property Name="no_of_persons_benefitted" Type="Edm.String"/>
+                <Property Name="percentage_of_beneficiaries" Type="Edm.String"/>
+            </EntityType>
+            <EntityType Name="brsr_businessfunctions_approved_status">
+                <Key>
+                    <PropertyRef Name="fiscalYear"/>
+                    <PropertyRef Name="businessFunction"/>
+                </Key>
+                <Property Name="fiscalYear" Type="Edm.String" Nullable="false"/>
+                <Property Name="businessFunction" Type="Edm.String" Nullable="false"/>
+                <Property Name="status" Type="Edm.String"/>
+                <Property Name="date" Type="Edm.DateTimeOffset" Precision="7"/>
+            </EntityType>
+            <EntityType Name="brsr_businessfunctions_rejected_status">
+                <Key>
+                    <PropertyRef Name="fiscalYear"/>
+                    <PropertyRef Name="businessFunction"/>
+                </Key>
+                <Property Name="fiscalYear" Type="Edm.String" Nullable="false"/>
+                <Property Name="businessFunction" Type="Edm.String" Nullable="false"/>
+                <Property Name="status" Type="Edm.String"/>
+                <Property Name="date" Type="Edm.DateTimeOffset" Precision="7"/>
+            </EntityType>
+            <EntityType Name="brsr_businessfunctions_submission_status">
+                <Key>
+                    <PropertyRef Name="fiscalYear"/>
+                    <PropertyRef Name="businessFunction"/>
+                </Key>
+                <Property Name="fiscalYear" Type="Edm.String" Nullable="false"/>
+                <Property Name="businessFunction" Type="Edm.String" Nullable="false"/>
+                <Property Name="status" Type="Edm.String"/>
+                <Property Name="date" Type="Edm.DateTimeOffset" Precision="7"/>
+            </EntityType>
+            <EntityType Name="brsr_businessfunctions_status">
+                <Key>
+                    <PropertyRef Name="fiscalYear"/>
+                    <PropertyRef Name="businessFunction"/>
+                </Key>
+                <Property Name="fiscalYear" Type="Edm.String" Nullable="false"/>
+                <Property Name="businessFunction" Type="Edm.String" Nullable="false"/>
+                <Property Name="status" Type="Edm.String"/>
+                <Property Name="date" Type="Edm.DateTimeOffset" Precision="7"/>
+            </EntityType>
+            <EntityType Name="brsr_businessfunctions_approved_log">
+                <Property Name="fiscalYear" Type="Edm.String"/>
+                <Property Name="businessFunction" Type="Edm.String"/>
+                <Property Name="approver" Type="Edm.String"/>
+                <Property Name="status" Type="Edm.String"/>
+                <Property Name="comments" Type="Edm.String"/>
+                <Property Name="date" Type="Edm.DateTimeOffset" Precision="7"/>
+            </EntityType>
+            <EntityType Name="brsr_businessfunctions_rejected_log">
+                <Property Name="fiscalYear" Type="Edm.String"/>
+                <Property Name="businessFunction" Type="Edm.String"/>
+                <Property Name="approver" Type="Edm.String"/>
+                <Property Name="status" Type="Edm.String"/>
+                <Property Name="comments" Type="Edm.String"/>
+                <Property Name="date" Type="Edm.DateTimeOffset" Precision="7"/>
+            </EntityType>
+            <EntityType Name="brsr_businessfunctions_approvalHistoryLog">
+                <Property Name="fiscalYear" Type="Edm.String"/>
+                <Property Name="businessFunction" Type="Edm.String"/>
+                <Property Name="approver" Type="Edm.String"/>
+                <Property Name="status" Type="Edm.String"/>
+                <Property Name="comments" Type="Edm.String"/>
+                <Property Name="date" Type="Edm.DateTimeOffset" Precision="7"/>
+            </EntityType>
+            <EntityType Name="email_status_CSO">
+                <Key>
+                    <PropertyRef Name="fiscalYear"/>
+                </Key>
+                <Property Name="fiscalYear" Type="Edm.String" Nullable="false"/>
+                <Property Name="status" Type="Edm.String"/>
+            </EntityType>
+            <Association Name="qualitative_data_quality_assurance_up_">
+                <End Role="qualitative_data_quality_assurance" Type="CatalogService.qualitative_data_quality_assurance" Multiplicity="*"/>
+                <End Role="qualitative_data" Type="CatalogService.qualitative_data" Multiplicity="1">
+                    <OnDelete Action="Cascade"/>
+                </End>
+                <ReferentialConstraint>
+                    <Principal Role="qualitative_data">
+                        <PropertyRef Name="fiscalYear"/>
+                        <PropertyRef Name="businessFunction"/>
+                    </Principal>
+                    <Dependent Role="qualitative_data_quality_assurance">
+                        <PropertyRef Name="up__fiscalYear"/>
+                        <PropertyRef Name="up__businessFunction"/>
+                    </Dependent>
+                </ReferentialConstraint>
+            </Association>
+            <Association Name="qualitative_data_quality_assurance_principle2_leadership_1_up_">
+                <End Role="qualitative_data_quality_assurance_principle2_leadership_1" Type="CatalogService.qualitative_data_quality_assurance_principle2_leadership_1" Multiplicity="*"/>
+                <End Role="qualitative_data_quality_assurance" Type="CatalogService.qualitative_data_quality_assurance" Multiplicity="1">
+                    <OnDelete Action="Cascade"/>
+                </End>
+                <ReferentialConstraint>
+                    <Principal Role="qualitative_data_quality_assurance">
+                        <PropertyRef Name="up__fiscalYear"/>
+                        <PropertyRef Name="up__businessFunction"/>
+                        <PropertyRef Name="principle"/>
+                        <PropertyRef Name="indicator"/>
+                        <PropertyRef Name="questionID"/>
+                    </Principal>
+                    <Dependent Role="qualitative_data_quality_assurance_principle2_leadership_1">
+                        <PropertyRef Name="up__up__fiscalYear"/>
+                        <PropertyRef Name="up__up__businessFunction"/>
+                        <PropertyRef Name="up__principle"/>
+                        <PropertyRef Name="up__indicator"/>
+                        <PropertyRef Name="up__questionID"/>
+                    </Dependent>
+                </ReferentialConstraint>
+            </Association>
+            <Association Name="qualitative_data_quality_assurance_principle2_leadership_2_up_">
+                <End Role="qualitative_data_quality_assurance_principle2_leadership_2" Type="CatalogService.qualitative_data_quality_assurance_principle2_leadership_2" Multiplicity="*"/>
+                <End Role="qualitative_data_quality_assurance" Type="CatalogService.qualitative_data_quality_assurance" Multiplicity="1">
+                    <OnDelete Action="Cascade"/>
+                </End>
+                <ReferentialConstraint>
+                    <Principal Role="qualitative_data_quality_assurance">
+                        <PropertyRef Name="up__fiscalYear"/>
+                        <PropertyRef Name="up__businessFunction"/>
+                        <PropertyRef Name="principle"/>
+                        <PropertyRef Name="indicator"/>
+                        <PropertyRef Name="questionID"/>
+                    </Principal>
+                    <Dependent Role="qualitative_data_quality_assurance_principle2_leadership_2">
+                        <PropertyRef Name="up__up__fiscalYear"/>
+                        <PropertyRef Name="up__up__businessFunction"/>
+                        <PropertyRef Name="up__principle"/>
+                        <PropertyRef Name="up__indicator"/>
+                        <PropertyRef Name="up__questionID"/>
+                    </Dependent>
+                </ReferentialConstraint>
+            </Association>
+            <Association Name="qualitative_data_EHS_up_">
+                <End Role="qualitative_data_EHS" Type="CatalogService.qualitative_data_EHS" Multiplicity="*"/>
+                <End Role="qualitative_data" Type="CatalogService.qualitative_data" Multiplicity="1">
+                    <OnDelete Action="Cascade"/>
+                </End>
+                <ReferentialConstraint>
+                    <Principal Role="qualitative_data">
+                        <PropertyRef Name="fiscalYear"/>
+                        <PropertyRef Name="businessFunction"/>
+                    </Principal>
+                    <Dependent Role="qualitative_data_EHS">
+                        <PropertyRef Name="up__fiscalYear"/>
+                        <PropertyRef Name="up__businessFunction"/>
+                    </Dependent>
+                </ReferentialConstraint>
+            </Association>
+            <Association Name="qualitative_data_EHS_principle6_essential_10_up_">
+                <End Role="qualitative_data_EHS_principle6_essential_10" Type="CatalogService.qualitative_data_EHS_principle6_essential_10" Multiplicity="*"/>
+                <End Role="qualitative_data_EHS" Type="CatalogService.qualitative_data_EHS" Multiplicity="1">
+                    <OnDelete Action="Cascade"/>
+                </End>
+                <ReferentialConstraint>
+                    <Principal Role="qualitative_data_EHS">
+                        <PropertyRef Name="up__fiscalYear"/>
+                        <PropertyRef Name="up__businessFunction"/>
+                        <PropertyRef Name="principle"/>
+                        <PropertyRef Name="indicator"/>
+                        <PropertyRef Name="questionID"/>
+                    </Principal>
+                    <Dependent Role="qualitative_data_EHS_principle6_essential_10">
+                        <PropertyRef Name="up__up__fiscalYear"/>
+                        <PropertyRef Name="up__up__businessFunction"/>
+                        <PropertyRef Name="up__principle"/>
+                        <PropertyRef Name="up__indicator"/>
+                        <PropertyRef Name="up__questionID"/>
+                    </Dependent>
+                </ReferentialConstraint>
+            </Association>
+            <Association Name="qualitative_data_EHS_principle6_essential_11_up_">
+                <End Role="qualitative_data_EHS_principle6_essential_11" Type="CatalogService.qualitative_data_EHS_principle6_essential_11" Multiplicity="*"/>
+                <End Role="qualitative_data_EHS" Type="CatalogService.qualitative_data_EHS" Multiplicity="1">
+                    <OnDelete Action="Cascade"/>
+                </End>
+                <ReferentialConstraint>
+                    <Principal Role="qualitative_data_EHS">
+                        <PropertyRef Name="up__fiscalYear"/>
+                        <PropertyRef Name="up__businessFunction"/>
+                        <PropertyRef Name="principle"/>
+                        <PropertyRef Name="indicator"/>
+                        <PropertyRef Name="questionID"/>
+                    </Principal>
+                    <Dependent Role="qualitative_data_EHS_principle6_essential_11">
+                        <PropertyRef Name="up__up__fiscalYear"/>
+                        <PropertyRef Name="up__up__businessFunction"/>
+                        <PropertyRef Name="up__principle"/>
+                        <PropertyRef Name="up__indicator"/>
+                        <PropertyRef Name="up__questionID"/>
+                    </Dependent>
+                </ReferentialConstraint>
+            </Association>
+            <Association Name="qualitative_data_EHS_principle6_essential_12_up_">
+                <End Role="qualitative_data_EHS_principle6_essential_12" Type="CatalogService.qualitative_data_EHS_principle6_essential_12" Multiplicity="*"/>
+                <End Role="qualitative_data_EHS" Type="CatalogService.qualitative_data_EHS" Multiplicity="1">
+                    <OnDelete Action="Cascade"/>
+                </End>
+                <ReferentialConstraint>
+                    <Principal Role="qualitative_data_EHS">
+                        <PropertyRef Name="up__fiscalYear"/>
+                        <PropertyRef Name="up__businessFunction"/>
+                        <PropertyRef Name="principle"/>
+                        <PropertyRef Name="indicator"/>
+                        <PropertyRef Name="questionID"/>
+                    </Principal>
+                    <Dependent Role="qualitative_data_EHS_principle6_essential_12">
+                        <PropertyRef Name="up__up__fiscalYear"/>
+                        <PropertyRef Name="up__up__businessFunction"/>
+                        <PropertyRef Name="up__principle"/>
+                        <PropertyRef Name="up__indicator"/>
+                        <PropertyRef Name="up__questionID"/>
+                    </Dependent>
+                </ReferentialConstraint>
+            </Association>
+            <Association Name="qualitative_data_EHS_principle6_leadership_6_up_">
+                <End Role="qualitative_data_EHS_principle6_leadership_6" Type="CatalogService.qualitative_data_EHS_principle6_leadership_6" Multiplicity="*"/>
+                <End Role="qualitative_data_EHS" Type="CatalogService.qualitative_data_EHS" Multiplicity="1">
+                    <OnDelete Action="Cascade"/>
+                </End>
+                <ReferentialConstraint>
+                    <Principal Role="qualitative_data_EHS">
+                        <PropertyRef Name="up__fiscalYear"/>
+                        <PropertyRef Name="up__businessFunction"/>
+                        <PropertyRef Name="principle"/>
+                        <PropertyRef Name="indicator"/>
+                        <PropertyRef Name="questionID"/>
+                    </Principal>
+                    <Dependent Role="qualitative_data_EHS_principle6_leadership_6">
+                        <PropertyRef Name="up__up__fiscalYear"/>
+                        <PropertyRef Name="up__up__businessFunction"/>
+                        <PropertyRef Name="up__principle"/>
+                        <PropertyRef Name="up__indicator"/>
+                        <PropertyRef Name="up__questionID"/>
+                    </Dependent>
+                </ReferentialConstraint>
+            </Association>
+            <Association Name="qualitative_data_IT_up_">
+                <End Role="qualitative_data_IT" Type="CatalogService.qualitative_data_IT" Multiplicity="*"/>
+                <End Role="qualitative_data" Type="CatalogService.qualitative_data" Multiplicity="1">
+                    <OnDelete Action="Cascade"/>
+                </End>
+                <ReferentialConstraint>
+                    <Principal Role="qualitative_data">
+                        <PropertyRef Name="fiscalYear"/>
+                        <PropertyRef Name="businessFunction"/>
+                    </Principal>
+                    <Dependent Role="qualitative_data_IT">
+                        <PropertyRef Name="up__fiscalYear"/>
+                        <PropertyRef Name="up__businessFunction"/>
+                    </Dependent>
+                </ReferentialConstraint>
+            </Association>
+            <Association Name="qualitative_data_Procurement_up_">
+                <End Role="qualitative_data_Procurement" Type="CatalogService.qualitative_data_Procurement" Multiplicity="*"/>
+                <End Role="qualitative_data" Type="CatalogService.qualitative_data" Multiplicity="1">
+                    <OnDelete Action="Cascade"/>
+                </End>
+                <ReferentialConstraint>
+                    <Principal Role="qualitative_data">
+                        <PropertyRef Name="fiscalYear"/>
+                        <PropertyRef Name="businessFunction"/>
+                    </Principal>
+                    <Dependent Role="qualitative_data_Procurement">
+                        <PropertyRef Name="up__fiscalYear"/>
+                        <PropertyRef Name="up__businessFunction"/>
+                    </Dependent>
+                </ReferentialConstraint>
+            </Association>
+            <Association Name="qualitative_data_Finance_up_">
+                <End Role="qualitative_data_Finance" Type="CatalogService.qualitative_data_Finance" Multiplicity="*"/>
+                <End Role="qualitative_data" Type="CatalogService.qualitative_data" Multiplicity="1">
+                    <OnDelete Action="Cascade"/>
+                </End>
+                <ReferentialConstraint>
+                    <Principal Role="qualitative_data">
+                        <PropertyRef Name="fiscalYear"/>
+                        <PropertyRef Name="businessFunction"/>
+                    </Principal>
+                    <Dependent Role="qualitative_data_Finance">
+                        <PropertyRef Name="up__fiscalYear"/>
+                        <PropertyRef Name="up__businessFunction"/>
+                    </Dependent>
+                </ReferentialConstraint>
+            </Association>
+            <Association Name="qualitative_data_Finance_principle4_essential_2_up_">
+                <End Role="qualitative_data_Finance_principle4_essential_2" Type="CatalogService.qualitative_data_Finance_principle4_essential_2" Multiplicity="*"/>
+                <End Role="qualitative_data_Finance" Type="CatalogService.qualitative_data_Finance" Multiplicity="1">
+                    <OnDelete Action="Cascade"/>
+                </End>
+                <ReferentialConstraint>
+                    <Principal Role="qualitative_data_Finance">
+                        <PropertyRef Name="up__fiscalYear"/>
+                        <PropertyRef Name="up__businessFunction"/>
+                        <PropertyRef Name="principle"/>
+                        <PropertyRef Name="indicator"/>
+                        <PropertyRef Name="questionID"/>
+                    </Principal>
+                    <Dependent Role="qualitative_data_Finance_principle4_essential_2">
+                        <PropertyRef Name="up__up__fiscalYear"/>
+                        <PropertyRef Name="up__up__businessFunction"/>
+                        <PropertyRef Name="up__principle"/>
+                        <PropertyRef Name="up__indicator"/>
+                        <PropertyRef Name="up__questionID"/>
+                    </Dependent>
+                </ReferentialConstraint>
+            </Association>
+            <Association Name="brsr_qualitative_data_Legal_Compliance_up_">
+                <End Role="brsr_qualitative_data_Legal_Compliance" Type="CatalogService.brsr_qualitative_data_Legal_Compliance" Multiplicity="*"/>
+                <End Role="qualitative_data" Type="CatalogService.qualitative_data" Multiplicity="1">
+                    <OnDelete Action="Cascade"/>
+                </End>
+                <ReferentialConstraint>
+                    <Principal Role="qualitative_data">
+                        <PropertyRef Name="fiscalYear"/>
+                        <PropertyRef Name="businessFunction"/>
+                    </Principal>
+                    <Dependent Role="brsr_qualitative_data_Legal_Compliance">
+                        <PropertyRef Name="up__fiscalYear"/>
+                        <PropertyRef Name="up__businessFunction"/>
+                    </Dependent>
+                </ReferentialConstraint>
+            </Association>
+            <Association Name="brsr_qualitative_data_Legal_Compliance_principle1_essential_3_up_">
+                <End Role="brsr_qualitative_data_Legal_Compliance_principle1_essential_3" Type="CatalogService.brsr_qualitative_data_Legal_Compliance_principle1_essential_3" Multiplicity="*"/>
+                <End Role="brsr_qualitative_data_Legal_Compliance" Type="CatalogService.brsr_qualitative_data_Legal_Compliance" Multiplicity="1">
+                    <OnDelete Action="Cascade"/>
+                </End>
+                <ReferentialConstraint>
+                    <Principal Role="brsr_qualitative_data_Legal_Compliance">
+                        <PropertyRef Name="up__fiscalYear"/>
+                        <PropertyRef Name="up__businessFunction"/>
+                        <PropertyRef Name="principle"/>
+                        <PropertyRef Name="indicator"/>
+                        <PropertyRef Name="questionID"/>
+                    </Principal>
+                    <Dependent Role="brsr_qualitative_data_Legal_Compliance_principle1_essential_3">
+                        <PropertyRef Name="up__up__fiscalYear"/>
+                        <PropertyRef Name="up__up__businessFunction"/>
+                        <PropertyRef Name="up__principle"/>
+                        <PropertyRef Name="up__indicator"/>
+                        <PropertyRef Name="up__questionID"/>
+                    </Dependent>
+                </ReferentialConstraint>
+            </Association>
+            <Association Name="brsr_qualitative_data_Legal_Compliance_principle7_essential_1_up_">
+                <End Role="brsr_qualitative_data_Legal_Compliance_principle7_essential_1" Type="CatalogService.brsr_qualitative_data_Legal_Compliance_principle7_essential_1" Multiplicity="*"/>
+                <End Role="brsr_qualitative_data_Legal_Compliance" Type="CatalogService.brsr_qualitative_data_Legal_Compliance" Multiplicity="1">
+                    <OnDelete Action="Cascade"/>
+                </End>
+                <ReferentialConstraint>
+                    <Principal Role="brsr_qualitative_data_Legal_Compliance">
+                        <PropertyRef Name="up__fiscalYear"/>
+                        <PropertyRef Name="up__businessFunction"/>
+                        <PropertyRef Name="principle"/>
+                        <PropertyRef Name="indicator"/>
+                        <PropertyRef Name="questionID"/>
+                    </Principal>
+                    <Dependent Role="brsr_qualitative_data_Legal_Compliance_principle7_essential_1">
+                        <PropertyRef Name="up__up__fiscalYear"/>
+                        <PropertyRef Name="up__up__businessFunction"/>
+                        <PropertyRef Name="up__principle"/>
+                        <PropertyRef Name="up__indicator"/>
+                        <PropertyRef Name="up__questionID"/>
+                    </Dependent>
+                </ReferentialConstraint>
+            </Association>
+            <Association Name="brsr_qualitative_data_Legal_Compliance_principle7_essential_2_up_">
+                <End Role="brsr_qualitative_data_Legal_Compliance_principle7_essential_2" Type="CatalogService.brsr_qualitative_data_Legal_Compliance_principle7_essential_2" Multiplicity="*"/>
+                <End Role="brsr_qualitative_data_Legal_Compliance" Type="CatalogService.brsr_qualitative_data_Legal_Compliance" Multiplicity="1">
+                    <OnDelete Action="Cascade"/>
+                </End>
+                <ReferentialConstraint>
+                    <Principal Role="brsr_qualitative_data_Legal_Compliance">
+                        <PropertyRef Name="up__fiscalYear"/>
+                        <PropertyRef Name="up__businessFunction"/>
+                        <PropertyRef Name="principle"/>
+                        <PropertyRef Name="indicator"/>
+                        <PropertyRef Name="questionID"/>
+                    </Principal>
+                    <Dependent Role="brsr_qualitative_data_Legal_Compliance_principle7_essential_2">
+                        <PropertyRef Name="up__up__fiscalYear"/>
+                        <PropertyRef Name="up__up__businessFunction"/>
+                        <PropertyRef Name="up__principle"/>
+                        <PropertyRef Name="up__indicator"/>
+                        <PropertyRef Name="up__questionID"/>
+                    </Dependent>
+                </ReferentialConstraint>
+            </Association>
+            <Association Name="brsr_qualitative_data_Legal_Compliance_principle7_leadership_1_up_">
+                <End Role="brsr_qualitative_data_Legal_Compliance_principle7_leadership_1" Type="CatalogService.brsr_qualitative_data_Legal_Compliance_principle7_leadership_1" Multiplicity="*"/>
+                <End Role="brsr_qualitative_data_Legal_Compliance" Type="CatalogService.brsr_qualitative_data_Legal_Compliance" Multiplicity="1">
+                    <OnDelete Action="Cascade"/>
+                </End>
+                <ReferentialConstraint>
+                    <Principal Role="brsr_qualitative_data_Legal_Compliance">
+                        <PropertyRef Name="up__fiscalYear"/>
+                        <PropertyRef Name="up__businessFunction"/>
+                        <PropertyRef Name="principle"/>
+                        <PropertyRef Name="indicator"/>
+                        <PropertyRef Name="questionID"/>
+                    </Principal>
+                    <Dependent Role="brsr_qualitative_data_Legal_Compliance_principle7_leadership_1">
+                        <PropertyRef Name="up__up__fiscalYear"/>
+                        <PropertyRef Name="up__up__businessFunction"/>
+                        <PropertyRef Name="up__principle"/>
+                        <PropertyRef Name="up__indicator"/>
+                        <PropertyRef Name="up__questionID"/>
+                    </Dependent>
+                </ReferentialConstraint>
+            </Association>
+            <Association Name="brsr_qualitative_data_HR_up_">
+                <End Role="brsr_qualitative_data_HR" Type="CatalogService.brsr_qualitative_data_HR" Multiplicity="*"/>
+                <End Role="qualitative_data" Type="CatalogService.qualitative_data" Multiplicity="1">
+                    <OnDelete Action="Cascade"/>
+                </End>
+                <ReferentialConstraint>
+                    <Principal Role="qualitative_data">
+                        <PropertyRef Name="fiscalYear"/>
+                        <PropertyRef Name="businessFunction"/>
+                    </Principal>
+                    <Dependent Role="brsr_qualitative_data_HR">
+                        <PropertyRef Name="up__fiscalYear"/>
+                        <PropertyRef Name="up__businessFunction"/>
+                    </Dependent>
+                </ReferentialConstraint>
+            </Association>
+            <Association Name="brsr_qualitative_data_HR_principle3_essential_6_up_">
+                <End Role="brsr_qualitative_data_HR_principle3_essential_6" Type="CatalogService.brsr_qualitative_data_HR_principle3_essential_6" Multiplicity="*"/>
+                <End Role="brsr_qualitative_data_HR" Type="CatalogService.brsr_qualitative_data_HR" Multiplicity="1">
+                    <OnDelete Action="Cascade"/>
+                </End>
+                <ReferentialConstraint>
+                    <Principal Role="brsr_qualitative_data_HR">
+                        <PropertyRef Name="up__fiscalYear"/>
+                        <PropertyRef Name="up__businessFunction"/>
+                        <PropertyRef Name="principle"/>
+                        <PropertyRef Name="indicator"/>
+                        <PropertyRef Name="questionID"/>
+                    </Principal>
+                    <Dependent Role="brsr_qualitative_data_HR_principle3_essential_6">
+                        <PropertyRef Name="up__up__fiscalYear"/>
+                        <PropertyRef Name="up__up__businessFunction"/>
+                        <PropertyRef Name="up__principle"/>
+                        <PropertyRef Name="up__indicator"/>
+                        <PropertyRef Name="up__questionID"/>
+                    </Dependent>
+                </ReferentialConstraint>
+            </Association>
+            <Association Name="brsr_qualitative_data_HR_principle8_essential_1_up_">
+                <End Role="brsr_qualitative_data_HR_principle8_essential_1" Type="CatalogService.brsr_qualitative_data_HR_principle8_essential_1" Multiplicity="*"/>
+                <End Role="brsr_qualitative_data_HR" Type="CatalogService.brsr_qualitative_data_HR" Multiplicity="1">
+                    <OnDelete Action="Cascade"/>
+                </End>
+                <ReferentialConstraint>
+                    <Principal Role="brsr_qualitative_data_HR">
+                        <PropertyRef Name="up__fiscalYear"/>
+                        <PropertyRef Name="up__businessFunction"/>
+                        <PropertyRef Name="principle"/>
+                        <PropertyRef Name="indicator"/>
+                        <PropertyRef Name="questionID"/>
+                    </Principal>
+                    <Dependent Role="brsr_qualitative_data_HR_principle8_essential_1">
+                        <PropertyRef Name="up__up__fiscalYear"/>
+                        <PropertyRef Name="up__up__businessFunction"/>
+                        <PropertyRef Name="up__principle"/>
+                        <PropertyRef Name="up__indicator"/>
+                        <PropertyRef Name="up__questionID"/>
+                    </Dependent>
+                </ReferentialConstraint>
+            </Association>
+            <Association Name="brsr_qualitative_data_HR_principle8_essential_2_up_">
+                <End Role="brsr_qualitative_data_HR_principle8_essential_2" Type="CatalogService.brsr_qualitative_data_HR_principle8_essential_2" Multiplicity="*"/>
+                <End Role="brsr_qualitative_data_HR" Type="CatalogService.brsr_qualitative_data_HR" Multiplicity="1">
+                    <OnDelete Action="Cascade"/>
+                </End>
+                <ReferentialConstraint>
+                    <Principal Role="brsr_qualitative_data_HR">
+                        <PropertyRef Name="up__fiscalYear"/>
+                        <PropertyRef Name="up__businessFunction"/>
+                        <PropertyRef Name="principle"/>
+                        <PropertyRef Name="indicator"/>
+                        <PropertyRef Name="questionID"/>
+                    </Principal>
+                    <Dependent Role="brsr_qualitative_data_HR_principle8_essential_2">
+                        <PropertyRef Name="up__up__fiscalYear"/>
+                        <PropertyRef Name="up__up__businessFunction"/>
+                        <PropertyRef Name="up__principle"/>
+                        <PropertyRef Name="up__indicator"/>
+                        <PropertyRef Name="up__questionID"/>
+                    </Dependent>
+                </ReferentialConstraint>
+            </Association>
+            <Association Name="brsr_qualitative_data_HR_principle8_leadership_1_up_">
+                <End Role="brsr_qualitative_data_HR_principle8_leadership_1" Type="CatalogService.brsr_qualitative_data_HR_principle8_leadership_1" Multiplicity="*"/>
+                <End Role="brsr_qualitative_data_HR" Type="CatalogService.brsr_qualitative_data_HR" Multiplicity="1">
+                    <OnDelete Action="Cascade"/>
+                </End>
+                <ReferentialConstraint>
+                    <Principal Role="brsr_qualitative_data_HR">
+                        <PropertyRef Name="up__fiscalYear"/>
+                        <PropertyRef Name="up__businessFunction"/>
+                        <PropertyRef Name="principle"/>
+                        <PropertyRef Name="indicator"/>
+                        <PropertyRef Name="questionID"/>
+                    </Principal>
+                    <Dependent Role="brsr_qualitative_data_HR_principle8_leadership_1">
+                        <PropertyRef Name="up__up__fiscalYear"/>
+                        <PropertyRef Name="up__up__businessFunction"/>
+                        <PropertyRef Name="up__principle"/>
+                        <PropertyRef Name="up__indicator"/>
+                        <PropertyRef Name="up__questionID"/>
+                    </Dependent>
+                </ReferentialConstraint>
+            </Association>
+            <Association Name="brsr_qualitative_data_HR_principle8_leadership_2_up_">
+                <End Role="brsr_qualitative_data_HR_principle8_leadership_2" Type="CatalogService.brsr_qualitative_data_HR_principle8_leadership_2" Multiplicity="*"/>
+                <End Role="brsr_qualitative_data_HR" Type="CatalogService.brsr_qualitative_data_HR" Multiplicity="1">
+                    <OnDelete Action="Cascade"/>
+                </End>
+                <ReferentialConstraint>
+                    <Principal Role="brsr_qualitative_data_HR">
+                        <PropertyRef Name="up__fiscalYear"/>
+                        <PropertyRef Name="up__businessFunction"/>
+                        <PropertyRef Name="principle"/>
+                        <PropertyRef Name="indicator"/>
+                        <PropertyRef Name="questionID"/>
+                    </Principal>
+                    <Dependent Role="brsr_qualitative_data_HR_principle8_leadership_2">
+                        <PropertyRef Name="up__up__fiscalYear"/>
+                        <PropertyRef Name="up__up__businessFunction"/>
+                        <PropertyRef Name="up__principle"/>
+                        <PropertyRef Name="up__indicator"/>
+                        <PropertyRef Name="up__questionID"/>
+                    </Dependent>
+                </ReferentialConstraint>
+            </Association>
+            <Association Name="brsr_qualitative_data_HR_principle8_leadership_4_up_">
+                <End Role="brsr_qualitative_data_HR_principle8_leadership_4" Type="CatalogService.brsr_qualitative_data_HR_principle8_leadership_4" Multiplicity="*"/>
+                <End Role="brsr_qualitative_data_HR" Type="CatalogService.brsr_qualitative_data_HR" Multiplicity="1">
+                    <OnDelete Action="Cascade"/>
+                </End>
+                <ReferentialConstraint>
+                    <Principal Role="brsr_qualitative_data_HR">
+                        <PropertyRef Name="up__fiscalYear"/>
+                        <PropertyRef Name="up__businessFunction"/>
+                        <PropertyRef Name="principle"/>
+                        <PropertyRef Name="indicator"/>
+                        <PropertyRef Name="questionID"/>
+                    </Principal>
+                    <Dependent Role="brsr_qualitative_data_HR_principle8_leadership_4">
+                        <PropertyRef Name="up__up__fiscalYear"/>
+                        <PropertyRef Name="up__up__businessFunction"/>
+                        <PropertyRef Name="up__principle"/>
+                        <PropertyRef Name="up__indicator"/>
+                        <PropertyRef Name="up__questionID"/>
+                    </Dependent>
+                </ReferentialConstraint>
+            </Association>
+            <Association Name="brsr_qualitative_data_HR_principle8_leadership_5_up_">
+                <End Role="brsr_qualitative_data_HR_principle8_leadership_5" Type="CatalogService.brsr_qualitative_data_HR_principle8_leadership_5" Multiplicity="*"/>
+                <End Role="brsr_qualitative_data_HR" Type="CatalogService.brsr_qualitative_data_HR" Multiplicity="1">
+                    <OnDelete Action="Cascade"/>
+                </End>
+                <ReferentialConstraint>
+                    <Principal Role="brsr_qualitative_data_HR">
+                        <PropertyRef Name="up__fiscalYear"/>
+                        <PropertyRef Name="up__businessFunction"/>
+                        <PropertyRef Name="principle"/>
+                        <PropertyRef Name="indicator"/>
+                        <PropertyRef Name="questionID"/>
+                    </Principal>
+                    <Dependent Role="brsr_qualitative_data_HR_principle8_leadership_5">
+                        <PropertyRef Name="up__up__fiscalYear"/>
+                        <PropertyRef Name="up__up__businessFunction"/>
+                        <PropertyRef Name="up__principle"/>
+                        <PropertyRef Name="up__indicator"/>
+                        <PropertyRef Name="up__questionID"/>
+                    </Dependent>
+                </ReferentialConstraint>
+            </Association>
+            <Association Name="brsr_qualitative_data_HR_principle8_leadership_6_up_">
+                <End Role="brsr_qualitative_data_HR_principle8_leadership_6" Type="CatalogService.brsr_qualitative_data_HR_principle8_leadership_6" Multiplicity="*"/>
+                <End Role="brsr_qualitative_data_HR" Type="CatalogService.brsr_qualitative_data_HR" Multiplicity="1">
+                    <OnDelete Action="Cascade"/>
+                </End>
+                <ReferentialConstraint>
+                    <Principal Role="brsr_qualitative_data_HR">
+                        <PropertyRef Name="up__fiscalYear"/>
+                        <PropertyRef Name="up__businessFunction"/>
+                        <PropertyRef Name="principle"/>
+                        <PropertyRef Name="indicator"/>
+                        <PropertyRef Name="questionID"/>
+                    </Principal>
+                    <Dependent Role="brsr_qualitative_data_HR_principle8_leadership_6">
+                        <PropertyRef Name="up__up__fiscalYear"/>
+                        <PropertyRef Name="up__up__businessFunction"/>
+                        <PropertyRef Name="up__principle"/>
+                        <PropertyRef Name="up__indicator"/>
+                        <PropertyRef Name="up__questionID"/>
+                    </Dependent>
+                </ReferentialConstraint>
+            </Association>
+            <Annotations Target="CatalogService.qualitative_data/modifiedAt" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Core.Computed" Bool="true"/>
+            </Annotations>
+            <Annotations Target="CatalogService.brsr_businessfunctions_approved_status/date" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Core.Computed" Bool="true"/>
+            </Annotations>
+            <Annotations Target="CatalogService.brsr_businessfunctions_rejected_status/date" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Core.Computed" Bool="true"/>
+            </Annotations>
+            <Annotations Target="CatalogService.brsr_businessfunctions_submission_status/date" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Core.Computed" Bool="true"/>
+            </Annotations>
+            <Annotations Target="CatalogService.EntityContainer/brsr_businessfunctions_status" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Capabilities.DeleteRestrictions">
+                    <Record Type="Capabilities.DeleteRestrictionsType">
+                        <PropertyValue Property="Deletable" Bool="false"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="Capabilities.InsertRestrictions">
+                    <Record Type="Capabilities.InsertRestrictionsType">
+                        <PropertyValue Property="Insertable" Bool="false"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="Capabilities.UpdateRestrictions">
+                    <Record Type="Capabilities.UpdateRestrictionsType">
+                        <PropertyValue Property="Updatable" Bool="false"/>
+                    </Record>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="CatalogService.brsr_businessfunctions_status/date" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Core.Computed" Bool="true"/>
+            </Annotations>
+            <Annotations Target="CatalogService.brsr_businessfunctions_approved_log/date" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Core.Computed" Bool="true"/>
+            </Annotations>
+            <Annotations Target="CatalogService.brsr_businessfunctions_rejected_log/date" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Core.Computed" Bool="true"/>
+            </Annotations>
+            <Annotations Target="CatalogService.EntityContainer/brsr_businessfunctions_approvalHistoryLog" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Capabilities.DeleteRestrictions">
+                    <Record Type="Capabilities.DeleteRestrictionsType">
+                        <PropertyValue Property="Deletable" Bool="false"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="Capabilities.InsertRestrictions">
+                    <Record Type="Capabilities.InsertRestrictionsType">
+                        <PropertyValue Property="Insertable" Bool="false"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="Capabilities.UpdateRestrictions">
+                    <Record Type="Capabilities.UpdateRestrictionsType">
+                        <PropertyValue Property="Updatable" Bool="false"/>
+                    </Record>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="CatalogService.brsr_businessfunctions_approvalHistoryLog/date" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Core.Computed" Bool="true"/>
+            </Annotations>
+        </Schema>
+    </edmx:DataServices>
+</edmx:Edmx>
