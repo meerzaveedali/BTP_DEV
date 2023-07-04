@@ -1,0 +1,122 @@
+<mvc:View controllerName="excelupload.controller.View1"
+    xmlns:f="sap.ui.layout.form"
+    xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
+    xmlns:core="sap.ui.core"
+    xmlns:u="sap.ui.unified"
+    xmlns:t="sap.ui.table"
+    xmlns="sap.m">
+    <Page id="page" title="{i18n>title}">
+        <content>
+        <f:SimpleForm id="_IDGenSimpleForm1"   editable="true"> 
+        <Label id="_IDGenLabel1" text="Bussiness Function"></Label>
+        <Select   id="id_sel1"  forceSelection="false" width ="40%" 
+            items="{
+                path: 'model1>/ProductCollection',
+                sorter: { path: 'model1>Name' }
+                }">
+                <core:Item id="_IDGenItem1" key="{model1>ProductId1}" text="{model1>Name}"/>
+                </Select>
+        <Label id="_IDGenLabel2" text=""></Label>
+        <Select   id="id_sel2"  forceSelection="false" width ="40%" 
+           >
+                <core:Item id="_IDGenItem12" text="Waste Desposed"/>
+                </Select>
+        <Button id="_IDGenButton2" width="30%" text="Template" icon="sap-icon://download" press="downloadTemplate"/>
+        </f:SimpleForm> 
+
+
+        
+        <Table id="_IDGenTable1" class="sapUiSmallMargin" width="auto"  
+        items="{/quantitative_data}"  enableBusyIndicator="true">
+        <headerToolbar>
+         <Toolbar id="_IDGenToolbar1">
+         <Title id="_IDGenTitle1" text="Quantitative" />
+         <!-- <ToolbarSpacer id="_IDGenToolbarSpacer1" />
+         <Button id="_IDGenButton3" text="Delete All" type="Reject" press="onDeleteAll" /> -->
+         </Toolbar>
+        </headerToolbar>
+        <columns>
+         <Column id="_IDGenColumn0" >
+          <Text id="_IDGenText0" text="Business Function" />
+         </Column>
+         <Column id="_IDGenColumn1" >
+          <Text id="_IDGenText1" text="Company Code" />
+         </Column>
+         <Column id="_IDGenColumn4"  >
+         <Text id="IDGenText4" text="Country" />
+         </Column>
+         <Column id="_IDGenColumn5" >
+          <Text id="IDGenText5" text="Location Text" />
+         </Column>
+         <Column id="_IDGenColumn6">
+          <Text id="IDGenText6" text="Plant Id" />
+         </Column>
+         <Column id="_IDGenColumn7"  >
+          <Text id="IDGenText7" text="Data Title" />
+         </Column>
+         <Column id="_IDGenColumn8"  >
+          <Text id="IDGenText8" text="Id Waste Type" />
+         </Column>
+         <Column id="_IDGenColumn9">
+          <Text id="IDGenText9" text="Value" />
+         </Column>
+         <Column id="_IDGenColumn98" >
+         <Text id="_IDGenText98" text="Unit Text" />
+         </Column>
+         <Column id="_IDGenColumn3" >
+         <Text id="_IDGenText3" text="value Date" />
+         </Column>
+        </columns>
+        <items>
+         <ColumnListItem id="_IDGenColumnListItem1" >
+         <cells>
+          <Text id="_IDGenText4" text="{businessFunction}"></Text>
+         <Text id="_IDGenText5" text="{company_code}" />
+          <Text id="_IDGenText6" text="{country}" />
+          <Text id="_IDGenText7" text="{location_text}" />
+          <Text id="_IDGenText8" text="{plant_id}" />
+          <Text id="_IDGenText9" text="{data_title}" />
+          <Text id="_IDGenText10" text="{id_waste_type}" />
+          <Text id="_IDGenText11" text="{value}" />
+          <Text id="_IDGenText12" text="{unit_text}" />
+          <Text id="_IDGenText13" text="{value_date}" />
+         </cells>
+         </ColumnListItem>
+        </items>
+        </Table>
+   
+        </content>
+        <footer>
+         <Bar id="_IDGenBar1">
+         <contentRight>
+		<!-- <u:FileUploader
+			id="fileUploader2"
+			name="myFileUpload"
+			uploadUrl="upload/"
+            buttonOnly = "true"
+			tooltip="Upload your file to the local server"
+			uploadComplete="handleUploadComplete"/>
+		<Button id="_IDGenButton4"
+			text="Mass Upload"
+            type="Accept"
+			press="handleUploadPress"/> -->
+            <u:FileUploader 
+			id="fileUploader2"
+			name="myFileUpload"
+			uploadUrl="upload/"
+			tooltip="Upload your file"
+            
+            uploadOnChange="true"
+            change="onChangeFile"
+            fileEmpty="onFileEmpty"
+			/>
+            <Button id="_IDGenButton3" text="Upload" type="Emphasized" press="onUploadExcel"></Button>
+	
+               
+         </contentRight>    
+          
+         </Bar>
+        </footer>
+    </Page>
+</mvc:View>
+
