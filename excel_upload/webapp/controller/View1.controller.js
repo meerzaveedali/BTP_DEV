@@ -18,11 +18,11 @@ sap.ui.define([
      */
     function (Controller, Export, ExportTypeCSV, BusyDialog, Column, Label, Text, MessageBox, ColumnListItem, JSONModel,Spreadsheet) {
         "use strict";
-        var oCont, oDataModel, oTableJsonModel, oTable, oFileUploader,fileName;
+        var oCont, oTableJsonModel, oTable, oFileUploader,fileName;
         return Controller.extend("excelupload.controller.View1", {
         onInit: function () {
             oCont = this;
-            oDataModel = this.getOwnerComponent().getModel();
+            this.oDataModel = this.getOwnerComponent().getModel();
             oTableJsonModel = new JSONModel();
             oTable = oCont.getView().byId("Tableid");
             oFileUploader = oCont.getView().byId("id_fileUploader");
@@ -45,6 +45,98 @@ sap.ui.define([
                 oCont.getView().byId("id_fileUploader").setEnabled(false);
                 
             }
+        },
+        fnSelectChange1: function(oEvent){
+                     let sKey = oEvent.getSource().getProperty("selectedKey"); 
+                     if (sKey === "07")
+                     {
+
+                        var monetary  = this.getView().byId("idMonetaryTable");
+                        monetary.setVisible(true);
+                        var nonMonetary = this.getView().byId("idNonMonetaryTable");
+                        nonMonetary.setVisible(true);
+                        var oTable = this.getView().byId("idTable");
+                        oTable.setVisible(true);
+                        var oTable1 = this.getView().byId("idTable1");
+                        oTable1.setVisible(true);
+                        this.oDataModel.read("/qualitative_data_Legal_Compliance(up__fiscalYear='2023',up__businessFunction='Legal_Compliance',principle='1',indicator='Essential',questionID='2')/principle1_essential_2", {
+                            success : function(oData){
+                                    for(let i=0;i<oData.results.length;i++){
+                                        if(oData.results[i].type === "Monetary"){
+                                            let oItem = new sap.m.ColumnListItem({
+                                                cells: [
+                                                  new sap.m.Text({ text: oData.results[i].typeOfPaidAmount}),
+                                                  new sap.m.Input({ value: oData.results[i].ngrbcPrinciple}),
+                                                  new sap.m.Input({ value: oData.results[i].nameOfInstitutions}),
+                                                  new sap.m.Input({ value: oData.results[i].amountInINR}),
+                                                  new sap.m.Input({ value: oData.results[i].briefOfTheCase}),
+                                                  new sap.m.Input({ value: oData.results[i].hasAnAppealBeen}),
+                                                ]
+                                              });
+                                              monetary.addItem(oItem);
+                                        }
+                                        if(oData.results[i].type === "Non-Monetary"){
+                                            let oItem = new sap.m.ColumnListItem({
+                                                cells: [
+                                                  new sap.m.Text({ text: oData.results[i].typeOfPaidAmount}),
+                                                  new sap.m.Input({ value: oData.results[i].ngrbcPrinciple}),
+                                                  new sap.m.Input({ value: oData.results[i].nameOfInstitutions}),
+                                                  new sap.m.Input({ value: oData.results[i].amountInINR}),
+                                                  new sap.m.Input({ value: oData.results[i].briefOfTheCase}),
+                                                  new sap.m.Input({ value: oData.results[i].hasAnAppealBeen}),
+                                                ]
+                                              });
+                                              nonMonetary.addItem(oItem);
+                                        }
+                                    }
+                            },
+                            error : function(oError){
+
+                            }
+
+                        });
+
+                        this.oDataModel.read("/qualitative_data_Legal_Compliance(up__fiscalYear='2024',up__businessFunction='Legal_Compliance',principle='1',indicator='Essential',questionID='5')/principle1_essential_5", {
+                            success : function(oData){
+                                    for(let i=0;i<oData.results.length;i++){
+                                            let oItem = new sap.m.ColumnListItem({
+                                                cells: [
+                                                  new sap.m.Text({ text: oData.results[i].typeOfWorkers}),
+                                                  new sap.m.Input({ value: oData.results[i].valueForCurrentFinancialYear}),
+                                                  new sap.m.Input({ value: oData.results[i].valueForPreviousFinancialYear}),
+                                                ]
+                                              });
+                                              oTable.addItem(oItem);
+                            }
+                        },
+                            error : function(oError){
+
+                            }
+
+                        });
+
+                        this.oDataModel.read("/qualitative_data_Legal_Compliance(up__fiscalYear='2024',up__businessFunction='Legal_Compliance',principle='1',indicator='Essential',questionID='6')/principle1_essential_6 ", {
+                            success : function(oData){
+                                    for(let i=0;i<oData.results.length;i++){
+                                            let oItem = new sap.m.ColumnListItem({
+                                                cells: [
+                                                  new sap.m.Text({ text: oData.results[i].detailsOfComplaints}),
+                                                  new sap.m.Input({ value: oData.results[i].numberForCurrentFinancialYear}),
+                                                  new sap.m.Input({ value: oData.results[i].remarksForCurrentFinancialYear}),
+                                                  new sap.m.Input({ value: oData.results[i].numberForPreviousFinancialYear}),
+                                                  new sap.m.Input({ value: oData.results[i].remarksForPreviousFinancialYear}),
+                                                ]
+                                              });
+                                              oTable1.addItem(oItem);
+                            }
+                        },
+                            error : function(oError){
+
+                            }
+
+                        });
+                        
+                     }
         },
         onTemplateDownload : function(){
 

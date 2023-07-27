@@ -34,7 +34,7 @@
                     <f:formElements>
                         <f:FormElement id="_IDGenFormElement1" label="Business Function">
                         <f:fields>
-                            <Select id="id_BF" forceSelection="false" change="fnSelectChange">
+                            <Select id="id_BF" forceSelection="false" change="fnSelectChange1">
                                 <core:Item id="_IDGenItem1" key="01" text="EHS"/>
                                 <core:Item id="_IDGenItem2" key="02" text="Quality Assurance"/>
                                 <core:Item id="_IDGenItem3" key="03" text="Finance"/>
@@ -87,6 +87,132 @@
                         <content>
                             <Table id="Tableid" class="sapUiSmallMarginTop" showNoData="true" noDataText=" Please Upload Excel Data."/>
                             <ui:Table id="newTable"  visible="false" selectionMode="None"></ui:Table>
+                            <Table id="idMonetaryTable"
+                             visible="false"
+		inset="false">
+		<headerToolbar>
+			<OverflowToolbar>
+				<content>
+					<Title text="Monetary" level="H2"/>
+				</content>
+			</OverflowToolbar>
+		</headerToolbar>
+		<columns>
+        	<Column>
+				<Text text="" />
+			</Column>
+			<Column>
+				<Text text="NGRBC Principle" />
+			</Column>
+			<Column>
+				<Text text="Name of regulatory/enforcement agencies/judicial institutions" />
+			</Column>
+			<Column>
+				<Text text="Amount (in INR)" />
+			</Column>
+			<Column>
+				<Text text="Brief of the case" />
+			</Column>
+			<Column>
+				<Text text="Has an appeal been preferred? (Yes/No)" />
+			</Column>
+		</columns>
+		<items>
+		
+		</items>
+	</Table>
+
+                            <Table id="idNonMonetaryTable"
+                             visible="false"
+		inset="false">
+		<headerToolbar>
+			<OverflowToolbar>
+				<content>
+					<Title text="Non-Monetary" level="H2"/>
+				</content>
+			</OverflowToolbar>
+		</headerToolbar>
+		<columns>
+        	<Column>
+				<Text text="" />
+			</Column>
+			<Column>
+				<Text text="NGRBC Principle" />
+			</Column>
+			<Column>
+				<Text text="Name of regulatory/enforcement agencies/judicial institutions" />
+			</Column>
+			<Column>
+				<Text text="Amount (in INR)" />
+			</Column>
+			<Column>
+				<Text text="Brief of the case" />
+			</Column>
+			<Column>
+				<Text text="Has an appeal been preferred? (Yes/No)" />
+			</Column>
+		</columns>
+		<items>
+		</items>
+	</Table>
+
+                       <Table id="idTable"
+                        visible="false"
+		inset="false">
+		<headerToolbar>
+			<OverflowToolbar>
+				<content>
+					<Title text="Number of Directors/KMPs/employees/workers against whom disciplinary action was
+taken by any law enforcement agency for the charges of bribery/ corruption" level="H2"/>
+				</content>
+			</OverflowToolbar>
+		</headerToolbar>
+		<columns>
+            <Column>
+				<Text text="" />
+			</Column>
+			<Column>
+				<Text text="FY____ (Current Financial Year)" />
+			</Column>
+			<Column>
+				<Text text="FY____ (Previous Financial Year) " />
+			</Column>
+		</columns>
+		<items>
+		</items>
+	</Table>
+
+    
+                       <Table id="idTable1"
+                        visible="false"
+		inset="false">
+		<headerToolbar>
+			<OverflowToolbar>
+				<content>
+					<Title text="Details of complaints with regard to conflict of interest" level="H2"/>
+				</content>
+			</OverflowToolbar>
+		</headerToolbar>
+		<columns>
+        	<Column>
+				<Text text="" />
+			</Column>
+			<Column>
+				<Text text="FY____ (Current Financial Year) Number" />
+			</Column>
+			<Column>
+				<Text text="FY____ (Previous Financial Year) Remarks" />
+			</Column>
+			<Column>
+				<Text text="FY____ (Current Financial Year) Number " />
+			</Column>
+			<Column>
+				<Text text="FY____ (Previous Financial Year) Remarks " />
+			</Column>
+		</columns>
+		<items>
+		</items>
+	</Table>
                         </content>
         </ScrollContainer>
    
