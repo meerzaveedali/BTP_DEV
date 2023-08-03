@@ -981,11 +981,270 @@ sap.ui.define([
                 
                 success : function(oData){
                         MessageBox.show("Data Saved Successfully");
+                        
+                },
+
+                error : function(oError){
+                    MessageBox.show(oError);
+                }
+            
+            
+            
+            });
+
+                        var workObj = {
+
+                            "definitionId": "eu10.sap-process-automation-q40kapza.zbrsrlegalcompliance.zapproval_process_for_legal_compliance",
+                        
+                            "context": {
+                        
+                                "zbusiness_function": "Legal_Compliance",
+                        
+                                "zfiscal_year": "2024",
+                        
+                                "zlegal_compliance_creator_email": "shriyansh.k@bristlecone.com",
+                        
+                                "zlegal_compliance_creator_name": "Shriyansh Keserwani",
+                        
+                                "zlegal_compliance_principle1_essential_2": [
+                        
+                                    {
+                        
+                                        "type": "Monetary",
+                        
+                                        "typeOfPaidAmount": "Penalty/Fine",
+                        
+                                        "ngrbcPrinciple": omonetaryItems[0].getAggregation("cells")[1].getProperty("value"),
+                        
+                                        "nameOfInstitutions": omonetaryItems[0].getAggregation("cells")[2].getProperty("value"),
+                        
+                                        "amountInINR": omonetaryItems[0].getAggregation("cells")[3].getProperty("value"),
+                        
+                                        "briefOfTheCase": omonetaryItems[0].getAggregation("cells")[4].getProperty("value"),
+                        
+                                        "hasAnAppealBeen": omonetaryItems[0].getAggregation("cells")[5].getProperty("value")
+                        
+                                    },
+                        
+                                    {
+                        
+                                        "type": "Monetary",
+                        
+                                        "typeOfPaidAmount": "Settlement",
+                        
+                                        "ngrbcPrinciple": omonetaryItems[1].getAggregation("cells")[1].getProperty("value"),
+                        
+                                        "nameOfInstitutions": omonetaryItems[1].getAggregation("cells")[2].getProperty("value"),
+                        
+                                        "amountInINR": omonetaryItems[1].getAggregation("cells")[3].getProperty("value"),
+                        
+                                        "briefOfTheCase": omonetaryItems[1].getAggregation("cells")[4].getProperty("value"),
+                        
+                                        "hasAnAppealBeen": omonetaryItems[1].getAggregation("cells")[5].getProperty("value")
+                        
+                                    },
+                        
+                                    {
+                        
+                                        "type": "Monetary",
+                        
+                                        "typeOfPaidAmount": "Compounding fee",
+                        
+                                        "ngrbcPrinciple": omonetaryItems[2].getAggregation("cells")[1].getProperty("value"),
+                        
+                                        "nameOfInstitutions": omonetaryItems[2].getAggregation("cells")[2].getProperty("value"),
+                        
+                                        "amountInINR": omonetaryItems[2].getAggregation("cells")[3].getProperty("value"),
+                        
+                                        "briefOfTheCase": omonetaryItems[2].getAggregation("cells")[4].getProperty("value"),
+                        
+                                        "hasAnAppealBeen": omonetaryItems[2].getAggregation("cells")[5].getProperty("value")
+                        
+                                    },
+                        
+                                    {
+                        
+                                        "type": "Non-Monetary",
+                        
+                                        "typeOfPaidAmount": "Imprisonment",
+                        
+                                        "ngrbcPrinciple": ononMonetaryItems[0].getAggregation("cells")[1].getProperty("value"),
+                        
+                                        "nameOfInstitutions": ononMonetaryItems[0].getAggregation("cells")[2].getProperty("value"),
+                        
+                                        "amountInINR": ononMonetaryItems[0].getAggregation("cells")[3].getProperty("value"),
+                        
+                                        "briefOfTheCase": ononMonetaryItems[0].getAggregation("cells")[4].getProperty("value"),
+                        
+                                        "hasAnAppealBeen": ononMonetaryItems[0].getAggregation("cells")[5].getProperty("value")
+                        
+                                    },
+                        
+                                    {
+                        
+                                        "type": "Non-Monetary",
+                        
+                                        "typeOfPaidAmount": "Punishment",
+                        
+                                        "ngrbcPrinciple": ononMonetaryItems[1].getAggregation("cells")[1].getProperty("value"),
+                        
+                                        "nameOfInstitutions": ononMonetaryItems[1].getAggregation("cells")[2].getProperty("value"),
+                        
+                                        "amountInINR": ononMonetaryItems[1].getAggregation("cells")[3].getProperty("value"),
+                        
+                                        "briefOfTheCase": ononMonetaryItems[1].getAggregation("cells")[4].getProperty("value"),
+                        
+                                        "hasAnAppealBeen": ononMonetaryItems[1].getAggregation("cells")[5].getProperty("value")
+                        
+                                    }
+                        
+                                ],
+                        
+                                "zlegal_compliance_principle1_essential_5": [
+                        
+                                    {
+                        
+                                        "typeOfWorkers": "Directors",
+                        
+                                        "valueForCurrentFinancialYear": oTableItems[0].getAggregation("cells")[1].getProperty("value"),
+                        
+                                        "valueForPreviousFinancialYear": oTableItems[0].getAggregation("cells")[2].getProperty("value")
+                        
+                                    },
+                        
+                                    {
+                        
+                                        "typeOfWorkers": "KMPs",
+                        
+                                        "valueForCurrentFinancialYear": oTableItems[1].getAggregation("cells")[1].getProperty("value"),
+                        
+                                        "valueForPreviousFinancialYear": oTableItems[1].getAggregation("cells")[2].getProperty("value")
+                        
+                                    },
+                        
+                                    {
+                        
+                                        "typeOfWorkers": "Employees",
+                        
+                                        "valueForCurrentFinancialYear": oTableItems[2].getAggregation("cells")[1].getProperty("value"),
+                        
+                                        "valueForPreviousFinancialYear": oTableItems[2].getAggregation("cells")[2].getProperty("value")
+                        
+                                    },
+                        
+                                    {
+                        
+                                        "typeOfWorkers": "Workers",
+                        
+                                        "valueForCurrentFinancialYear": oTableItems[3].getAggregation("cells")[1].getProperty("value"),
+                        
+                                        "valueForPreviousFinancialYear": oTableItems[3].getAggregation("cells")[2].getProperty("value")
+                        
+                                    }
+                        
+                                ],
+                        
+                                "zlegal_compliance_principle1_essential_6": [
+                        
+                                    {
+                        
+                                        "detailsOfComplaints": "Number of complaints received in relation to issues of Conflict of Interest of the Directors",
+                        
+                                        "numberForCurrentFinancialYear": oTable1Items[0].getAggregation("cells")[1].getProperty("value"),
+                        
+                                        "remarksForCurrentFinancialYear": oTable1Items[0].getAggregation("cells")[2].getProperty("value"),
+                        
+                                        "numberForPreviousFinancialYear": oTable1Items[0].getAggregation("cells")[3].getProperty("value"),
+                        
+                                        "remarksForPreviousFinancialYear": oTable1Items[0].getAggregation("cells")[4].getProperty("value")
+                        
+                                    },
+                        
+                                    {
+                        
+                                        "detailsOfComplaints": "Number of complaints received in relation to issues of Conflict of Interest of the KMPs",
+                        
+                                        "numberForCurrentFinancialYear": oTable1Items[1].getAggregation("cells")[1].getProperty("value"),
+                        
+                                        "remarksForCurrentFinancialYear": oTable1Items[1].getAggregation("cells")[2].getProperty("value"),
+                        
+                                        "numberForPreviousFinancialYear": oTable1Items[1].getAggregation("cells")[3].getProperty("value"),
+                        
+                                        "remarksForPreviousFinancialYear": oTable1Items[1].getAggregation("cells")[4].getProperty("value")
+                        
+                                    }
+                        
+                                ],
+                        
+                                "zlegal_compliance_principle1_essential_3": [
+                        
+                                    {
+                        
+                                        "case_details": "",
+                        
+                                        "name_regulatory_agencies": ""
+                        
+                                    }
+                        
+                                ],
+                        
+                                "zlegal_compliance_principle7_essential_1": [
+                        
+                                    {
+                        
+                                        "sr_no": "",
+                        
+                                        "name_of_trade_industy_associations": "",
+                        
+                                        "reach_of_trade_industy_associations": ""
+                        
+                                    }
+                        
+                                ],
+                        
+                                "zlegal_compliance_principle7_essential_2": [
+                        
+                                    {
+                        
+                                        "name_of_authority": "",
+                        
+                                        "brief_of_case": "",
+                        
+                                        "corrective_actions_taken": ""
+                        
+                                    }
+                        
+                                ],
+                        
+                                "zlegal_compliance_principle7_leadership_1": [
+                        
+                                    {
+                        
+                                        "sr_no": "",
+                        
+                                        "public_policy_advocated": "",
+                        
+                                        "method_resorted_for_advocacy": "",
+                        
+                                        "information_available_in_public_domain": "",
+                        
+                                        "frequency_of_review_by_board": "",
+                        
+                                        "web_link": ""
+                        
+                                    }
+                        
+                                ]
+                        
+                            }
+                        
+                        };
+
                         var appId = that.getOwnerComponent().getManifestEntry("/sap.app/id");
                         var appPath = appId.replaceAll(".", "/");
                         var appModulePath = jQuery.sap.getModulePath(appPath);
-            
                             that.getView().setBusy(true);
+
                             $.ajax({
                                 url: appModulePath + "/bpmworkflowruntime/v1/xsrf-token",
                                 method: "GET",
@@ -999,7 +1258,7 @@ sap.ui.define([
                                     $.ajax({
                                         url: appModulePath + "/bpmworkflowruntime/v1/workflow-instances",
                                         type: "POST",
-                                        data: JSON.stringify(paOBJ),
+                                        data: JSON.stringify(workObj),
                                         headers: {
                                             "X-CSRF-Token": token,
                                             "Content-Type": "application/json"
@@ -1017,9 +1276,6 @@ sap.ui.define([
                                                 onClose: function (Action) {
                                                     // that.clearForm();
                                                     that.getView().setBusy(false);
-                                                    that.getView().byId("_IDGenObjectPageSection2").setVisible(false);
-                                                    that.getView().byId("_IDGenButton1").setVisible(false);
-                                                    that.getView().byId("_IDGenButton0").setVisible(false);
                                                 }
                                             });
                                         },
@@ -1040,15 +1296,6 @@ sap.ui.define([
                                             });
                                         }
                                     });
-                },
-
-                error : function(oError){
-                    MessageBox.show(oError);
-                }
-            
-            
-            
-            });
 
             }
         },
