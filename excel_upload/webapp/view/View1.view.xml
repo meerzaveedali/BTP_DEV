@@ -213,6 +213,876 @@ taken by any law enforcement agency for the charges of bribery/ corruption" leve
 		<items>
 		</items>
 	</Table>
+
+
+                       <Table id="idTableSegment"
+                        visible="false"
+		inset="false">
+		<headerToolbar>
+			<OverflowToolbar>
+				<content>
+					<Title text="Percentage Coverage by training and awareness programmes on any of the principles during the financial year" level="H2"/>
+				</content>
+			</OverflowToolbar>
+		</headerToolbar>
+		<columns>
+			<Column>
+				<Text text="Segment" />
+			</Column>
+			<Column>
+				<Text text="Total Number Of Training And Awareness Programs held" />
+			</Column>
+			<Column>
+				<Text text="Topics/Principles covered under the training and its impact" />
+			</Column>
+			<Column>
+				<Text text="Percentage Of Persons In Respective Category Covered by the awareness Programmes" />
+			</Column>
+		</columns>
+		<items>
+		</items>
+	</Table>
+
+	                    <Table id="idPEmpTable"
+                             visible="false"
+		inset="false">
+		<headerToolbar>
+			<OverflowToolbar>
+				<content>
+					<Title text="Details of measures for the well-being of employees" level="H2"/>
+				</content>
+			</OverflowToolbar>
+		</headerToolbar>
+		<columns>
+			<Column>
+				<Text text="Category" />
+			</Column>
+			<Column>
+				<Text text="Total (A)" />
+			</Column>
+			<Column>
+				<Text text="Health Insurance (Number B)" />
+			</Column>
+			<Column>
+				<Text text="Health Insurance (% B / A)" />
+			</Column>
+			<Column>
+				<Text text="Accident Insurance (Number C)" />
+			</Column>
+				<Column>
+				<Text text="Accident Insurance (% C / A)" />
+			</Column>
+			<Column>
+				<Text text="Maternity Benefits (Number D)" />
+			</Column>
+			<Column>
+				<Text text="Maternity Benefits (% D / A)" />
+			</Column>
+			<Column>
+				<Text text="Paternity Benefits (Number E)" />
+			</Column>
+			<Column>
+				<Text text="Paternity Benefits (% E / A)" />
+			</Column>
+			<Column>
+				<Text text="Day Care Facilities (Number F)" />
+			</Column>
+			<Column>
+				<Text text="Day Care Facilities (% F / A)" />
+			</Column>
+		</columns>
+		<items>
+			<ColumnListItem>
+				<cells>
+				<Text text="Permanent Employess" />
+				</cells>
+			</ColumnListItem>
+		</items>
+	</Table>
+
+	
+	                    <Table id="idNPEmpTable"
+                             visible="false"
+		inset="false">
+		<headerToolbar>
+			<OverflowToolbar>
+				<content>
+					<Title text="Details of measures for the well-being of employees" level="H2"/>
+				</content>
+			</OverflowToolbar>
+		</headerToolbar>
+		<columns>
+			<Column>
+				<Text text="Category" />
+			</Column>
+			<Column>
+				<Text text="Total (A)" />
+			</Column>
+			<Column>
+				<Text text="Health Insurance (Number B)" />
+			</Column>
+			<Column>
+				<Text text="Health Insurance (% B / A)" />
+			</Column>
+			<Column>
+				<Text text="Accident Insurance (Number C)" />
+			</Column>
+				<Column>
+				<Text text="Accident Insurance (% C / A)" />
+			</Column>
+			<Column>
+				<Text text="Maternity Benefits (Number D)" />
+			</Column>
+			<Column>
+				<Text text="Maternity Benefits (% D / A)" />
+			</Column>
+			<Column>
+				<Text text="Paternity Benefits (Number E)" />
+			</Column>
+			<Column>
+				<Text text="Paternity Benefits (% E / A)" />
+			</Column>
+			<Column>
+				<Text text="Day Care Facilities (Number F)" />
+			</Column>
+			<Column>
+				<Text text="Day Care Facilities (% F / A)" />
+			</Column>
+		</columns>
+		<items>
+			<ColumnListItem>
+				<cells>
+				<Text text="Other Than Permanent Employess" />
+				</cells>
+			</ColumnListItem>
+		</items>
+	</Table>
+
+	<Table id="idWorkerTable"
+                             visible="false"
+		inset="false">
+		<headerToolbar>
+			<OverflowToolbar>
+				<content>
+					<Title text="Details of measures for the well-being of workers" level="H2"/>
+				</content>
+			</OverflowToolbar>
+		</headerToolbar>
+		<columns>
+			<Column>
+				<Text text="Category" />
+			</Column>
+			<Column>
+				<Text text="Total (A)" />
+			</Column>
+			<Column>
+				<Text text="Health Insurance (Number B)" />
+			</Column>
+			<Column>
+				<Text text="Health Insurance (% B / A)" />
+			</Column>
+			<Column>
+				<Text text="Accident Insurance (Number C)" />
+			</Column>
+				<Column>
+				<Text text="Accident Insurance (% C / A)" />
+			</Column>
+			<Column>
+				<Text text="Maternity Benefits (Number D)" />
+			</Column>
+			<Column>
+				<Text text="Maternity Benefits (% D / A)" />
+			</Column>
+			<Column>
+				<Text text="Paternity Benefits (Number E)" />
+			</Column>
+			<Column>
+				<Text text="Paternity Benefits (% E / A)" />
+			</Column>
+			<Column>
+				<Text text="Day Care Facilities (Number F)" />
+			</Column>
+			<Column>
+				<Text text="Day Care Facilities (% F / A)" />
+			</Column>
+		</columns>
+		<items>
+			<ColumnListItem>
+				<cells>
+				<Text text="Permanent Workers" />
+				</cells>
+			</ColumnListItem>
+		</items>
+	</Table>
+
+	<Table id="idNonWorkerTable"
+                             visible="false"
+		inset="false">
+		<headerToolbar>
+			<OverflowToolbar>
+				<content>
+					<Title text="Details of measures for the well-being of workers" level="H2"/>
+				</content>
+			</OverflowToolbar>
+		</headerToolbar>
+		<columns>
+			<Column>
+				<Text text="Category" />
+			</Column>
+			<Column>
+				<Text text="Total (A)" />
+			</Column>
+			<Column>
+				<Text text="Health Insurance (Number B)" />
+			</Column>
+			<Column>
+				<Text text="Health Insurance (% B / A)" />
+			</Column>
+			<Column>
+				<Text text="Accident Insurance (Number C)" />
+			</Column>
+				<Column>
+				<Text text="Accident Insurance (% C / A)" />
+			</Column>
+			<Column>
+				<Text text="Maternity Benefits (Number D)" />
+			</Column>
+			<Column>
+				<Text text="Maternity Benefits (% D / A)" />
+			</Column>
+			<Column>
+				<Text text="Paternity Benefits (Number E)" />
+			</Column>
+			<Column>
+				<Text text="Paternity Benefits (% E / A)" />
+			</Column>
+			<Column>
+				<Text text="Day Care Facilities (Number F)" />
+			</Column>
+			<Column>
+				<Text text="Day Care Facilities (% F / A)" />
+			</Column>
+		</columns>
+		<items>
+			<ColumnListItem>
+				<cells>
+				<Text text="Other Than Permanent Workers" />
+				</cells>
+			</ColumnListItem>
+		</items>
+	</Table>
+
+	<Table id="idRetireBenfTable"
+                             visible="false"
+		inset="false">
+		<headerToolbar>
+			<OverflowToolbar>
+				<content>
+					<Title text="Details of retirement benefits, for Current FY and Previous Financial Year" level="H2"/>
+				</content>
+			</OverflowToolbar>
+		</headerToolbar>
+		<columns>
+			<Column>
+				<Text text="Benefits" />
+			</Column>
+			<Column>
+				<Text text="FY____ Current Financial Year (No. of employees covered as a % of total employees)" />
+			</Column>
+			<Column>
+				<Text text="FY____ Current Financial Year (No. of workers covered as a % of total workers)" />
+			</Column>
+			<Column>
+				<Text text="FY____ Current Financial Year (Deducted and deposited with the authority (Y/N/N.A))" />
+			</Column>
+			<Column>
+				<Text text="FY____  Previous Year (No. of employees covered as a % of total employees)" />
+			</Column>
+			<Column>
+				<Text text="FY____  Previous Year (No. of workers covered as a % of total workers)" />
+			</Column>
+			<Column>
+				<Text text="FY____ Previous Year (Deducted and deposited with the authority (Y/N/N.A))" />
+			</Column>
+		</columns>
+		<items>
+		</items>
+	</Table>
+
+	<Table id="idRateofWorkAndLeaveTable"
+                             visible="false"
+		inset="false">
+		<headerToolbar>
+			<OverflowToolbar>
+				<content>
+					<Title text="Return to work and Retention rates of permanent employees and workers that took parental leave." level="H2"/>
+				</content>
+			</OverflowToolbar>
+		</headerToolbar>
+		<columns>
+			<Column>
+				<Text text="Gender" />
+			</Column>
+			<Column>
+				<Text text="Permanent Employees Return To Work Rate" />
+			</Column>
+			<Column>
+				<Text text="Permanent Employees Retention Rate" />
+			</Column>
+			<Column>
+				<Text text="Permanent Workers Return To Work Rate" />
+			</Column>
+			<Column>
+				<Text text="Permanent Workers Retention Rate" />
+			</Column>
+		</columns>
+		<items>
+		</items>
+	</Table>
+
+	<Table id="idMembershipEmpTable"
+                             visible="false"
+		inset="false">
+		<headerToolbar>
+			<OverflowToolbar>
+				<content>
+					<Title text="Membership of employees in association(s) or Unions recognised by the listed entity" level="H2"/>
+				</content>
+			</OverflowToolbar>
+		</headerToolbar>
+		<columns>
+			<Column>
+				<Text text="Category" />
+			</Column>
+			<Column>
+				<Text text="FY____ Current Financial Year - Total Employees/Workers in respective category (A)" />
+			</Column>
+			<Column>
+				<Text text="FY____ Current Financial - Total Employees/Workers in respective category, who are part of associations or unions (B)" />
+			</Column>
+			<Column>
+				<Text text="FY____ Current Financial Year (% B / A)" />
+			</Column>
+			<Column>
+				<Text text="FY____  Previous Year - Total Employees/Workers in respective category (C)" />
+			</Column>
+			<Column>
+				<Text text="FY____  Previous Year - Total Employees/Workers in respective category, who are part of associations or unions (D)" />
+			</Column>
+			<Column>
+				<Text text="FY____  Previous Year (% D / C)" />
+			</Column>
+		</columns>
+		<items>
+		</items>
+	</Table>
+
+	<Table id="idMembershipWorTable"
+                             visible="false"
+		inset="false">
+		<headerToolbar>
+			<OverflowToolbar>
+				<content>
+					<Title text="Membership of worker in association(s) or Unions recognised by the listed entity" level="H2"/>
+				</content>
+			</OverflowToolbar>
+		</headerToolbar>
+		<columns>
+			<Column>
+				<Text text="Category" />
+			</Column>
+			<Column>
+				<Text text="FY____ Current Financial Year - Total Employees/Workers in respective category (A)" />
+			</Column>
+			<Column>
+				<Text text="FY____ Current Financial - Total Employees/Workers in respective category, who are part of associations or unions (B)" />
+			</Column>
+			<Column>
+				<Text text="FY____ Current Financial Year (% B / A)" />
+			</Column>
+			<Column>
+				<Text text="FY____  Previous Year - Total Employees/Workers in respective category (C)" />
+			</Column>
+			<Column>
+				<Text text="FY____  Previous Year - Total Employees/Workers in respective category, who are part of associations or unions (D)" />
+			</Column>
+			<Column>
+				<Text text="FY____  Previous Year (% D / C)" />
+			</Column>
+		</columns>
+		<items>
+		</items>
+	</Table>
+
+	                   <Table id="idPEmpTrainingTable"
+                             visible="false"
+		inset="false">
+		<headerToolbar>
+			<OverflowToolbar>
+				<content>
+					<Title text="Details of training given to employees" level="H2"/>
+				</content>
+			</OverflowToolbar>
+		</headerToolbar>
+		<columns>
+			<Column>
+				<Text text="Category" />
+			</Column>
+			<Column>
+				<Text text="FY____ Current Financial Year - Total (A)" />
+			</Column>
+			<Column>
+				<Text text="FY____ Current Financial Year - On Health And Safety Measures (No. B)" />
+			</Column>
+			<Column>
+				<Text text="FY____ Current Financial Year - On Health And Safety Measures (% B / A)" />
+			</Column>
+			<Column>
+				<Text text="FY____ Current Financial Year - On Skill Upgradation (No. C)" />
+			</Column>
+				<Column>
+				<Text text="FY____ Current Financial Year - On Skill Upgradation (% C / A)" />
+			</Column>
+			<Column>
+				<Text text="FY____  Previous Year - Total (D)" />
+			</Column>
+			<Column>
+				<Text text="FY____  Previous Year - On Health And Safety Measures (No. E)" />
+			</Column>
+			<Column>
+				<Text text="FY____  Previous Year - On Health And Safety Measures (% E / A)" />
+			</Column>
+			<Column>
+				<Text text="FY____  Previous Year - On Skill Upgradation (No. F)" />
+			</Column>
+			<Column>
+				<Text text="FY____ - On Skill Upgradation (% F / A)" />
+			</Column>
+		</columns>
+		<items>
+			<ColumnListItem>
+				<cells>
+				    <Text text="Employess" />
+				</cells>
+			</ColumnListItem>
+		</items>
+	</Table>
+
+		                   <Table id="idWorkTrainingTable"
+                             visible="false"
+		inset="false">
+		<headerToolbar>
+			<OverflowToolbar>
+				<content>
+					<Title text="Details of training given to workers" level="H2"/>
+				</content>
+			</OverflowToolbar>
+		</headerToolbar>
+		<columns>
+			<Column>
+				<Text text="Category" />
+			</Column>
+			<Column>
+				<Text text="FY____ Current Financial Year - Total (A)" />
+			</Column>
+			<Column>
+				<Text text="FY____ Current Financial Year - On Health And Safety Measures (No. B)" />
+			</Column>
+			<Column>
+				<Text text="FY____ Current Financial Year - On Health And Safety Measures (% B / A)" />
+			</Column>
+			<Column>
+				<Text text="FY____ Current Financial Year - On Skill Upgradation (No. C)" />
+			</Column>
+				<Column>
+				<Text text="FY____ Current Financial Year - On Skill Upgradation (% C / A)" />
+			</Column>
+			<Column>
+				<Text text="FY____  Previous Year - Total (D)" />
+			</Column>
+			<Column>
+				<Text text="FY____  Previous Year - On Health And Safety Measures (No. E)" />
+			</Column>
+			<Column>
+				<Text text="FY____  Previous Year - On Health And Safety Measures (% E / A)" />
+			</Column>
+			<Column>
+				<Text text="FY____  Previous Year - On Skill Upgradation (No. F)" />
+			</Column>
+			<Column>
+				<Text text="FY____ - On Skill Upgradation (% F / A)" />
+			</Column>
+		</columns>
+		<items>
+			<ColumnListItem>
+				<cells>
+				    <Text text="Workers" />
+				</cells>
+			</ColumnListItem>
+		</items>
+	</Table>
+
+		<Table id="idPerEmpTable"
+                             visible="false"
+		inset="false">
+		<headerToolbar>
+			<OverflowToolbar>
+				<content>
+					<Title text="Details of performance and career development reviews of employees" level="H2"/>
+				</content>
+			</OverflowToolbar>
+		</headerToolbar>
+		<columns>
+			<Column>
+				<Text text="Category" />
+			</Column>
+			<Column>
+				<Text text="FY____ Current Financial Year - Total (A)" />
+			</Column>
+			<Column>
+				<Text text="FY____ Current Financial - (No. B)" />
+			</Column>
+			<Column>
+				<Text text="FY____ Current Financial Year (% B / A)" />
+			</Column>
+			<Column>
+				<Text text="FY____  Previous Year - Total (C)" />
+			</Column>
+			<Column>
+				<Text text="FY____  Previous Year - (No. D)" />
+			</Column>
+			<Column>
+				<Text text="FY____  Previous Year (% D / C)" />
+			</Column>
+		</columns>
+		<items>
+		</items>
+	</Table>
+
+	<Table id="idPerWorkTable"
+                             visible="false"
+		inset="false">
+		<headerToolbar>
+			<OverflowToolbar>
+				<content>
+					<Title text="Details of performance and career development reviews of workers" level="H2"/>
+				</content>
+			</OverflowToolbar>
+		</headerToolbar>
+		<columns>
+			<Column>
+				<Text text="Category" />
+			</Column>
+			<Column>
+				<Text text="FY____ Current Financial Year - Total (A)" />
+			</Column>
+			<Column>
+				<Text text="FY____ Current Financial - (No. B)" />
+			</Column>
+			<Column>
+				<Text text="FY____ Current Financial Year (% B / A)" />
+			</Column>
+			<Column>
+				<Text text="FY____  Previous Year - Total (C)" />
+			</Column>
+			<Column>
+				<Text text="FY____  Previous Year - (No. D)" />
+			</Column>
+			<Column>
+				<Text text="FY____  Previous Year (% D / C)" />
+			</Column>
+		</columns>
+		<items>
+		</items>
+	</Table>
+
+	
+		<Table id="idEmpHumanRightTable"
+                             visible="false"
+		inset="false">
+		<headerToolbar>
+			<OverflowToolbar>
+				<content>
+					<Title text="Employees who have been provided training on human rights issues and policy(ies) of the entity" level="H2"/>
+				</content>
+			</OverflowToolbar>
+		</headerToolbar>
+		<columns>
+			<Column>
+				<Text text="Category" />
+			</Column>
+			<Column>
+				<Text text="FY____ Current Financial Year - Total (A)" />
+			</Column>
+			<Column>
+				<Text text="FY____ Current Financial - No. of employees covered (B)" />
+			</Column>
+			<Column>
+				<Text text="FY____ Current Financial Year (% B / A)" />
+			</Column>
+			<Column>
+				<Text text="FY____  Previous Year - Total (C)" />
+			</Column>
+			<Column>
+				<Text text="FY____  Previous Year - No. of employees covered (D)" />
+			</Column>
+			<Column>
+				<Text text="FY____  Previous Year (% D / C)" />
+			</Column>
+		</columns>
+		<items>
+		</items>
+	</Table>
+
+	<Table id="idWorkHumanRightTable"
+                             visible="false"
+		inset="false">
+		<headerToolbar>
+			<OverflowToolbar>
+				<content>
+					<Title text="Workers who have been provided training on human rights issues and policy(ies) of the entity" level="H2"/>
+				</content>
+			</OverflowToolbar>
+		</headerToolbar>
+		<columns>
+			<Column>
+				<Text text="Category" />
+			</Column>
+			<Column>
+				<Text text="FY____ Current Financial Year - Total (A)" />
+			</Column>
+			<Column>
+				<Text text="FY____ Current Financial - No.of workers covered (B)" />
+			</Column>
+			<Column>
+				<Text text="FY____ Current Financial Year (% B / A)" />
+			</Column>
+			<Column>
+				<Text text="FY____  Previous Year - Total (C)" />
+			</Column>
+			<Column>
+				<Text text="FY____  Previous Year - No. of workers covered (D)" />
+			</Column>
+			<Column>
+				<Text text="FY____  Previous Year (% D / C)" />
+			</Column>
+		</columns>
+		<items>
+		</items>
+	</Table>
+
+             <Table id="idPEmpWageTable"
+                             visible="false"
+		inset="false">
+		<headerToolbar>
+			<OverflowToolbar>
+				<content>
+					<Title text="Details of minimum wages paid to employees" level="H2"/>
+				</content>
+			</OverflowToolbar>
+		</headerToolbar>
+		<columns>
+			<Column>
+				<Text text="Category" />
+			</Column>
+			<Column>
+				<Text text="FY____ Current Financial Year - Total (A)" />
+			</Column>
+			<Column>
+				<Text text="FY____ Current Financial Year - Equal to minimum wage (No. B)" />
+			</Column>
+			<Column>
+				<Text text="FY____ Current Financial Year - Equal to minimum wage (% B / A)" />
+			</Column>
+			<Column>
+				<Text text="FY____ Current Financial Year - More than minimum wage (No. C)" />
+			</Column>
+				<Column>
+				<Text text="FY____ Current Financial Year - More than minimum wage (% C / A)" />
+			</Column>
+			<Column>
+				<Text text="FY____  Previous Year - Total (D)" />
+			</Column>
+			<Column>
+				<Text text="FY____  Previous Year - Equal to minimum wage (No. E)" />
+			</Column>
+			<Column>
+				<Text text="FY____  Previous Year - Equal to minimum wage (% E / A)" />
+			</Column>
+			<Column>
+				<Text text="FY____  Previous Year - More than minimum wage (No. F)" />
+			</Column>
+			<Column>
+				<Text text="FY____ - More than minimum wage (% F / A)" />
+			</Column>
+		</columns>
+		<items>
+			<ColumnListItem>
+				<cells>
+				    <Text text="Employess" />
+				</cells>
+			</ColumnListItem>
+		</items>
+	</Table>
+
+		                   <Table id="idWorkWageTable"
+                             visible="false"
+		inset="false">
+		<headerToolbar>
+			<OverflowToolbar>
+				<content>
+					<Title text="Details of minimum wages paid to workers" level="H2"/>
+				</content>
+			</OverflowToolbar>
+		</headerToolbar>
+		<columns>
+			<Column>
+				<Text text="Category" />
+			</Column>
+			<Column>
+				<Text text="FY____ Current Financial Year - Total (A)" />
+			</Column>
+			<Column>
+				<Text text="FY____ Current Financial Year - Equal to minimum wage (No. B)" />
+			</Column>
+			<Column>
+				<Text text="FY____ Current Financial Year - Equal to minimum wage (% B / A)" />
+			</Column>
+			<Column>
+				<Text text="FY____ Current Financial Year - More than minimum wage (No. C)" />
+			</Column>
+				<Column>
+				<Text text="FY____ Current Financial Year - More than minimum wage (% C / A)" />
+			</Column>
+			<Column>
+				<Text text="FY____  Previous Year - Total (D)" />
+			</Column>
+			<Column>
+				<Text text="FY____  Previous Year - Equal to minimum wage (No. E)" />
+			</Column>
+			<Column>
+				<Text text="FY____  Previous Year - Equal to minimum wage (% E / A)" />
+			</Column>
+			<Column>
+				<Text text="FY____  Previous Year - More than minimum wage (No. F)" />
+			</Column>
+			<Column>
+				<Text text="FY____ - More than minimum wage (% F / A)" />
+			</Column>
+		</columns>
+		<items>
+			<ColumnListItem>
+				<cells>
+				    <Text text="Workers" />
+				</cells>
+			</ColumnListItem>
+		</items>
+	</Table>
+
+	<Table id="idWageTable"
+                             visible="false"
+		inset="false">
+		<headerToolbar>
+			<OverflowToolbar>
+				<content>
+					<Title text="Details of remuneration/salary/wages" level="H2"/>
+				</content>
+			</OverflowToolbar>
+		</headerToolbar>
+		<columns>
+			<Column>
+				<Text text="" />
+			</Column>
+			<Column>
+				<Text text="Male (Number)" />
+			</Column>
+			<Column>
+				<Text text="Male Median Remuneration" />
+			</Column>
+			<Column>
+				<Text text="Female (Number)" />
+			</Column>
+			<Column>
+				<Text text="Female Median Remuneration" />
+			</Column>
+		</columns>
+		<items>
+		</items>
+	</Table>
+
+		<Table id="idComplaintTable"
+                             visible="false"
+		inset="false">
+		<headerToolbar>
+			<OverflowToolbar>
+				<content>
+					<Title text="Number of Complaints on the following made by employees and workers:
+Sexual Harassment
+Discrimination at
+workplace
+Child Labour
+Forced
+Labour/Involuntary
+Labour
+Wages
+Other human rights related issues" level="H2"/>
+				</content>
+			</OverflowToolbar>
+		</headerToolbar>
+		<columns>
+			<Column>
+				<Text text="" />
+			</Column>
+			<Column>
+				<Text text="FY____ Current Financial Year - Filed during the year " />
+			</Column>
+			<Column>
+				<Text text="FY____ Current Financial Year - Pending resolution at the end of the year" />
+			</Column>
+			<Column>
+				<Text text="FY____ Current Financial Year - Remarks" />
+			</Column>
+			<Column>
+				<Text text="FY____  Previous Year - Filed during the year" />
+			</Column>
+			<Column>
+				<Text text="FY____  Previous Year - Pending resolution at the end of the year" />
+			</Column>
+			<Column>
+				<Text text="FY____  Previous Year - Remarks" />
+			</Column>
+		</columns>
+		<items>
+		</items>
+	</Table>
+
+	<Table id="idAssessmentsTable"
+                             visible="false"
+		inset="false">
+		<headerToolbar>
+			<OverflowToolbar>
+				<content>
+					<Title text="Assessments for the year:
+Child labour
+Forced/involuntary labour
+Sexual harassment
+Discrimination at workplace
+Wages
+Others - please specify" level="H2"/>
+				</content>
+			</OverflowToolbar>
+		</headerToolbar>
+		<columns>
+			<Column>
+				<Text text="" />
+			</Column>
+			<Column>
+				<Text text="% of plants and offices that were assessed (by entity or statuatory authorities or third parties)" />
+			</Column>
+		</columns>
+		<items>
+		</items>
+	</Table>
                         </content>
         </ScrollContainer>
    
@@ -220,8 +1090,9 @@ taken by any law enforcement agency for the charges of bribery/ corruption" leve
         <footer>
             <Toolbar id="_IDGenToolbar1">
                 <ToolbarSpacer id="_IDGenToolbarSpacer1"/>
-                <Button id="idSubmit" text="Submit" visible="false" press="onSubmit" type="Accept"/>
-                <Button id="idClear" text="Clear" visible="false" press="onClear" type="Reject"/>
+				<Button id="idEdit" text="Edit" press="onEdit"/>
+                <Button id="idSubmit" text="Submit" visible="false" press="OnSubmit" type="Accept"/>
+                <Button id="idCancel" text="Cancel" visible="false" press="onCancel" type="Attention"/>
             </Toolbar>
         </footer>
     </Page>

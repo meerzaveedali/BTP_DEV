@@ -27,6 +27,13 @@ sap.ui.define([
             oTable = oCont.getView().byId("Tableid");
             oFileUploader = oCont.getView().byId("id_fileUploader");
             fileName = "";
+            var oEdit = {
+                editable: false
+            };
+            var myedit = {};
+            myedit.edit = oEdit;
+            var oEditModel = new JSONModel(myedit);
+            this.getView().setModel(oEditModel, "editModel");
         },
         fnUploadStart : function(){ // uploadStart event from fileuploader
             oCont.getView().setBusy(true);
@@ -47,48 +54,115 @@ sap.ui.define([
             }
         },
         fnSelectChange1: function(oEvent){
+
                      let sKey = oEvent.getSource().getProperty("selectedKey"); 
                      if (sKey === "07")
                      {
 
                         var monetary  = this.getView().byId("idMonetaryTable");
                         monetary.setVisible(true);
+                        monetary.removeAllItems();
                         var nonMonetary = this.getView().byId("idNonMonetaryTable");
                         nonMonetary.setVisible(true);
+                        nonMonetary.removeAllItems();
                         var oTable = this.getView().byId("idTable");
                         oTable.setVisible(true);
+                        oTable.removeAllItems();
                         var oTable1 = this.getView().byId("idTable1");
                         oTable1.setVisible(true);
-                        this.oDataModel.read("/qualitative_data_Legal_Compliance(up__fiscalYear='2023',up__businessFunction='Legal_Compliance',principle='1',indicator='Essential',questionID='2')/principle1_essential_2", {
+                        oTable1.removeAllItems();
+                        var TableSegment  = this.getView().byId("idTableSegment");
+                        TableSegment.setVisible(false);
+                        var PEmpTable = this.getView().byId("idPEmpTable");
+                        PEmpTable.setVisible(false);
+                        var NPEmpTable = this.getView().byId("idNPEmpTable");
+                        NPEmpTable.setVisible(false);
+                        var WorkerTable = this.getView().byId("idWorkerTable");
+                        WorkerTable.setVisible(false);
+                        var NonWorkerTable  = this.getView().byId("idNonWorkerTable");
+                        NonWorkerTable.setVisible(false);
+                        var RetireBenfTable = this.getView().byId("idRetireBenfTable");
+                        RetireBenfTable.setVisible(false);
+                        var MembershipEmpTable = this.getView().byId("idMembershipEmpTable");
+                        MembershipEmpTable.setVisible(false);
+                        var MembershipWorTable = this.getView().byId("idMembershipWorTable");
+                        MembershipWorTable.setVisible(false);
+                        var RateofWorkAndLeaveTable = this.getView().byId("idRateofWorkAndLeaveTable");
+                        RateofWorkAndLeaveTable.setVisible(false);
+                        var PEmpTrainingTable  = this.getView().byId("idPEmpTrainingTable");
+                        PEmpTrainingTable.setVisible(false);
+                        var WorkTrainingTable = this.getView().byId("idWorkTrainingTable");
+                        WorkTrainingTable.setVisible(false);
+                        var PerEmpTable  = this.getView().byId("idPerEmpTable");
+                        PerEmpTable.setVisible(false);
+                        var PerWorkTable = this.getView().byId("idPerWorkTable");
+                        PerWorkTable.setVisible(false);
+                        var EmpHumanRightTable = this.getView().byId("idEmpHumanRightTable");
+                        EmpHumanRightTable.setVisible(false);
+                        var WorkHumanRightTable = this.getView().byId("idWorkHumanRightTable");
+                        WorkHumanRightTable.setVisible(false);
+                        var PEmpWageTable = this.getView().byId("idPEmpWageTable");
+                        PEmpWageTable.setVisible(false);
+                        var WorkWageTable = this.getView().byId("idWorkWageTable");
+                        WorkWageTable.setVisible(false);
+                        var WageTable = this.getView().byId("idWageTable");
+                        WageTable.setVisible(false);
+                        var ComplaintTable = this.getView().byId("idComplaintTable");
+                        ComplaintTable.setVisible(false);
+                        var AssessmentsTable = this.getView().byId("idAssessmentsTable");
+                        AssessmentsTable.setVisible(false);
+                        var that = this;
+                        this.oDataModel.read("/qualitative_data_Legal_Compliance(up__fiscalYear='2024',up__businessFunction='Legal_Compliance',principle='1',indicator='Essential',questionID='2')/principle1_essential_2", {
                             success : function(oData){
+                                        let aItems = [];
+                                        let aItems1 = [];
                                     for(let i=0;i<oData.results.length;i++){
                                         if(oData.results[i].type === "Monetary"){
                                             let oItem = new sap.m.ColumnListItem({
                                                 cells: [
                                                   new sap.m.Text({ text: oData.results[i].typeOfPaidAmount}),
-                                                  new sap.m.Input({ value: oData.results[i].ngrbcPrinciple}),
-                                                  new sap.m.Input({ value: oData.results[i].nameOfInstitutions}),
-                                                  new sap.m.Input({ value: oData.results[i].amountInINR}),
-                                                  new sap.m.Input({ value: oData.results[i].briefOfTheCase}),
-                                                  new sap.m.Input({ value: oData.results[i].hasAnAppealBeen}),
+                                                  new sap.m.Input({ value: oData.results[i].ngrbcPrinciple, editable:"{editModel>/edit/editable}"}),
+                                                  new sap.m.Input({ value: oData.results[i].nameOfInstitutions, editable:"{editModel>/edit/editable}"}),
+                                                  new sap.m.Input({ value: oData.results[i].amountInINR, editable:"{editModel>/edit/editable}"}),
+                                                  new sap.m.Input({ value: oData.results[i].briefOfTheCase, editable:"{editModel>/edit/editable}"}),
+                                                  new sap.m.Input({ value: oData.results[i].hasAnAppealBeen, editable:"{editModel>/edit/editable}"}),
                                                 ]
                                               });
-                                              monetary.addItem(oItem);
+                                              if(oData.results[i].typeOfPaidAmount === "Compounding fee"){
+                                                aItems[2] = oItem;
+                                            }
+                                            if(oData.results[i].typeOfPaidAmount === "Penalty/ Fine"){
+                                                aItems[0] = oItem;
+                                            }
+                                            if(oData.results[i].typeOfPaidAmount === "Settlement"){
+                                                aItems[1] = oItem;
+                                            }
+                                            
                                         }
                                         if(oData.results[i].type === "Non-Monetary"){
                                             let oItem = new sap.m.ColumnListItem({
                                                 cells: [
                                                   new sap.m.Text({ text: oData.results[i].typeOfPaidAmount}),
-                                                  new sap.m.Input({ value: oData.results[i].ngrbcPrinciple}),
-                                                  new sap.m.Input({ value: oData.results[i].nameOfInstitutions}),
-                                                  new sap.m.Input({ value: oData.results[i].amountInINR}),
-                                                  new sap.m.Input({ value: oData.results[i].briefOfTheCase}),
-                                                  new sap.m.Input({ value: oData.results[i].hasAnAppealBeen}),
+                                                  new sap.m.Input({ value: oData.results[i].ngrbcPrinciple, editable:"{editModel>/edit/editable}"}),
+                                                  new sap.m.Input({ value: oData.results[i].nameOfInstitutions, editable:"{editModel>/edit/editable}"}),
+                                                  new sap.m.Input({ value: oData.results[i].amountInINR, editable:"{editModel>/edit/editable}"}),
+                                                  new sap.m.Input({ value: oData.results[i].briefOfTheCase, editable:"{editModel>/edit/editable}"}),
+                                                  new sap.m.Input({ value: oData.results[i].hasAnAppealBeen, editable:"{editModel>/edit/editable}"}),
                                                 ]
                                               });
-                                              nonMonetary.addItem(oItem);
+                                              if(oData.results[i].typeOfPaidAmount === "Punishment"){
+                                                aItems1[1] = oItem;
+                                            }
+                                            if(oData.results[i].typeOfPaidAmount === "Imprisonment"){
+                                                aItems1[0] = oItem;
+                                            }
                                         }
                                     }
+                                    for(let i=0;i<aItems.length;i++)
+                                        monetary.addItem(aItems[i]);
+
+                                    for(let i=0;i<aItems1.length;i++)
+                                        nonMonetary.addItem(aItems1[i]);
                             },
                             error : function(oError){
 
@@ -98,16 +172,30 @@ sap.ui.define([
 
                         this.oDataModel.read("/qualitative_data_Legal_Compliance(up__fiscalYear='2024',up__businessFunction='Legal_Compliance',principle='1',indicator='Essential',questionID='5')/principle1_essential_5", {
                             success : function(oData){
+                                let aItems = [];
                                     for(let i=0;i<oData.results.length;i++){
                                             let oItem = new sap.m.ColumnListItem({
                                                 cells: [
                                                   new sap.m.Text({ text: oData.results[i].typeOfWorkers}),
-                                                  new sap.m.Input({ value: oData.results[i].valueForCurrentFinancialYear}),
-                                                  new sap.m.Input({ value: oData.results[i].valueForPreviousFinancialYear}),
+                                                  new sap.m.Input({ value: oData.results[i].valueForCurrentFinancialYear, editable:"{editModel>/edit/editable}"}),
+                                                  new sap.m.Input({ value: oData.results[i].valueForPreviousFinancialYear, editable:"{editModel>/edit/editable}"}),
                                                 ]
                                               });
-                                              oTable.addItem(oItem);
-                            }
+                                              if(oData.results[i].typeOfWorkers === "Workers"){
+                                                aItems[3] = oItem;
+                                            }
+                                            if(oData.results[i].typeOfWorkers === "Directors"){
+                                                aItems[0] = oItem;
+                                            }
+                                            if(oData.results[i].typeOfWorkers === "Employees"){
+                                                aItems[2] = oItem;
+                                            }
+                                            if(oData.results[i].typeOfWorkers === "KMPs"){
+                                                aItems[1] = oItem;
+                                            }
+                                            }
+                                        for(let i=0;i<aItems.length;i++)
+                                            oTable.addItem(aItems[i]);
                         },
                             error : function(oError){
 
@@ -117,19 +205,30 @@ sap.ui.define([
 
                         this.oDataModel.read("/qualitative_data_Legal_Compliance(up__fiscalYear='2024',up__businessFunction='Legal_Compliance',principle='1',indicator='Essential',questionID='6')/principle1_essential_6 ", {
                             success : function(oData){
+                                let aItems= [];
                                     for(let i=0;i<oData.results.length;i++){
                                             let oItem = new sap.m.ColumnListItem({
                                                 cells: [
                                                   new sap.m.Text({ text: oData.results[i].detailsOfComplaints}),
-                                                  new sap.m.Input({ value: oData.results[i].numberForCurrentFinancialYear}),
-                                                  new sap.m.Input({ value: oData.results[i].remarksForCurrentFinancialYear}),
-                                                  new sap.m.Input({ value: oData.results[i].numberForPreviousFinancialYear}),
-                                                  new sap.m.Input({ value: oData.results[i].remarksForPreviousFinancialYear}),
+                                                  new sap.m.Input({ value: oData.results[i].numberForCurrentFinancialYear, editable:"{editModel>/edit/editable}"}),
+                                                  new sap.m.Input({ value: oData.results[i].remarksForCurrentFinancialYear, editable:"{editModel>/edit/editable}"}),
+                                                  new sap.m.Input({ value: oData.results[i].numberForPreviousFinancialYear, editable:"{editModel>/edit/editable}"}),
+                                                  new sap.m.Input({ value: oData.results[i].remarksForPreviousFinancialYear, editable:"{editModel>/edit/editable}"}),
                                                 ]
                                               });
-                                              oTable1.addItem(oItem);
-                            }
-                        },
+
+                                              if(oData.results[i].detailsOfComplaints === "Number of complaints received in relation to issues of Conflict of Interest of the Directors"){
+                                                aItems[0] = oItem;
+                                            }
+                                            if(oData.results[i].detailsOfComplaints === "Number of complaints received in relation to issues of Conflict of Interest of the KMPs"){
+                                                aItems[1] = oItem;
+                                            }
+
+                                    }
+                                            
+                                    for(let i=0;i<aItems.length;i++)
+                                            oTable1.addItem(aItems[i]);
+                                        },
                             error : function(oError){
 
                             }
@@ -137,6 +236,821 @@ sap.ui.define([
                         });
                         
                      }
+                     else if(sKey === "04"){
+
+                        var TableSegment  = this.getView().byId("idTableSegment");
+                        TableSegment.setVisible(true);
+                        TableSegment.removeAllItems();
+                        var PEmpTable = this.getView().byId("idPEmpTable");
+                        PEmpTable.setVisible(true);
+                        PEmpTable.removeAllItems();
+                        var NPEmpTable = this.getView().byId("idNPEmpTable");
+                        NPEmpTable.setVisible(true);
+                        NPEmpTable.removeAllItems();
+                        var WorkerTable = this.getView().byId("idWorkerTable");
+                        WorkerTable.setVisible(true);
+                        WorkerTable.removeAllItems();
+                        var NonWorkerTable  = this.getView().byId("idNonWorkerTable");
+                        NonWorkerTable.setVisible(true);
+                        NonWorkerTable.removeAllItems();
+                        var RetireBenfTable = this.getView().byId("idRetireBenfTable");
+                        RetireBenfTable.setVisible(true);
+                        RetireBenfTable.removeAllItems();
+                        var MembershipEmpTable = this.getView().byId("idMembershipEmpTable");
+                        MembershipEmpTable.setVisible(true);
+                        MembershipEmpTable.removeAllItems();
+                        var MembershipWorTable = this.getView().byId("idMembershipWorTable");
+                        MembershipWorTable.setVisible(true);
+                        MembershipWorTable.removeAllItems();
+                        var RateofWorkAndLeaveTable = this.getView().byId("idRateofWorkAndLeaveTable");
+                        RateofWorkAndLeaveTable.setVisible(true);
+                        RateofWorkAndLeaveTable.removeAllItems();
+                        var PEmpTrainingTable  = this.getView().byId("idPEmpTrainingTable");
+                        PEmpTrainingTable.setVisible(true);
+                        PEmpTrainingTable.removeAllItems();
+                        var WorkTrainingTable = this.getView().byId("idWorkTrainingTable");
+                        WorkTrainingTable.setVisible(true);
+                        WorkTrainingTable.removeAllItems();
+                        var PerEmpTable  = this.getView().byId("idPerEmpTable");
+                        PerEmpTable.setVisible(true);
+                        PerEmpTable.removeAllItems();
+                        var PerWorkTable = this.getView().byId("idPerWorkTable");
+                        PerWorkTable.setVisible(true);
+                        PerWorkTable.removeAllItems();
+                        var EmpHumanRightTable = this.getView().byId("idEmpHumanRightTable");
+                        EmpHumanRightTable.setVisible(true);
+                        EmpHumanRightTable.removeAllItems();
+                        var WorkHumanRightTable = this.getView().byId("idWorkHumanRightTable");
+                        WorkHumanRightTable.setVisible(true);
+                        WorkHumanRightTable.removeAllItems();
+                        var PEmpWageTable = this.getView().byId("idPEmpWageTable");
+                        PEmpWageTable.setVisible(true);
+                        PEmpWageTable.removeAllItems();
+                        var WorkWageTable = this.getView().byId("idWorkWageTable");
+                        WorkWageTable.setVisible(true);
+                        WorkWageTable.removeAllItems();
+                        var WageTable = this.getView().byId("idWageTable");
+                        WageTable.setVisible(true);
+                        WageTable.removeAllItems();
+                        var ComplaintTable = this.getView().byId("idComplaintTable");
+                        ComplaintTable.setVisible(true);
+                        ComplaintTable.removeAllItems();
+                        var AssessmentsTable = this.getView().byId("idAssessmentsTable");
+                        AssessmentsTable.setVisible(true);
+                        AssessmentsTable.removeAllItems();
+                        var monetary  = this.getView().byId("idMonetaryTable");
+                        monetary.setVisible(false);
+                        var nonMonetary = this.getView().byId("idNonMonetaryTable");
+                        nonMonetary.setVisible(false);
+                        var oTable = this.getView().byId("idTable");
+                        oTable.setVisible(false);
+                        var oTable1 = this.getView().byId("idTable1");
+                        oTable1.setVisible(false);
+                        this.oDataModel.read("/qualitative_data_HR(up__fiscalYear='2024',up__businessFunction='HR',principle='1',indicator='Essential',questionID='1')/principle1_essential_1", {
+                            success : function(oData){
+                                for(let i=0;i<oData.results.length;i++){
+                                    let oItem = new sap.m.ColumnListItem({
+                                        cells: [
+                                          new sap.m.Text({ text: oData.results[i].segment}),
+                                          new sap.m.Input({ value: oData.results[i].numberOfTrainingPrograms}),
+                                          new sap.m.Input({ value: oData.results[i].topicsCoveredUnderTraining}),
+                                          new sap.m.Input({ value: oData.results[i].percentageOfPersonsInRespectiveCategory}),
+                                        ]
+                                      });
+                                      TableSegment.addItem(oItem);
+                    }
+                            },
+                            error : function(oError){
+                                debugger;
+                            }
+                        });
+                        this.oDataModel.read("/qualitative_data_HR(up__fiscalYear='2024',up__businessFunction='HR',principle='3',indicator='Essential',questionID='1a')/principle3_essential_1a", {
+                            success : function(oData){
+                                for(let i=0;i<oData.results.length;i++){
+                                    if(oData.results[i].type === "Permanent employees"){
+                                    let oItem = new sap.m.ColumnListItem({
+                                        cells: [
+                                          new sap.m.Text({ text: oData.results[i].category}),
+                                          new sap.m.Input({ value: oData.results[i].total}),
+                                          new sap.m.Input({ value: oData.results[i].numberOfHealthInsurance}),
+                                          new sap.m.Input({ value: oData.results[i].percentageOfHealthInsurance}),
+                                          new sap.m.Input({ value: oData.results[i].numberOfAccidentInsurance}),
+                                          new sap.m.Input({ value: oData.results[i].percentageOfAccidentInsurance}),
+                                          new sap.m.Input({ value: oData.results[i].numberOfMaternityBenefits}),
+                                          new sap.m.Input({ value: oData.results[i].percentageOfMaternityBenefits}),
+                                          new sap.m.Input({ value: oData.results[i].numberOfPaternityBenefits}),
+                                          new sap.m.Input({ value: oData.results[i].percentageOfPaternityBenefits}),
+                                          new sap.m.Input({ value: oData.results[i].numberOfDayCareFacilities}),
+                                          new sap.m.Input({ value: oData.results[i].percentageOfDayCareFacilities}),
+                                        ]
+                                      });
+                                      PEmpTable.addItem(oItem);
+                                    }
+                                    else 
+                                        if(oData.results[i].type === "Other than Permanent employees"){
+                                            let oItem = new sap.m.ColumnListItem({
+                                                cells: [
+                                                  new sap.m.Text({ text: oData.results[i].category}),
+                                                  new sap.m.Input({ value: oData.results[i].total}),
+                                                  new sap.m.Input({ value: oData.results[i].numberOfHealthInsurance}),
+                                                  new sap.m.Input({ value: oData.results[i].percentageOfHealthInsurance}),
+                                                  new sap.m.Input({ value: oData.results[i].numberOfAccidentInsurance}),
+                                                  new sap.m.Input({ value: oData.results[i].percentageOfAccidentInsurance}),
+                                                  new sap.m.Input({ value: oData.results[i].numberOfMaternityBenefits}),
+                                                  new sap.m.Input({ value: oData.results[i].percentageOfMaternityBenefits}),
+                                                  new sap.m.Input({ value: oData.results[i].numberOfPaternityBenefits}),
+                                                  new sap.m.Input({ value: oData.results[i].percentageOfPaternityBenefits}),
+                                                  new sap.m.Input({ value: oData.results[i].numberOfDayCareFacilities}),
+                                                  new sap.m.Input({ value: oData.results[i].percentageOfDayCareFacilities}),
+                                                ]
+                                              });
+                                              NPEmpTable.addItem(oItem);
+                                    }
+                                 }
+                            },
+                            error : function(oError){
+                                debugger;
+                            }
+                        });
+                        this.oDataModel.read("/qualitative_data_HR(up__fiscalYear='2024',up__businessFunction='HR',principle='3',indicator='Essential',questionID='1b')/principle3_essential_1b", {
+                            success : function(oData){
+                                for(let i=0;i<oData.results.length;i++){
+                                    if(oData.results[i].type === "Permanent workers"){
+                                    let oItem = new sap.m.ColumnListItem({
+                                        cells: [
+                                          new sap.m.Text({ text: oData.results[i].category}),
+                                          new sap.m.Input({ value: oData.results[i].total}),
+                                          new sap.m.Input({ value: oData.results[i].numberOfHealthInsurance}),
+                                          new sap.m.Input({ value: oData.results[i].percentageOfHealthInsurance}),
+                                          new sap.m.Input({ value: oData.results[i].numberOfAccidentInsurance}),
+                                          new sap.m.Input({ value: oData.results[i].percentageOfAccidentInsurance}),
+                                          new sap.m.Input({ value: oData.results[i].numberOfMaternityBenefits}),
+                                          new sap.m.Input({ value: oData.results[i].percentageOfMaternityBenefits}),
+                                          new sap.m.Input({ value: oData.results[i].numberOfPaternityBenefits}),
+                                          new sap.m.Input({ value: oData.results[i].percentageOfPaternityBenefits}),
+                                          new sap.m.Input({ value: oData.results[i].numberOfDayCareFacilities}),
+                                          new sap.m.Input({ value: oData.results[i].percentageOfDayCareFacilities}),
+                                        ]
+                                      });
+                                      WorkerTable.addItem(oItem);
+                                    }
+                                    else 
+                                        if(oData.results[i].type === "Other than Permanent workers"){
+                                            let oItem = new sap.m.ColumnListItem({
+                                                cells: [
+                                                  new sap.m.Text({ text: oData.results[i].category}),
+                                                  new sap.m.Input({ value: oData.results[i].total}),
+                                                  new sap.m.Input({ value: oData.results[i].numberOfHealthInsurance}),
+                                                  new sap.m.Input({ value: oData.results[i].percentageOfHealthInsurance}),
+                                                  new sap.m.Input({ value: oData.results[i].numberOfAccidentInsurance}),
+                                                  new sap.m.Input({ value: oData.results[i].percentageOfAccidentInsurance}),
+                                                  new sap.m.Input({ value: oData.results[i].numberOfMaternityBenefits}),
+                                                  new sap.m.Input({ value: oData.results[i].percentageOfMaternityBenefits}),
+                                                  new sap.m.Input({ value: oData.results[i].numberOfPaternityBenefits}),
+                                                  new sap.m.Input({ value: oData.results[i].percentageOfPaternityBenefits}),
+                                                  new sap.m.Input({ value: oData.results[i].numberOfDayCareFacilities}),
+                                                  new sap.m.Input({ value: oData.results[i].percentageOfDayCareFacilities}),
+                                                ]
+                                              });
+                                              NonWorkerTable.addItem(oItem);
+                                    }
+                                 }
+                            },
+                            error : function(oError){
+                                debugger;
+                            }
+                        });
+                        this.oDataModel.read("/qualitative_data_HR(up__fiscalYear='2024',up__businessFunction='HR',principle='3',indicator='Essential',questionID='2')/principle3_essential_2", {
+                            success : function(oData){
+                                for(let i=0;i<oData.results.length;i++){
+                                    let oItem = new sap.m.ColumnListItem({
+                                        cells: [
+                                          new sap.m.Text({ text: oData.results[i].benefits}),
+                                          new sap.m.Input({ value: oData.results[i].currentFYEmployees}),
+                                          new sap.m.Input({ value: oData.results[i].currentFYWorkers}),
+                                          new sap.m.Input({ value: oData.results[i].currentFYauthority}),
+                                          new sap.m.Input({ value: oData.results[i].previousFYEmployees}),
+                                          new sap.m.Input({ value: oData.results[i].previousFYWorkers}),
+                                          new sap.m.Input({ value: oData.results[i].previousFYauthority}),
+                                        ]
+                                      });
+                                      RetireBenfTable.addItem(oItem);
+                    }
+                            },
+                            error : function(oError){
+                                debugger;
+                            }
+                        });
+
+                        this.oDataModel.read("/qualitative_data_HR(up__fiscalYear='2024',up__businessFunction='HR',principle='3',indicator='Essential',questionID='5')/principle3_essential_5", {
+                            success : function(oData){
+                                for(let i=0;i<oData.results.length;i++){
+                                    let oItem = new sap.m.ColumnListItem({
+                                        cells: [
+                                          new sap.m.Text({ text: oData.results[i].gender}),
+                                          new sap.m.Input({ value: oData.results[i].permanentEmployeesReturnToWorkRate}),
+                                          new sap.m.Input({ value: oData.results[i].permanentEmployeesRetentionRate}),
+                                          new sap.m.Input({ value: oData.results[i].permanentWorkersReturnToWorkRate}),
+                                          new sap.m.Input({ value: oData.results[i].permanentWorkersRetentionRate}),
+                                        ]
+                                      });
+                                      RateofWorkAndLeaveTable.addItem(oItem);
+                    }
+                            },
+                            error : function(oError){
+                                debugger;
+                            }
+                        });
+
+                        this.oDataModel.read("/qualitative_data_HR(up__fiscalYear='2024',up__businessFunction='HR',principle='3',indicator='Essential',questionID='7')/principle3_essential_7", {
+                            success : function(oData){
+                                for(let i=0;i<oData.results.length;i++){
+                                    if(oData.results[i].type === "Total Permanent Employees"){
+                                    let oItem = new sap.m.ColumnListItem({
+                                        cells: [
+                                          new sap.m.Text({ text: oData.results[i].category}),
+                                          new sap.m.Input({ value: oData.results[i].currentFYTotalEmployees}),
+                                          new sap.m.Input({ value: oData.results[i].currentFYTotalEmployeesPartOfUnions}),
+                                          new sap.m.Input({ value: oData.results[i].currentFYPercentage}),
+                                          new sap.m.Input({ value: oData.results[i].previousFYTotalEmployees}),
+                                          new sap.m.Input({ value: oData.results[i].previousFYTotalEmployeesPartOfUnions}),
+                                          new sap.m.Input({ value: oData.results[i].previousFYPercentage}),
+                                        ]
+                                      });
+                                      MembershipEmpTable.addItem(oItem);
+                    }       else
+                         if(oData.results[i].type === "Total Permanent Workers"){
+                        let oItem = new sap.m.ColumnListItem({
+                            cells: [
+                              new sap.m.Text({ text: oData.results[i].category}),
+                              new sap.m.Input({ value: oData.results[i].currentFYTotalEmployees}),
+                              new sap.m.Input({ value: oData.results[i].currentFYTotalEmployeesPartOfUnions}),
+                              new sap.m.Input({ value: oData.results[i].currentFYPercentage}),
+                              new sap.m.Input({ value: oData.results[i].previousFYTotalEmployees}),
+                              new sap.m.Input({ value: oData.results[i].previousFYTotalEmployeesPartOfUnions}),
+                              new sap.m.Input({ value: oData.results[i].previousFYPercentage}),
+                            ]
+                          });
+                          MembershipWorTable.addItem(oItem);
+        }
+                }
+                            },
+                            error : function(oError){
+                                debugger;
+                            }
+                        });
+
+                        
+                        this.oDataModel.read("/qualitative_data_HR(up__fiscalYear='2024',up__businessFunction='HR',principle='3',indicator='Essential',questionID='8')/principle3_essential_8", {
+                            success : function(oData){
+                                for(let i=0;i<oData.results.length;i++){
+                                    if(oData.results[i].type === "Employees"){
+                                    let oItem = new sap.m.ColumnListItem({
+                                        cells: [
+                                          new sap.m.Text({ text: oData.results[i].category}),
+                                          new sap.m.Input({ value: oData.results[i].currentFYTotal}),
+                                          new sap.m.Input({ value: oData.results[i].currentFYNumberHealthSafetyMeasures}),
+                                          new sap.m.Input({ value: oData.results[i].currentFYPercentageHealthSafetyMeasures}),
+                                          new sap.m.Input({ value: oData.results[i].currentFYNumberSkillUpgradation}),
+                                          new sap.m.Input({ value: oData.results[i].currentFYPercentageSkillUpgradation}),
+                                          new sap.m.Input({ value: oData.results[i].previousFYTotal}),
+                                          new sap.m.Input({ value: oData.results[i].previousFYNumberHealthSafetyMeasures}),
+                                          new sap.m.Input({ value: oData.results[i].previousFYPercentageHealthSafetyMeasures}),
+                                          new sap.m.Input({ value: oData.results[i].previousFYNumberSkillUpgradation}),
+                                          new sap.m.Input({ value: oData.results[i].previousFYPercentageSkillUpgradation}),
+                                        ]
+                                      });
+                                      PEmpTrainingTable.addItem(oItem);
+                    }       else
+                         if(oData.results[i].type === "Workers"){
+                        let oItem = new sap.m.ColumnListItem({
+                            cells: [
+                                new sap.m.Text({ text: oData.results[i].category}),
+                                new sap.m.Input({ value: oData.results[i].currentFYTotal}),
+                                new sap.m.Input({ value: oData.results[i].currentFYNumberHealthSafetyMeasures}),
+                                new sap.m.Input({ value: oData.results[i].currentFYPercentageHealthSafetyMeasures}),
+                                new sap.m.Input({ value: oData.results[i].currentFYNumberSkillUpgradation}),
+                                new sap.m.Input({ value: oData.results[i].currentFYPercentageSkillUpgradation}),
+                                new sap.m.Input({ value: oData.results[i].previousFYTotal}),
+                                new sap.m.Input({ value: oData.results[i].previousFYNumberHealthSafetyMeasures}),
+                                new sap.m.Input({ value: oData.results[i].previousFYPercentageHealthSafetyMeasures}),
+                                new sap.m.Input({ value: oData.results[i].previousFYNumberSkillUpgradation}),
+                                new sap.m.Input({ value: oData.results[i].previousFYPercentageSkillUpgradation}),
+                            ]
+                          });
+                          WorkTrainingTable.addItem(oItem);
+        }
+                }
+                            },
+                            error : function(oError){
+                                debugger;
+                            }
+                        });
+
+                                
+                        this.oDataModel.read("/qualitative_data_HR(up__fiscalYear='2024',up__businessFunction='HR',principle='3',indicator='Essential',questionID='9')/principle3_essential_9", {
+                            success : function(oData){
+                                for(let i=0;i<oData.results.length;i++){
+                                    if(oData.results[i].type === "Employees"){
+                                    let oItem = new sap.m.ColumnListItem({
+                                        cells: [
+                                            new sap.m.Text({ text: oData.results[i].category}),
+                                            new sap.m.Input({ value: oData.results[i].currentFYTotal}),
+                                            new sap.m.Input({ value: oData.results[i].currentFYNumber}),
+                                            new sap.m.Input({ value: oData.results[i].currentFYPercentage}),
+                                            new sap.m.Input({ value: oData.results[i].previousFYTotal}),
+                                            new sap.m.Input({ value: oData.results[i].previousFYNumber}),
+                                            new sap.m.Input({ value: oData.results[i].previousFYPercentage}),
+                                        ]
+                                      });
+                                      PerEmpTable.addItem(oItem);
+                    }       else
+                         if(oData.results[i].type === "Workers"){
+                        let oItem = new sap.m.ColumnListItem({
+                            cells: [
+                                new sap.m.Text({ text: oData.results[i].category}),
+                                new sap.m.Input({ value: oData.results[i].currentFYTotal}),
+                                new sap.m.Input({ value: oData.results[i].currentFYNumber}),
+                                new sap.m.Input({ value: oData.results[i].currentFYPercentage}),
+                                new sap.m.Input({ value: oData.results[i].previousFYTotal}),
+                                new sap.m.Input({ value: oData.results[i].previousFYNumber}),
+                                new sap.m.Input({ value: oData.results[i].previousFYPercentage}),
+                            ]
+                          });
+                          PerWorkTable.addItem(oItem);
+        }
+                }
+                            },
+                            error : function(oError){
+                                debugger;
+                            }
+                        });
+
+                        this.oDataModel.read("/qualitative_data_HR(up__fiscalYear='2024',up__businessFunction='HR',principle='5',indicator='Essential',questionID='1')/principle5_essential_1", {
+                            success : function(oData){
+                                for(let i=0;i<oData.results.length;i++){
+                                    if(oData.results[i].type === "Employees"){
+                                    let oItem = new sap.m.ColumnListItem({
+                                        cells: [
+                                            new sap.m.Text({ text: oData.results[i].category}),
+                                            new sap.m.Input({ value: oData.results[i].currentFYTotal}),
+                                            new sap.m.Input({ value: oData.results[i].currentFYNumber}),
+                                            new sap.m.Input({ value: oData.results[i].currentFYPercentage}),
+                                            new sap.m.Input({ value: oData.results[i].previousFYTotal}),
+                                            new sap.m.Input({ value: oData.results[i].previousFYNumber}),
+                                            new sap.m.Input({ value: oData.results[i].previousFYPercentage}),
+                                        ]
+                                      });
+                                      EmpHumanRightTable.addItem(oItem);
+                    }       else
+                         if(oData.results[i].type === "Workers"){
+                        let oItem = new sap.m.ColumnListItem({
+                            cells: [
+                                new sap.m.Text({ text: oData.results[i].category}),
+                                new sap.m.Input({ value: oData.results[i].currentFYTotal}),
+                                new sap.m.Input({ value: oData.results[i].currentFYNumber}),
+                                new sap.m.Input({ value: oData.results[i].currentFYPercentage}),
+                                new sap.m.Input({ value: oData.results[i].previousFYTotal}),
+                                new sap.m.Input({ value: oData.results[i].previousFYNumber}),
+                                new sap.m.Input({ value: oData.results[i].previousFYPercentage}),
+                            ]
+                          });
+                          WorkHumanRightTable.addItem(oItem);
+        }
+                }
+                            },
+                            error : function(oError){
+                                debugger;
+                            }
+                        });
+
+                        this.oDataModel.read("/qualitative_data_HR(up__fiscalYear='2024',up__businessFunction='HR',principle='5',indicator='Essential',questionID='2')/principle5_essential_2", {
+                            success : function(oData){
+                                for(let i=0;i<oData.results.length;i++){
+                                    if(oData.results[i].type === "Employees"){
+                                    let oItem = new sap.m.ColumnListItem({
+                                        cells: [
+                                            new sap.m.Text({ text: oData.results[i].subType + " " + oData.results[i].category}),
+                                            new sap.m.Input({ value: oData.results[i].currentFYTotal}),
+                                            new sap.m.Input({ value: oData.results[i].currentFYNumberEqualToMinimumWage}),
+                                            new sap.m.Input({ value: oData.results[i].currentFYPercentageEqualToMinimumWage}),
+                                            new sap.m.Input({ value: oData.results[i].currentFYNumberMoreThanMinimumWage}),
+                                            new sap.m.Input({ value: oData.results[i].currentFYPercentageMoreThanMinimumWage}),
+                                            new sap.m.Input({ value: oData.results[i].previousFYTotal}),
+                                            new sap.m.Input({ value: oData.results[i].previousFYNumberEqualToMinimumWage}),
+                                            new sap.m.Input({ value: oData.results[i].previousFYPercentageEqualToMinimumWage}),
+                                            new sap.m.Input({ value: oData.results[i].previousFYNumberMoreThanMinimumWage}),
+                                            new sap.m.Input({ value: oData.results[i].previousFYPercentageMoreThanMinimumWage}),
+                                        ]
+                                      });
+                                      PEmpWageTable.addItem(oItem);
+                    }       else
+                         if(oData.results[i].type === "Workers"){
+                        let oItem = new sap.m.ColumnListItem({
+                            cells: [
+                                new sap.m.Text({ text: oData.results[i].subType + " " + oData.results[i].category }),
+                                new sap.m.Input({ value: oData.results[i].currentFYTotal}),
+                                new sap.m.Input({ value: oData.results[i].currentFYNumberEqualToMinimumWage}),
+                                new sap.m.Input({ value: oData.results[i].currentFYPercentageEqualToMinimumWage}),
+                                new sap.m.Input({ value: oData.results[i].currentFYNumberMoreThanMinimumWage}),
+                                new sap.m.Input({ value: oData.results[i].currentFYPercentageMoreThanMinimumWage}),
+                                new sap.m.Input({ value: oData.results[i].previousFYTotal}),
+                                new sap.m.Input({ value: oData.results[i].previousFYNumberEqualToMinimumWage}),
+                                new sap.m.Input({ value: oData.results[i].previousFYPercentageEqualToMinimumWage}),
+                                new sap.m.Input({ value: oData.results[i].previousFYNumberMoreThanMinimumWage}),
+                                new sap.m.Input({ value: oData.results[i].previousFYPercentageMoreThanMinimumWage}),
+                            ]
+                          });
+                          WorkWageTable.addItem(oItem);
+        }
+                }
+                            },
+                            error : function(oError){
+                                debugger;
+                            }
+                        });
+
+                        this.oDataModel.read("/qualitative_data_HR(up__fiscalYear='2024',up__businessFunction='HR',principle='5',indicator='Essential',questionID='3')/principle5_essential_3", {
+                            success : function(oData){
+                                for(let i=0;i<oData.results.length;i++){
+                                    let oItem = new sap.m.ColumnListItem({
+                                        cells: [
+                                          new sap.m.Text({ text: oData.results[i].type}),
+                                          new sap.m.Input({ value: oData.results[i].maleNumber}),
+                                          new sap.m.Input({ value: oData.results[i].maleMedianRemuneration}),
+                                          new sap.m.Input({ value: oData.results[i].femaleNumber}),
+                                          new sap.m.Input({ value: oData.results[i].femaleMedianRemuneration}),
+                                        ]
+                                      });
+                                      WageTable.addItem(oItem);
+                    }
+                            },
+                            error : function(oError){
+                                debugger;
+                            }
+                        });
+
+                        this.oDataModel.read("/qualitative_data_HR(up__fiscalYear='2024',up__businessFunction='HR',principle='5',indicator='Essential',questionID='6')/principle5_essential_6", {
+                            success : function(oData){
+                                for(let i=0;i<oData.results.length;i++){
+                                    let oItem = new sap.m.ColumnListItem({
+                                        cells: [
+                                          new sap.m.Text({ text: oData.results[i].type}),
+                                          new sap.m.Input({ value: oData.results[i].currentFYComplaintsFiled}),
+                                          new sap.m.Input({ value: oData.results[i].currentFYComplaintsPending}),
+                                          new sap.m.Input({ value: oData.results[i].currentFYComplaintsRemarks}),
+                                          new sap.m.Input({ value: oData.results[i].previousFYComplaintsFiled}),
+                                          new sap.m.Input({ value: oData.results[i].previousFYComplaintsPending}),
+                                          new sap.m.Input({ value: oData.results[i].previousFYComplaintsRemarks}),
+                                        ]
+                                      });
+                                      ComplaintTable.addItem(oItem);
+                    }
+                            },
+                            error : function(oError){
+                                debugger;
+                            }
+                        });
+
+                        this.oDataModel.read("/qualitative_data_HR(up__fiscalYear='2024',up__businessFunction='HR',principle='5',indicator='Essential',questionID='9')/principle5_essential_9", {
+                            success : function(oData){
+                                for(let i=0;i<oData.results.length;i++){
+                                    let oItem = new sap.m.ColumnListItem({
+                                        cells: [
+                                          new sap.m.Text({ text: oData.results[i].type}),
+                                          new sap.m.Input({ value: oData.results[i].percentage}),
+                                        ]
+                                      });
+                                      AssessmentsTable.addItem(oItem);
+                    }
+                            },
+                            error : function(oError){
+                                debugger;
+                            }
+                        });
+                     }
+        },
+        onCancel : function(){
+            this.getView().byId("idEdit").setVisible(true);
+            this.getView().byId("idSubmit").setVisible(false);
+            this.getView().byId("idCancel").setVisible(false);
+            this.getView().getModel("editModel").setData({edit:false});
+        },
+        onEdit : function(){
+            this.getView().byId("idEdit").setVisible(false);
+            this.getView().byId("idSubmit").setVisible(true);
+            this.getView().byId("idCancel").setVisible(true);
+            let sKey = this.getView().byId("id_BF").getProperty("selectedKey");
+            if(sKey === "07"){
+                this.getView().getModel("editModel").setData({edit:true});
+            }
+        },
+        OnSubmit : function() {
+            
+            this.getView().byId("idEdit").setVisible(true);
+            this.getView().byId("idSubmit").setVisible(false);
+            this.getView().byId("idCancel").setVisible(false);
+            let sKey = this.getView().byId("id_BF").getProperty("selectedKey");
+            if (sKey === "07")
+                { 
+                    this.getView().getModel("editModel").setData({edit:false});
+                    var monetary  = this.getView().byId("idMonetaryTable");
+                    var nonMonetary = this.getView().byId("idNonMonetaryTable");
+                    var oTable = this.getView().byId("idTable");
+                    var oTable1 = this.getView().byId("idTable1");
+                    var omonetaryItems = monetary.getItems();
+                    var ononMonetaryItems = nonMonetary.getItems();
+                    var oTableItems = oTable.getItems();
+                    var oTable1Items = oTable1.getItems();
+
+                   var oPayload = {
+                
+                    "status": "Submitted",
+                
+                    "creator_email": "renuka.dimber@bristlecone.com",
+                
+                    "creator_name": "Renuka Dimber",
+                
+                    "Legal_Compliance": [
+                
+                        {
+                
+                            "principle": "1",
+                
+                            "indicator": "Essential",
+                
+                            "questionID": "2",
+                
+                            "principle1_essential_2": [
+                
+                                {
+                
+                                    "type": "Monetary",
+                
+                                    "typeOfPaidAmount": "Penalty/ Fine",
+                
+                                    "ngrbcPrinciple": omonetaryItems[0].getAggregation("cells")[1].getProperty("value"),
+                
+                                    "nameOfInstitutions": omonetaryItems[0].getAggregation("cells")[2].getProperty("value"),
+                
+                                    "amountInINR": omonetaryItems[0].getAggregation("cells")[3].getProperty("value"),
+                
+                                    "briefOfTheCase": omonetaryItems[0].getAggregation("cells")[4].getProperty("value"),
+                
+                                    "hasAnAppealBeen": omonetaryItems[0].getAggregation("cells")[5].getProperty("value")
+                
+                                },
+                
+                                {
+                
+                                    "type": "Monetary",
+                
+                                    "typeOfPaidAmount": "Settlement",
+                
+                                    "ngrbcPrinciple": omonetaryItems[1].getAggregation("cells")[1].getProperty("value"),
+                
+                                    "nameOfInstitutions": omonetaryItems[1].getAggregation("cells")[2].getProperty("value"),
+                
+                                    "amountInINR": omonetaryItems[1].getAggregation("cells")[3].getProperty("value"),
+                
+                                    "briefOfTheCase": omonetaryItems[1].getAggregation("cells")[4].getProperty("value"),
+                
+                                    "hasAnAppealBeen": omonetaryItems[1].getAggregation("cells")[5].getProperty("value")
+                
+                                },
+                
+                                {
+                
+                                    "type": "Monetary",
+                
+                                    "typeOfPaidAmount": "Compounding fee",
+                
+                                    "ngrbcPrinciple": omonetaryItems[2].getAggregation("cells")[1].getProperty("value"),
+                
+                                    "nameOfInstitutions": omonetaryItems[2].getAggregation("cells")[2].getProperty("value"),
+                
+                                    "amountInINR": omonetaryItems[2].getAggregation("cells")[3].getProperty("value"),
+                
+                                    "briefOfTheCase": omonetaryItems[2].getAggregation("cells")[4].getProperty("value"),
+                
+                                    "hasAnAppealBeen": omonetaryItems[2].getAggregation("cells")[5].getProperty("value")
+                
+                                },
+                
+                                {
+                
+                                    "type": "Non-Monetary",
+                
+                                    "typeOfPaidAmount": "Imprisonment",
+                
+                                    "ngrbcPrinciple": ononMonetaryItems[0].getAggregation("cells")[1].getProperty("value"),
+                
+                                    "nameOfInstitutions": ononMonetaryItems[0].getAggregation("cells")[2].getProperty("value"),
+                
+                                    "amountInINR": ononMonetaryItems[0].getAggregation("cells")[3].getProperty("value"),
+                
+                                    "briefOfTheCase": ononMonetaryItems[0].getAggregation("cells")[4].getProperty("value"),
+                
+                                    "hasAnAppealBeen": ononMonetaryItems[0].getAggregation("cells")[5].getProperty("value")
+                
+                                },
+                
+                                {
+                
+                                    "type": "Non-Monetary",
+                
+                                    "typeOfPaidAmount": "Punishment",
+                
+                                    "ngrbcPrinciple": ononMonetaryItems[1].getAggregation("cells")[1].getProperty("value"),
+                
+                                    "nameOfInstitutions": ononMonetaryItems[1].getAggregation("cells")[2].getProperty("value"),
+                
+                                    "amountInINR": ononMonetaryItems[1].getAggregation("cells")[3].getProperty("value"),
+                
+                                    "briefOfTheCase": ononMonetaryItems[1].getAggregation("cells")[4].getProperty("value"),
+                
+                                    "hasAnAppealBeen": ononMonetaryItems[1].getAggregation("cells")[5].getProperty("value")
+                
+                                }
+                
+                            ]
+                
+                        },
+                
+                        {
+                
+                            "principle": "1",
+                
+                            "indicator": "Essential",
+                
+                            "questionID": "5",
+                
+                            "principle1_essential_5": [
+                
+                                {
+                
+                                    "typeOfWorkers": "Directors",
+                
+                                    "valueForCurrentFinancialYear": oTableItems[0].getAggregation("cells")[1].getProperty("value"),
+                
+                                    "valueForPreviousFinancialYear": oTableItems[0].getAggregation("cells")[2].getProperty("value")
+                
+                                },
+                
+                                {
+                
+                                    "typeOfWorkers": "KMPs",
+                
+                                    "valueForCurrentFinancialYear": oTableItems[1].getAggregation("cells")[1].getProperty("value"),
+                
+                                    "valueForPreviousFinancialYear": oTableItems[1].getAggregation("cells")[2].getProperty("value")
+                
+                                },
+                
+                                {
+                
+                                    "typeOfWorkers": "Employees",
+                
+                                    "valueForCurrentFinancialYear": oTableItems[2].getAggregation("cells")[1].getProperty("value"),
+                
+                                    "valueForPreviousFinancialYear": oTableItems[2].getAggregation("cells")[2].getProperty("value")
+                
+                                },
+                
+                                {
+                
+                                    "typeOfWorkers": "Workers",
+                
+                                    "valueForCurrentFinancialYear": oTableItems[3].getAggregation("cells")[1].getProperty("value"),
+                
+                                    "valueForPreviousFinancialYear": oTableItems[3].getAggregation("cells")[2].getProperty("value")
+                
+                                }
+                
+                            ]
+                
+                        },
+                
+                        {
+                
+                            "principle": "1",
+                
+                            "indicator": "Essential",
+                
+                            "questionID": "6",
+                
+                            "principle1_essential_6": [
+                
+                                {
+                
+                                    "detailsOfComplaints": "Number of complaints received in relation to issues of Conflict of Interest of the Directors",
+                
+                                    "numberForCurrentFinancialYear": oTable1Items[0].getAggregation("cells")[1].getProperty("value"),
+                
+                                    "remarksForCurrentFinancialYear": oTable1Items[0].getAggregation("cells")[2].getProperty("value"),
+                
+                                    "numberForPreviousFinancialYear": oTable1Items[0].getAggregation("cells")[3].getProperty("value"),
+                
+                                    "remarksForPreviousFinancialYear": oTable1Items[0].getAggregation("cells")[4].getProperty("value")
+                
+                                },
+                
+                                {
+                
+                                    "detailsOfComplaints": "Number of complaints received in relation to issues of Conflict of Interest of the KMPs",
+                
+                                    "numberForCurrentFinancialYear": oTable1Items[1].getAggregation("cells")[1].getProperty("value"),
+                
+                                    "remarksForCurrentFinancialYear": oTable1Items[1].getAggregation("cells")[2].getProperty("value"),
+                
+                                    "numberForPreviousFinancialYear": oTable1Items[1].getAggregation("cells")[3].getProperty("value"),
+                
+                                    "remarksForPreviousFinancialYear": oTable1Items[1].getAggregation("cells")[4].getProperty("value")
+                
+                                }
+                
+                            ]
+                
+                        }
+                
+                    ]
+                
+                };
+                var that = this;
+               this.oDataModel.update("/qualitative_data(fiscalYear='2024',businessFunction='Legal_Compliance')", oPayload, {
+                
+                success : function(oData){
+                        MessageBox.show("Data Saved Successfully");
+                        var appId = that.getOwnerComponent().getManifestEntry("/sap.app/id");
+                        var appPath = appId.replaceAll(".", "/");
+                        var appModulePath = jQuery.sap.getModulePath(appPath);
+            
+                            that.getView().setBusy(true);
+                            $.ajax({
+                                url: appModulePath + "/bpmworkflowruntime/v1/xsrf-token",
+                                method: "GET",
+                                headers: {
+                                    "X-CSRF-Token": "Fetch"
+                                },
+                                success: function (result, xhr, data) {
+                                    var token = data.getResponseHeader("X-CSRF-Token");
+                                    if (token === null) return;
+            
+                                    $.ajax({
+                                        url: appModulePath + "/bpmworkflowruntime/v1/workflow-instances",
+                                        type: "POST",
+                                        data: JSON.stringify(paOBJ),
+                                        headers: {
+                                            "X-CSRF-Token": token,
+                                            "Content-Type": "application/json"
+                                        },
+                                        async: false,
+                                        success: function (data, response) {
+                                            var successMsg;
+                                            that.getView().setBusy(false);
+                                            successMsg = "Request Sent for Approval";
+                                            MessageBox.success(successMsg, {
+                                                icon: MessageBox.Icon.SUCCESS,
+                                                title: "SUCCESS",
+                                                actions: [MessageBox.Action.OK],
+                                                initialFocus: MessageBox.Action.OK,
+                                                onClose: function (Action) {
+                                                    // that.clearForm();
+                                                    that.getView().setBusy(false);
+                                                    that.getView().byId("_IDGenObjectPageSection2").setVisible(false);
+                                                    that.getView().byId("_IDGenButton1").setVisible(false);
+                                                    that.getView().byId("_IDGenButton0").setVisible(false);
+                                                }
+                                            });
+                                        },
+                                        error: function (e) {
+                                            that.getView().setBusy(false);
+                                            MessageBox.show(JSON.stringify(e), {
+                                                icon: MessageBox.Icon.ERROR,
+                                                title: "ERROR"
+                                            });
+                                        }
+                                    });
+                                        },
+                                        error: function (e) {
+                                            that.getView().setBusy(false);
+                                            MessageBox.show(JSON.stringify(e), {
+                                                icon: MessageBox.Icon.ERROR,
+                                                title: "ERROR"
+                                            });
+                                        }
+                                    });
+                },
+
+                error : function(oError){
+                    MessageBox.show(oError);
+                }
+            
+            
+            
+            });
+
+            }
         },
         onTemplateDownload : function(){
 
