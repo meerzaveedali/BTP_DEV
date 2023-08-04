@@ -7,22 +7,7 @@
     xmlns="sap.m">
     <Page id="page" title="{i18n>title}">
         <content>
-        <!-- <f:SimpleForm id="_IDGenSimpleForm1"   editable="true"> 
-        <Label id="_IDGenLabel1" text="Bussiness Function"></Label>
-        <Select   id="id_sel1"  forceSelection="false" width ="40%" 
-            items="{
-                path: 'model1>/ProductCollection',
-                sorter: { path: 'model1>Name' }
-                }">
-                <core:Item id="_IDGenItem1" key="{model1>ProductId1}" text="{model1>Name}"/>
-                </Select>
-        <Label id="_IDGenLabel2" text=""></Label>
-        <Select   id="id_sel2"  forceSelection="false" width ="40%" 
-           >
-                <core:Item id="_IDGenItem12" text="Waste Desposed"/>
-                </Select>
-        <Button id="_IDGenButton2" width="30%" text="Template" icon="sap-icon://download" press="downloadTemplate"/>
-        </f:SimpleForm>  -->
+       
 
         <f:Form id="RiskForm" editable="true">
             <f:layout>
