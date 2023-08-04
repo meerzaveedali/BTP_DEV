@@ -93,7 +93,7 @@
 		<headerToolbar>
 			<OverflowToolbar>
 				<content>
-					<Title text="Monetary" level="H2"/>
+					<Title id="titleMON" text="Monetary" level="H2"/>
 				</content>
 			</OverflowToolbar>
 		</headerToolbar>
