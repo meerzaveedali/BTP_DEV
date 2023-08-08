@@ -63,6 +63,15 @@
                             <Button text="Download Template" press="onTemplateDownload" tooltip="Download sample" id="download" icon="sap-icon://download"/>
                             </f:fields>
                         </f:FormElement>
+
+						<f:FormElement id="idplantform" label="Browse">
+                            <f:fields>
+                                <Select  id="IdFormSelect" class="sapUiSizeCompact" >
+								<core:Item id="_IDplnt1" key="01" text="1001"/>
+								<core:Item id="_IDplnt2" key="01" text="1002"/>
+                                </Select>
+                            </f:fields>
+                        </f:FormElement>
                     </f:formElements>
                 </f:FormContainer>
             </f:formContainers>
