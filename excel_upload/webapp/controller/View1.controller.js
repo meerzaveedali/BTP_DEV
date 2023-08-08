@@ -56,6 +56,9 @@ sap.ui.define([
         fnSelectChange1: function(oEvent){
 
                      let sKey = oEvent.getSource().getProperty("selectedKey"); 
+                     if (sKey == "01"){
+                        this.getView().byId("idplantform").setVisible(true);
+                     }
                      if (sKey === "07")
                      {
 
@@ -1363,7 +1366,7 @@ sap.ui.define([
                 }else{
                     var ColumnsData = Object.keys(oModelData[0]);
                     var oColumnNames = [];
-                    if(ColumnsData[5] == "Value"){
+                    if(ColumnsData[0] == "Value Date"){
                         $.each(ColumnsData, function (i, value) {
                             oColumnNames.push({
                                 Text: ColumnsData[i]
@@ -1408,7 +1411,7 @@ sap.ui.define([
                 }else{
                     var ColumnsData = Object.keys(oModelData[0]);
                     var oColumnNames = [];
-                    if(ColumnsData[7] == "id_complaint_type"){
+                    if(ColumnsData[0] == "Value Date"){
                         $.each(ColumnsData, function (i, value) {
                             oColumnNames.push({
                                 Text: ColumnsData[i]
@@ -1444,7 +1447,7 @@ sap.ui.define([
                         oFileUploader.clear();
                     }
                 }
-            }else if (selectedFileTemp == "03"){
+            }else if (ColumnsData[0] == "Value Date"){
                 oTable.setVisible(true);
                 newTable.setVisible(false);
 
@@ -1499,7 +1502,7 @@ sap.ui.define([
                 }else{
                     var ColumnsData = Object.keys(oModelData[0]);
                     var oColumnNames = [];
-                    if(ColumnsData[5] == "id_waste_type"){
+                    if(ColumnsData[0] == "Value Date"){
                         $.each(ColumnsData, function (i, value) {
                             oColumnNames.push({
                                 Text: ColumnsData[i]
@@ -1546,7 +1549,7 @@ sap.ui.define([
                 }else{
                     var ColumnsData = Object.keys(oModelData[0]);
                     var oColumnNames = [];
-                    if(ColumnsData[5] == "ID Waste Type"){
+                    if(ColumnsData[0] == "Value Date"){
                         $.each(ColumnsData, function (i, value) {
                             oColumnNames.push({
                                 Text: ColumnsData[i]
@@ -1630,7 +1633,7 @@ sap.ui.define([
                 }else{
                     var ColumnsData = Object.keys(oModelData[0]);
                     var oColumnNames = [];
-                    if(ColumnsData[5] == "ID Waste Type"){
+                    if(ColumnsData[0] == "Value Date"){
                         $.each(ColumnsData, function (i, value) {
                             oColumnNames.push({
                                 Text: ColumnsData[i]
@@ -1714,7 +1717,7 @@ sap.ui.define([
                 }else{
                     var ColumnsData = Object.keys(oModelData[0]);
                     var oColumnNames = [];
-                    if(ColumnsData[5] == "Value"){
+                    if(ColumnsData[0] == "Value Date"){
                         $.each(ColumnsData, function (i, value) {
                             oColumnNames.push({
                                 Text: ColumnsData[i]
@@ -1798,7 +1801,7 @@ sap.ui.define([
                 }else{
                     var ColumnsData = Object.keys(oModelData[0]);
                     var oColumnNames = [];
-                    if(ColumnsData[5] == "Value"){
+                    if(ColumnsData[0] == "Value Date"){
                         $.each(ColumnsData, function (i, value) {
                             oColumnNames.push({
                                 Text: ColumnsData[i]
@@ -1882,7 +1885,7 @@ sap.ui.define([
                 }else{
                     var ColumnsData = Object.keys(oModelData[0]);
                     var oColumnNames = [];
-                    if(ColumnsData[5] == "Value"){
+                    if(ColumnsData[0] == "Value Date"){
                         $.each(ColumnsData, function (i, value) {
                             oColumnNames.push({
                                 Text: ColumnsData[i]
@@ -1966,7 +1969,7 @@ sap.ui.define([
                 }else{
                     var ColumnsData = Object.keys(oModelData[0]);
                     var oColumnNames = [];
-                    if(ColumnsData[5] == "id_water_type"){
+                    if(ColumnsData[0] == "Value Date"){
                         $.each(ColumnsData, function (i, value) {
                             oColumnNames.push({
                                 Text: ColumnsData[i]
@@ -2051,7 +2054,7 @@ sap.ui.define([
                 }else{
                     var ColumnsData = Object.keys(oModelData[0]);
                     var oColumnNames = [];
-                    if(ColumnsData[5]== "id_air_emission_type"){
+                    if(ColumnsData[0] == "Value Date"){
                         $.each(ColumnsData, function (i, value) {
                             oColumnNames.push({
                                 Text: ColumnsData[i]
@@ -2136,7 +2139,7 @@ sap.ui.define([
                 }else{
                     var ColumnsData = Object.keys(oModelData[0]);
                     var oColumnNames = [];
-                    if(ColumnsData[8] == "Fis_year"){
+                    if(ColumnsData[0] == "Value Date"){
                         $.each(ColumnsData, function (i, value) {
                             oColumnNames.push({
                                 Text: ColumnsData[i]
@@ -2221,7 +2224,7 @@ sap.ui.define([
                 }else{
                     var ColumnsData = Object.keys(oModelData[0]);
                     var oColumnNames = [];
-                    if(ColumnsData[7] == "category"){
+                    if(ColumnsData[0] == "Value Date"){
                         $.each(ColumnsData, function (i, value) {
                             oColumnNames.push({
                                 Text: ColumnsData[i]
@@ -2294,8 +2297,176 @@ sap.ui.define([
                         MessageBox.warning("Invalid Template");
                         oFileUploader.clear();
                     }
-                }
+                } 
             
+            }else if (selectedFileTemp == "14"){
+                //In case of Supplier Master Data we are using sap.ui.table.Table api for displaying data
+                oTable.setVisible(false);
+                newTable.setVisible(true);
+
+                if(oModelData.length === 0){
+                    MessageBox.warning("File is Empty");
+                }else{
+                    var ColumnsData = Object.keys(oModelData[0]);
+                    var oColumnNames = [];
+                    if(ColumnsData[0] == "Value Date"){
+                        $.each(ColumnsData, function (i, value) {
+                            oColumnNames.push({
+                                Text: ColumnsData[i]
+                            });
+                        });
+                        oTableJsonModel.setProperty("/columnNames", oColumnNames);
+                        var oTemplate = new Column({
+                            header : new Text({
+                                text: "{Text}",
+                                wrapping : true
+                            })
+                        });
+                        oTable.bindAggregation("columns", "/columnNames", oTemplate);
+
+                        newTable.setModel(oTableJsonModel);
+                        newTable.setVisibleRowCount(oTableJsonModel.getData().Data.length)
+
+                        var oNewTemplate = new sap.ui.table.Column({
+                            width : "auto",
+                            minWidth : 5,
+                            autoResizable : true,
+                            label : new sap.m.Label({
+                                wrapping : true,
+                                tooltip : "{Text}",
+                                text : "{Text}"
+                            }),
+                            template : new sap.m.Text({
+                                text : "{Text}",
+                                tooltip : "{Text}",
+                                wrapping : false
+                            })
+                        });
+                        //newTable.bindAggregation("columns", "/columnNames", oNewTemplate);
+
+                        newTable.bindColumns("/columnNames", function(sId, oContext) {
+                            var columnName = oContext.getObject().Text;
+                            return new sap.ui.table.Column({
+                                width : "5rem",
+                                minWidth : 5,
+                                autoResizable : true,
+                                label: columnName,
+                                template: columnName,
+                            });
+                        });
+                        newTable.bindRows("/Data");
+
+                        var oItemTemplate = new ColumnListItem({
+                            vAlign : "Middle"
+                        });
+                        var oTableHeaders = oTable.getColumns();
+                        $.each(oTableHeaders, function (j, value) {
+                            var oHeaderName = oTableHeaders[j].getHeader().getText();
+                            oItemTemplate.addCell(
+                                new Text({
+                                    text: "{" + oHeaderName + "}",
+                                    wrapping : true
+                                })
+                            );
+                        });
+                        
+                        oTable.bindAggregation("items", {
+                            path: "/Data",
+                            template: oItemTemplate
+                        });
+                        
+                        this.getView().byId("idSubmit").setVisible(true);
+                        this.getView().byId("idClear").setVisible(true);
+                    }
+                    else{
+                        MessageBox.warning("Invalid Template");
+                        oFileUploader.clear();
+                    }
+                } 
+            }else if (selectedFileTemp == "15"){
+                //In case of Supplier Master Data we are using sap.ui.table.Table api for displaying data
+                oTable.setVisible(false);
+                newTable.setVisible(true);
+
+                if(oModelData.length === 0){
+                    MessageBox.warning("File is Empty");
+                }else{
+                    var ColumnsData = Object.keys(oModelData[0]);
+                    var oColumnNames = [];
+                    if(ColumnsData[0] == "Value Date"){
+                        $.each(ColumnsData, function (i, value) {
+                            oColumnNames.push({
+                                Text: ColumnsData[i]
+                            });
+                        });
+                        oTableJsonModel.setProperty("/columnNames", oColumnNames);
+                        var oTemplate = new Column({
+                            header : new Text({
+                                text: "{Text}",
+                                wrapping : true
+                            })
+                        });
+                        oTable.bindAggregation("columns", "/columnNames", oTemplate);
+
+                        newTable.setModel(oTableJsonModel);
+                        newTable.setVisibleRowCount(oTableJsonModel.getData().Data.length)
+
+                        var oNewTemplate = new sap.ui.table.Column({
+                            width : "auto",
+                            minWidth : 5,
+                            autoResizable : true,
+                            label : new sap.m.Label({
+                                wrapping : true,
+                                tooltip : "{Text}",
+                                text : "{Text}"
+                            }),
+                            template : new sap.m.Text({
+                                text : "{Text}",
+                                tooltip : "{Text}",
+                                wrapping : false
+                            })
+                        });
+                        //newTable.bindAggregation("columns", "/columnNames", oNewTemplate);
+
+                        newTable.bindColumns("/columnNames", function(sId, oContext) {
+                            var columnName = oContext.getObject().Text;
+                            return new sap.ui.table.Column({
+                                width : "5rem",
+                                minWidth : 5,
+                                autoResizable : true,
+                                label: columnName,
+                                template: columnName,
+                            });
+                        });
+                        newTable.bindRows("/Data");
+
+                        var oItemTemplate = new ColumnListItem({
+                            vAlign : "Middle"
+                        });
+                        var oTableHeaders = oTable.getColumns();
+                        $.each(oTableHeaders, function (j, value) {
+                            var oHeaderName = oTableHeaders[j].getHeader().getText();
+                            oItemTemplate.addCell(
+                                new Text({
+                                    text: "{" + oHeaderName + "}",
+                                    wrapping : true
+                                })
+                            );
+                        });
+                        
+                        oTable.bindAggregation("items", {
+                            path: "/Data",
+                            template: oItemTemplate
+                        });
+                        
+                        this.getView().byId("idSubmit").setVisible(true);
+                        this.getView().byId("idClear").setVisible(true);
+                    }
+                    else{
+                        MessageBox.warning("Invalid Template");
+                        oFileUploader.clear();
+                    }
+                } 
             }
             
 
@@ -2354,10 +2525,10 @@ sap.ui.define([
                     "id_water_type" : vData[i]?.['id_water_type'] || '',
                     "id_air_emission_type" : vData[i]?.['id_air_emission_type'] || '',
                     "employee_type" : vData[i]?.['employee_type'] || '',
-                    "data_title" : vData[i]?.['Data Title'] || '',
-                    "company_code" : vData[i]?.['Company Code'] || '', // NK
-                    "country" : vData[i]?.['Country'] || '', //NK
-                    "location_text" : vData[i]?.['Location Text'] || '', //NK
+                    // "data_title" : vData[i]?.['Data Title'] || '',
+                    // "company_code" : vData[i]?.['Company Code'] || '', // NK
+                    // "country" : vData[i]?.['Country'] || '', //NK
+                    // "location_text" : vData[i]?.['Location Text'] || '', //NK
                     "plant_id" : vData[i]?.['Plant Id'] || '', //NK
                     "value" : vData[i]?.['Value'] || '', //NK
                     "unit_text" : vData[i]?.['Unit Text'] || '' //NK
@@ -2435,31 +2606,13 @@ sap.ui.define([
             var selectedTemplate = this.getView().byId("id_File").getSelectedKey();
            var columns = [];
            if(selectedBF == "01"){
-            columns = [{
-                label: 'Company Code',
-                property: 'company_code',
-                width: '25'
-            },
-            {
-                label: 'Country',
-                property: 'Country',
-                width: '25'
-            },
-            {
-                label: 'Location Text',
-                property: 'location_text',
-                width: '25'
-            },
-            {
-                label: 'Plant Id',
-                property: 'plant_id',
-                width: '30'
-            },
-            {
-                label: 'Data Title',
-                property: 'data_title',
-                width: '40'
-            },
+            columns = [
+                {
+                    label: 'Value Date',
+                    property: 'value_date',
+                    width: '18'
+                },
+            
             {
                 label: 'Value',
                 property: 'value ',
@@ -2469,20 +2622,30 @@ sap.ui.define([
                 label: 'Unit Text',
                 property: 'unit_text',
                 width: '18'
-            },
-            {
-                label: 'Value Date',
-                property: 'value_date',
-                width: '18'
-            }];
-            
+            }
+            ];
+            if(selectedTemplate == "01"){
+                var newColumns = {
+                    label: 'id_injury_type',
+                    property: 'id_injury_type',
+                    width: '25'
+                  };
+                  columns.splice(1, 0, newColumns);
+          
+                }else{
             if(selectedTemplate == "02"){
             var newColumns = {
                 label: 'id_complaint_type',
                 property: 'id_complaint_type',
                 width: '25'
               };
-              columns.splice(7, 0, newColumns);
+              columns.splice(1, 0, newColumns);
+              var newColumns2 = {
+                label: 'id_status_type',
+                property: 'id_status_type',
+                width: '25'
+              };
+              columns.splice(3, 0, newColumns2);
       
             }else if(selectedTemplate == "04"){
             var newColumns = {
@@ -2490,7 +2653,7 @@ sap.ui.define([
                 property :"id_waste_type",
                 width: '25'
               };
-              columns.splice(5, 0, newColumns);
+              columns.splice(1, 0, newColumns);
 
            }
            else if(selectedTemplate == "05"){
@@ -2499,7 +2662,7 @@ sap.ui.define([
                 property :"id_waste_type",
                 width: '25'
               };
-              columns.splice(5, 0, newColumns);
+              columns.splice(1, 0, newColumns);
 
            }
            else if(selectedTemplate == "06"){
@@ -2508,44 +2671,88 @@ sap.ui.define([
                 property :"id_waste_type",
                 width: '25'
               };
-              columns.splice(5, 0, newColumns);
+              columns.splice(1, 0, newColumns);
+              
 
-           }else if(selectedTemplate == "10"){
+           } if(selectedTemplate == "07"){
+            var newColumns = {
+                label : "id_Energy Source_type",
+                property :"id_Energy Source_type",
+                width: '25'
+              };
+              columns.splice(3, 0, newColumns);
+              
+
+           } else if(selectedTemplate == "08"){
+            var newColumns = {
+                label : "id_Energy Source_type",
+                property :"id_Energy Source_type",
+                width: '25'
+              };
+              columns.splice(3, 0, newColumns);
+              
+
+           } else if(selectedTemplate == "09"){
+            var newColumns = {
+                label : "id_Energy Source_type",
+                property :"id_Energy Source_type",
+                width: '25'
+              };
+              columns.splice(1, 0, newColumns);
+              
+
+           }
+           else if(selectedTemplate == "10"){
             var newColumns = {
                 label : "id_water_type",
                 property :"id_water_type",
                 width: '25'
               };
-              columns.splice(5, 0, newColumns);
+              columns.splice(1, 0, newColumns);
+              var newColumns2 = {
+                label : "id_treatment_type",
+                property :"id_treatment_type",
+                width: '25'
+              };
+              columns.splice(2, 0, newColumns2);
            }
            else if(selectedTemplate == "11"){
+            var newColumns = {
+                label : "id_water_type",
+                property :"id_water_type",
+                width: '25'
+              };
+              columns.splice(1, 0, newColumns);
+              
+           }else if(selectedTemplate == "12"){
+            var newColumns = {
+                label : "id_water_type",
+                property :"id_water_type",
+                width: '25'
+              };
+              columns.splice(1, 0, newColumns);
+
+           }
+           else if(selectedTemplate == "13"){
             var newColumns = {
                 label : "id_air_emission_type",
                 property :"id_air_emission_type",
                 width: '25'
               };
-              columns.splice(5, 0, newColumns);
-
+              columns.splice(1, 0, newColumns);
            }
-           else if(selectedTemplate == "12"){
-            var newColumns = {
-                label : "Fis_year",
-                property :"Fis_year",
-                width: '25'
-              };
-              columns.splice(8, 0, newColumns);
-           }
-           else if(selectedTemplate == "13"){
+           else if(selectedTemplate == "15"){
             var newColumns = {
                 label : "category",
                 property :"category",
                 width: '25'
               };
-              columns.splice(7, 0, newColumns);
+              columns.splice(3, 0, newColumns);
 
            }
 
             }
+        }
 
           
           return columns;
@@ -2601,56 +2808,51 @@ sap.ui.define([
                   temp.splice(7, 0, newColumns);
                 }
             else if(selectedTemplate == "03"){
-                fileName = "P-6_E_I-6 Scope1Emissions";
+                fileName = "P-6_E_I-7 Scope1Emissions";
            }
            else if(selectedTemplate == "04"){
-            fileName = "P-6_E_I-8 Waste Disposed";
-            var newColumns = {
-                "key" : "id_waste_type",
-                "value" :"id_waste_type"
-              };
-              temp.splice(5, 0, newColumns);
-
+            fileName = "P-6_E_I-9 Waste Disposed";
+           
            }
            else if(selectedTemplate == "05"){
-            fileName = "P-6_E_I-8 Waste Generated";
-            var newColumns = {
-                "key" : "id_waste_type",
-                "value" :"id_waste_type"
-              };
-              temp.splice(5, 0, newColumns);
+            fileName = "P-6_E_I-9 Waste Generated";
 
            }
            else if(selectedTemplate == "06"){
-            fileName = "P-6_E_I-8 Waste Recovered";
-            var newColumns = {
-                "key" : "id_waste_type",
-                "value" :"id_waste_type"
-              };
-              temp.splice(5, 0, newColumns);
+            fileName = "P-6_E_I-9 Waste Recovered";
 
            }
            else if(selectedTemplate == "07"){
             fileName = "P-6_E_I-1 ElectricityConsumption";
 
-           }
-           else if(selectedTemplate == "08"){
-            fileName = "P-6_E_I-1 FuelConsumption";
+           } else if(selectedTemplate == "08"){
+            fileName = "P-6_E_I-1 EnergyConsumption";
 
            }
            else if(selectedTemplate == "09"){
-            fileName = "P-6_E_I-3 WaterConsumed";
+            fileName = "P-6_E_I-1 FuelConsumption";
 
            }
            else if(selectedTemplate == "10"){
+            fileName = "P-6_E_I-3 WaterConsumed";
+
+           }
+           else if(selectedTemplate == "11"){
             fileName = "P-6_E_I-3 WaterWithdrawl";
             var newColumns = {
                 "key" : "id_water_type",
                 "value" :"id_water_type"
               };
               temp.splice(5, 0, newColumns);
+           } else if(selectedTemplate == "12"){
+            fileName = "P-6_E_I-3 WaterDischarge";
+            var newColumns = {
+                "key" : "id_water_type",
+                "value" :"id_water_type"
+              };
+              temp.splice(5, 0, newColumns);
            }
-           else if(selectedTemplate == "11"){
+           else if(selectedTemplate == "13"){
             fileName = "P-6_E_I-5 Air Emission";
             var newColumns = {
                 "key" : "id_air_emission_type",
@@ -2659,7 +2861,7 @@ sap.ui.define([
               temp.splice(5, 0, newColumns);
 
            }
-           else if(selectedTemplate == "12"){
+           else if(selectedTemplate == "14"){
             fileName = "P-6_E_I-6 Scope2Emissions";
             var newColumns = {
                 "key" : "Fis_year",
@@ -2667,7 +2869,7 @@ sap.ui.define([
               };
               temp.splice(8, 0, newColumns);
            }
-           else if(selectedTemplate == "13"){
+           else if(selectedTemplate == "15"){
             fileName = "P-6_L_I-4 Scope3Emissions";
             var newColumns = {
                 "key" : "category",

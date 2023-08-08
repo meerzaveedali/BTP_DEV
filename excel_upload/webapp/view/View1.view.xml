@@ -42,11 +42,13 @@
                                 <core:Item id="_IDGenItem06" key="06" text="Waste Recovered"/>
                                 <core:Item id="_IDGenItem07" key="07" text="Electricity Consumption"/>
                                 <core:Item id="_IDGenItem08" key="08" text="Energy Consumption"/>
-                                <core:Item id="_IDGenItem09" key="09" text="Water Consumed"/>
-                                <core:Item id="_IDGenItem10" key="10" text="Water Withdrawl"/>
-                                <core:Item id="_IDGenItem11" key="11" text="Air Emmission"/>
-                                <core:Item id="_IDGenItem12" key="12" text="Scope2Emissions"/>
-                                <core:Item id="_IDGenItem13" key="13" text="Scope3Emissions"/>
+								<core:Item id="_IDGenItem09" key="09" text="Fuel Consumption"/>
+                                <core:Item id="_IDGenItem10" key="10" text="Water Consumed"/>
+                                <core:Item id="_IDGenItem11" key="11" text="Water Withdrawl"/>
+								<core:Item id="_IDGenItem12" key="12" text="Water Discharge"/>
+                                <core:Item id="_IDGenItem13" key="12" text="Air Emmission"/>
+                                <core:Item id="_IDGenItem14" key="14" text="Scope2Emissions"/>
+                                <core:Item id="_IDGenItem15" key="15" text="Scope3Emissions"/>
                                 
                                 <!-- <core:Item id="_IDGenItem10" key="05" text="Electricity "/> -->
                             </Select>
@@ -64,7 +66,7 @@
                             </f:fields>
                         </f:FormElement>
 
-						<f:FormElement id="idplantform" label="Browse">
+						<f:FormElement id="idplantform" label="Palnt ID" visible="false">
                             <f:fields>
                                 <Select  id="IdFormSelect" class="sapUiSizeCompact" >
 								<core:Item id="_IDplnt1" key="01" text="1001"/>
