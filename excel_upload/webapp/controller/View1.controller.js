@@ -748,560 +748,560 @@ sap.ui.define([
                 this.getView().getModel("editModel").setData({edit:true});
             }
         },
-        OnSubmit : function() {
+        // OnSubmit : function() {
             
-            this.getView().byId("idEdit").setVisible(true);
-            this.getView().byId("idSubmit").setVisible(false);
-            this.getView().byId("idCancel").setVisible(false);
-            let sKey = this.getView().byId("id_BF").getProperty("selectedKey");
-            if (sKey === "07")
-                { 
-                    this.getView().getModel("editModel").setData({edit:false});
-                    var monetary  = this.getView().byId("idMonetaryTable");
-                    var nonMonetary = this.getView().byId("idNonMonetaryTable");
-                    var oTable = this.getView().byId("idTable");
-                    var oTable1 = this.getView().byId("idTable1");
-                    var omonetaryItems = monetary.getItems();
-                    var ononMonetaryItems = nonMonetary.getItems();
-                    var oTableItems = oTable.getItems();
-                    var oTable1Items = oTable1.getItems();
+        //     this.getView().byId("idEdit").setVisible(true);
+        //     this.getView().byId("idSubmit").setVisible(false);
+        //     this.getView().byId("idCancel").setVisible(false);
+        //     let sKey = this.getView().byId("id_BF").getProperty("selectedKey");
+        //     if (sKey === "07")
+        //         { 
+        //             this.getView().getModel("editModel").setData({edit:false});
+        //             var monetary  = this.getView().byId("idMonetaryTable");
+        //             var nonMonetary = this.getView().byId("idNonMonetaryTable");
+        //             var oTable = this.getView().byId("idTable");
+        //             var oTable1 = this.getView().byId("idTable1");
+        //             var omonetaryItems = monetary.getItems();
+        //             var ononMonetaryItems = nonMonetary.getItems();
+        //             var oTableItems = oTable.getItems();
+        //             var oTable1Items = oTable1.getItems();
 
-                   var oPayload = {
+        //            var oPayload = {
                 
-                    "status": "Submitted",
+        //             "status": "Submitted",
                 
-                    "creator_email": "renuka.dimber@bristlecone.com",
+        //             "creator_email": "renuka.dimber@bristlecone.com",
                 
-                    "creator_name": "Renuka Dimber",
+        //             "creator_name": "Renuka Dimber",
                 
-                    "Legal_Compliance": [
+        //             "Legal_Compliance": [
                 
-                        {
+        //                 {
                 
-                            "principle": "1",
+        //                     "principle": "1",
                 
-                            "indicator": "Essential",
+        //                     "indicator": "Essential",
                 
-                            "questionID": "2",
+        //                     "questionID": "2",
                 
-                            "principle1_essential_2": [
+        //                     "principle1_essential_2": [
                 
-                                {
+        //                         {
                 
-                                    "type": "Monetary",
+        //                             "type": "Monetary",
                 
-                                    "typeOfPaidAmount": "Penalty/ Fine",
+        //                             "typeOfPaidAmount": "Penalty/ Fine",
                 
-                                    "ngrbcPrinciple": omonetaryItems[0].getAggregation("cells")[1].getProperty("value"),
+        //                             "ngrbcPrinciple": omonetaryItems[0].getAggregation("cells")[1].getProperty("value"),
                 
-                                    "nameOfInstitutions": omonetaryItems[0].getAggregation("cells")[2].getProperty("value"),
+        //                             "nameOfInstitutions": omonetaryItems[0].getAggregation("cells")[2].getProperty("value"),
                 
-                                    "amountInINR": omonetaryItems[0].getAggregation("cells")[3].getProperty("value"),
+        //                             "amountInINR": omonetaryItems[0].getAggregation("cells")[3].getProperty("value"),
                 
-                                    "briefOfTheCase": omonetaryItems[0].getAggregation("cells")[4].getProperty("value"),
+        //                             "briefOfTheCase": omonetaryItems[0].getAggregation("cells")[4].getProperty("value"),
                 
-                                    "hasAnAppealBeen": omonetaryItems[0].getAggregation("cells")[5].getProperty("value")
+        //                             "hasAnAppealBeen": omonetaryItems[0].getAggregation("cells")[5].getProperty("value")
                 
-                                },
+        //                         },
                 
-                                {
+        //                         {
                 
-                                    "type": "Monetary",
+        //                             "type": "Monetary",
                 
-                                    "typeOfPaidAmount": "Settlement",
+        //                             "typeOfPaidAmount": "Settlement",
                 
-                                    "ngrbcPrinciple": omonetaryItems[1].getAggregation("cells")[1].getProperty("value"),
+        //                             "ngrbcPrinciple": omonetaryItems[1].getAggregation("cells")[1].getProperty("value"),
                 
-                                    "nameOfInstitutions": omonetaryItems[1].getAggregation("cells")[2].getProperty("value"),
+        //                             "nameOfInstitutions": omonetaryItems[1].getAggregation("cells")[2].getProperty("value"),
                 
-                                    "amountInINR": omonetaryItems[1].getAggregation("cells")[3].getProperty("value"),
+        //                             "amountInINR": omonetaryItems[1].getAggregation("cells")[3].getProperty("value"),
                 
-                                    "briefOfTheCase": omonetaryItems[1].getAggregation("cells")[4].getProperty("value"),
+        //                             "briefOfTheCase": omonetaryItems[1].getAggregation("cells")[4].getProperty("value"),
                 
-                                    "hasAnAppealBeen": omonetaryItems[1].getAggregation("cells")[5].getProperty("value")
+        //                             "hasAnAppealBeen": omonetaryItems[1].getAggregation("cells")[5].getProperty("value")
                 
-                                },
+        //                         },
                 
-                                {
+        //                         {
                 
-                                    "type": "Monetary",
+        //                             "type": "Monetary",
                 
-                                    "typeOfPaidAmount": "Compounding fee",
+        //                             "typeOfPaidAmount": "Compounding fee",
                 
-                                    "ngrbcPrinciple": omonetaryItems[2].getAggregation("cells")[1].getProperty("value"),
+        //                             "ngrbcPrinciple": omonetaryItems[2].getAggregation("cells")[1].getProperty("value"),
                 
-                                    "nameOfInstitutions": omonetaryItems[2].getAggregation("cells")[2].getProperty("value"),
+        //                             "nameOfInstitutions": omonetaryItems[2].getAggregation("cells")[2].getProperty("value"),
                 
-                                    "amountInINR": omonetaryItems[2].getAggregation("cells")[3].getProperty("value"),
+        //                             "amountInINR": omonetaryItems[2].getAggregation("cells")[3].getProperty("value"),
                 
-                                    "briefOfTheCase": omonetaryItems[2].getAggregation("cells")[4].getProperty("value"),
+        //                             "briefOfTheCase": omonetaryItems[2].getAggregation("cells")[4].getProperty("value"),
                 
-                                    "hasAnAppealBeen": omonetaryItems[2].getAggregation("cells")[5].getProperty("value")
+        //                             "hasAnAppealBeen": omonetaryItems[2].getAggregation("cells")[5].getProperty("value")
                 
-                                },
+        //                         },
                 
-                                {
+        //                         {
                 
-                                    "type": "Non-Monetary",
+        //                             "type": "Non-Monetary",
                 
-                                    "typeOfPaidAmount": "Imprisonment",
+        //                             "typeOfPaidAmount": "Imprisonment",
                 
-                                    "ngrbcPrinciple": ononMonetaryItems[0].getAggregation("cells")[1].getProperty("value"),
+        //                             "ngrbcPrinciple": ononMonetaryItems[0].getAggregation("cells")[1].getProperty("value"),
                 
-                                    "nameOfInstitutions": ononMonetaryItems[0].getAggregation("cells")[2].getProperty("value"),
+        //                             "nameOfInstitutions": ononMonetaryItems[0].getAggregation("cells")[2].getProperty("value"),
                 
-                                    "amountInINR": ononMonetaryItems[0].getAggregation("cells")[3].getProperty("value"),
+        //                             "amountInINR": ononMonetaryItems[0].getAggregation("cells")[3].getProperty("value"),
                 
-                                    "briefOfTheCase": ononMonetaryItems[0].getAggregation("cells")[4].getProperty("value"),
+        //                             "briefOfTheCase": ononMonetaryItems[0].getAggregation("cells")[4].getProperty("value"),
                 
-                                    "hasAnAppealBeen": ononMonetaryItems[0].getAggregation("cells")[5].getProperty("value")
+        //                             "hasAnAppealBeen": ononMonetaryItems[0].getAggregation("cells")[5].getProperty("value")
                 
-                                },
+        //                         },
                 
-                                {
+        //                         {
                 
-                                    "type": "Non-Monetary",
+        //                             "type": "Non-Monetary",
                 
-                                    "typeOfPaidAmount": "Punishment",
+        //                             "typeOfPaidAmount": "Punishment",
                 
-                                    "ngrbcPrinciple": ononMonetaryItems[1].getAggregation("cells")[1].getProperty("value"),
+        //                             "ngrbcPrinciple": ononMonetaryItems[1].getAggregation("cells")[1].getProperty("value"),
                 
-                                    "nameOfInstitutions": ononMonetaryItems[1].getAggregation("cells")[2].getProperty("value"),
+        //                             "nameOfInstitutions": ononMonetaryItems[1].getAggregation("cells")[2].getProperty("value"),
                 
-                                    "amountInINR": ononMonetaryItems[1].getAggregation("cells")[3].getProperty("value"),
+        //                             "amountInINR": ononMonetaryItems[1].getAggregation("cells")[3].getProperty("value"),
                 
-                                    "briefOfTheCase": ononMonetaryItems[1].getAggregation("cells")[4].getProperty("value"),
+        //                             "briefOfTheCase": ononMonetaryItems[1].getAggregation("cells")[4].getProperty("value"),
                 
-                                    "hasAnAppealBeen": ononMonetaryItems[1].getAggregation("cells")[5].getProperty("value")
+        //                             "hasAnAppealBeen": ononMonetaryItems[1].getAggregation("cells")[5].getProperty("value")
                 
-                                }
+        //                         }
                 
-                            ]
+        //                     ]
                 
-                        },
+        //                 },
                 
-                        {
+        //                 {
                 
-                            "principle": "1",
+        //                     "principle": "1",
                 
-                            "indicator": "Essential",
+        //                     "indicator": "Essential",
                 
-                            "questionID": "5",
+        //                     "questionID": "5",
                 
-                            "principle1_essential_5": [
+        //                     "principle1_essential_5": [
                 
-                                {
+        //                         {
                 
-                                    "typeOfWorkers": "Directors",
+        //                             "typeOfWorkers": "Directors",
                 
-                                    "valueForCurrentFinancialYear": oTableItems[0].getAggregation("cells")[1].getProperty("value"),
+        //                             "valueForCurrentFinancialYear": oTableItems[0].getAggregation("cells")[1].getProperty("value"),
                 
-                                    "valueForPreviousFinancialYear": oTableItems[0].getAggregation("cells")[2].getProperty("value")
+        //                             "valueForPreviousFinancialYear": oTableItems[0].getAggregation("cells")[2].getProperty("value")
                 
-                                },
+        //                         },
                 
-                                {
+        //                         {
                 
-                                    "typeOfWorkers": "KMPs",
+        //                             "typeOfWorkers": "KMPs",
                 
-                                    "valueForCurrentFinancialYear": oTableItems[1].getAggregation("cells")[1].getProperty("value"),
+        //                             "valueForCurrentFinancialYear": oTableItems[1].getAggregation("cells")[1].getProperty("value"),
                 
-                                    "valueForPreviousFinancialYear": oTableItems[1].getAggregation("cells")[2].getProperty("value")
+        //                             "valueForPreviousFinancialYear": oTableItems[1].getAggregation("cells")[2].getProperty("value")
                 
-                                },
+        //                         },
                 
-                                {
+        //                         {
                 
-                                    "typeOfWorkers": "Employees",
+        //                             "typeOfWorkers": "Employees",
                 
-                                    "valueForCurrentFinancialYear": oTableItems[2].getAggregation("cells")[1].getProperty("value"),
+        //                             "valueForCurrentFinancialYear": oTableItems[2].getAggregation("cells")[1].getProperty("value"),
                 
-                                    "valueForPreviousFinancialYear": oTableItems[2].getAggregation("cells")[2].getProperty("value")
+        //                             "valueForPreviousFinancialYear": oTableItems[2].getAggregation("cells")[2].getProperty("value")
                 
-                                },
+        //                         },
                 
-                                {
+        //                         {
                 
-                                    "typeOfWorkers": "Workers",
+        //                             "typeOfWorkers": "Workers",
                 
-                                    "valueForCurrentFinancialYear": oTableItems[3].getAggregation("cells")[1].getProperty("value"),
+        //                             "valueForCurrentFinancialYear": oTableItems[3].getAggregation("cells")[1].getProperty("value"),
                 
-                                    "valueForPreviousFinancialYear": oTableItems[3].getAggregation("cells")[2].getProperty("value")
+        //                             "valueForPreviousFinancialYear": oTableItems[3].getAggregation("cells")[2].getProperty("value")
                 
-                                }
+        //                         }
                 
-                            ]
+        //                     ]
                 
-                        },
+        //                 },
                 
-                        {
+        //                 {
                 
-                            "principle": "1",
+        //                     "principle": "1",
                 
-                            "indicator": "Essential",
+        //                     "indicator": "Essential",
                 
-                            "questionID": "6",
+        //                     "questionID": "6",
                 
-                            "principle1_essential_6": [
+        //                     "principle1_essential_6": [
                 
-                                {
+        //                         {
                 
-                                    "detailsOfComplaints": "Number of complaints received in relation to issues of Conflict of Interest of the Directors",
+        //                             "detailsOfComplaints": "Number of complaints received in relation to issues of Conflict of Interest of the Directors",
                 
-                                    "numberForCurrentFinancialYear": oTable1Items[0].getAggregation("cells")[1].getProperty("value"),
+        //                             "numberForCurrentFinancialYear": oTable1Items[0].getAggregation("cells")[1].getProperty("value"),
                 
-                                    "remarksForCurrentFinancialYear": oTable1Items[0].getAggregation("cells")[2].getProperty("value"),
+        //                             "remarksForCurrentFinancialYear": oTable1Items[0].getAggregation("cells")[2].getProperty("value"),
                 
-                                    "numberForPreviousFinancialYear": oTable1Items[0].getAggregation("cells")[3].getProperty("value"),
+        //                             "numberForPreviousFinancialYear": oTable1Items[0].getAggregation("cells")[3].getProperty("value"),
                 
-                                    "remarksForPreviousFinancialYear": oTable1Items[0].getAggregation("cells")[4].getProperty("value")
+        //                             "remarksForPreviousFinancialYear": oTable1Items[0].getAggregation("cells")[4].getProperty("value")
                 
-                                },
+        //                         },
                 
-                                {
+        //                         {
                 
-                                    "detailsOfComplaints": "Number of complaints received in relation to issues of Conflict of Interest of the KMPs",
+        //                             "detailsOfComplaints": "Number of complaints received in relation to issues of Conflict of Interest of the KMPs",
                 
-                                    "numberForCurrentFinancialYear": oTable1Items[1].getAggregation("cells")[1].getProperty("value"),
+        //                             "numberForCurrentFinancialYear": oTable1Items[1].getAggregation("cells")[1].getProperty("value"),
                 
-                                    "remarksForCurrentFinancialYear": oTable1Items[1].getAggregation("cells")[2].getProperty("value"),
+        //                             "remarksForCurrentFinancialYear": oTable1Items[1].getAggregation("cells")[2].getProperty("value"),
                 
-                                    "numberForPreviousFinancialYear": oTable1Items[1].getAggregation("cells")[3].getProperty("value"),
+        //                             "numberForPreviousFinancialYear": oTable1Items[1].getAggregation("cells")[3].getProperty("value"),
                 
-                                    "remarksForPreviousFinancialYear": oTable1Items[1].getAggregation("cells")[4].getProperty("value")
+        //                             "remarksForPreviousFinancialYear": oTable1Items[1].getAggregation("cells")[4].getProperty("value")
                 
-                                }
+        //                         }
                 
-                            ]
+        //                     ]
                 
-                        }
+        //                 }
                 
-                    ]
+        //             ]
                 
-                };
-                var that = this;
-               this.oDataModel.update("/qualitative_data(fiscalYear='2024',businessFunction='Legal_Compliance')", oPayload, {
+        //         };
+        //         var that = this;
+        //        this.oDataModel.update("/qualitative_data(fiscalYear='2024',businessFunction='Legal_Compliance')", oPayload, {
                 
-                success : function(oData){
-                        MessageBox.show("Data Saved Successfully");
+        //         success : function(oData){
+        //                 MessageBox.show("Data Saved Successfully");
                         
-                },
+        //         },
 
-                error : function(oError){
-                    MessageBox.show(oError);
-                }
+        //         error : function(oError){
+        //             MessageBox.show(oError);
+        //         }
             
             
             
-            });
+        //     });
 
-                        var workObj = {
+        //                 var workObj = {
 
-                            "definitionId": "eu10.sap-process-automation-q40kapza.zbrsrlegalcompliance.zapproval_process_for_legal_compliance",
+        //                     "definitionId": "eu10.sap-process-automation-q40kapza.zbrsrlegalcompliance.zapproval_process_for_legal_compliance",
                         
-                            "context": {
+        //                     "context": {
                         
-                                "zbusiness_function": "Legal_Compliance",
+        //                         "zbusiness_function": "Legal_Compliance",
                         
-                                "zfiscal_year": "2024",
+        //                         "zfiscal_year": "2024",
                         
-                                "zlegal_compliance_creator_email": "shriyansh.k@bristlecone.com",
+        //                         "zlegal_compliance_creator_email": "shriyansh.k@bristlecone.com",
                         
-                                "zlegal_compliance_creator_name": "Shriyansh Keserwani",
+        //                         "zlegal_compliance_creator_name": "Shriyansh Keserwani",
                         
-                                "zlegal_compliance_principle1_essential_2": [
+        //                         "zlegal_compliance_principle1_essential_2": [
                         
-                                    {
+        //                             {
                         
-                                        "type": "Monetary",
+        //                                 "type": "Monetary",
                         
-                                        "typeOfPaidAmount": "Penalty/Fine",
+        //                                 "typeOfPaidAmount": "Penalty/Fine",
                         
-                                        "ngrbcPrinciple": omonetaryItems[0].getAggregation("cells")[1].getProperty("value"),
+        //                                 "ngrbcPrinciple": omonetaryItems[0].getAggregation("cells")[1].getProperty("value"),
                         
-                                        "nameOfInstitutions": omonetaryItems[0].getAggregation("cells")[2].getProperty("value"),
+        //                                 "nameOfInstitutions": omonetaryItems[0].getAggregation("cells")[2].getProperty("value"),
                         
-                                        "amountInINR": omonetaryItems[0].getAggregation("cells")[3].getProperty("value"),
+        //                                 "amountInINR": omonetaryItems[0].getAggregation("cells")[3].getProperty("value"),
                         
-                                        "briefOfTheCase": omonetaryItems[0].getAggregation("cells")[4].getProperty("value"),
+        //                                 "briefOfTheCase": omonetaryItems[0].getAggregation("cells")[4].getProperty("value"),
                         
-                                        "hasAnAppealBeen": omonetaryItems[0].getAggregation("cells")[5].getProperty("value")
+        //                                 "hasAnAppealBeen": omonetaryItems[0].getAggregation("cells")[5].getProperty("value")
                         
-                                    },
+        //                             },
                         
-                                    {
+        //                             {
                         
-                                        "type": "Monetary",
+        //                                 "type": "Monetary",
                         
-                                        "typeOfPaidAmount": "Settlement",
+        //                                 "typeOfPaidAmount": "Settlement",
                         
-                                        "ngrbcPrinciple": omonetaryItems[1].getAggregation("cells")[1].getProperty("value"),
+        //                                 "ngrbcPrinciple": omonetaryItems[1].getAggregation("cells")[1].getProperty("value"),
                         
-                                        "nameOfInstitutions": omonetaryItems[1].getAggregation("cells")[2].getProperty("value"),
+        //                                 "nameOfInstitutions": omonetaryItems[1].getAggregation("cells")[2].getProperty("value"),
                         
-                                        "amountInINR": omonetaryItems[1].getAggregation("cells")[3].getProperty("value"),
+        //                                 "amountInINR": omonetaryItems[1].getAggregation("cells")[3].getProperty("value"),
                         
-                                        "briefOfTheCase": omonetaryItems[1].getAggregation("cells")[4].getProperty("value"),
+        //                                 "briefOfTheCase": omonetaryItems[1].getAggregation("cells")[4].getProperty("value"),
                         
-                                        "hasAnAppealBeen": omonetaryItems[1].getAggregation("cells")[5].getProperty("value")
+        //                                 "hasAnAppealBeen": omonetaryItems[1].getAggregation("cells")[5].getProperty("value")
                         
-                                    },
+        //                             },
                         
-                                    {
+        //                             {
                         
-                                        "type": "Monetary",
+        //                                 "type": "Monetary",
                         
-                                        "typeOfPaidAmount": "Compounding fee",
+        //                                 "typeOfPaidAmount": "Compounding fee",
                         
-                                        "ngrbcPrinciple": omonetaryItems[2].getAggregation("cells")[1].getProperty("value"),
+        //                                 "ngrbcPrinciple": omonetaryItems[2].getAggregation("cells")[1].getProperty("value"),
                         
-                                        "nameOfInstitutions": omonetaryItems[2].getAggregation("cells")[2].getProperty("value"),
+        //                                 "nameOfInstitutions": omonetaryItems[2].getAggregation("cells")[2].getProperty("value"),
                         
-                                        "amountInINR": omonetaryItems[2].getAggregation("cells")[3].getProperty("value"),
+        //                                 "amountInINR": omonetaryItems[2].getAggregation("cells")[3].getProperty("value"),
                         
-                                        "briefOfTheCase": omonetaryItems[2].getAggregation("cells")[4].getProperty("value"),
+        //                                 "briefOfTheCase": omonetaryItems[2].getAggregation("cells")[4].getProperty("value"),
                         
-                                        "hasAnAppealBeen": omonetaryItems[2].getAggregation("cells")[5].getProperty("value")
+        //                                 "hasAnAppealBeen": omonetaryItems[2].getAggregation("cells")[5].getProperty("value")
                         
-                                    },
+        //                             },
                         
-                                    {
+        //                             {
                         
-                                        "type": "Non-Monetary",
+        //                                 "type": "Non-Monetary",
                         
-                                        "typeOfPaidAmount": "Imprisonment",
+        //                                 "typeOfPaidAmount": "Imprisonment",
                         
-                                        "ngrbcPrinciple": ononMonetaryItems[0].getAggregation("cells")[1].getProperty("value"),
+        //                                 "ngrbcPrinciple": ononMonetaryItems[0].getAggregation("cells")[1].getProperty("value"),
                         
-                                        "nameOfInstitutions": ononMonetaryItems[0].getAggregation("cells")[2].getProperty("value"),
+        //                                 "nameOfInstitutions": ononMonetaryItems[0].getAggregation("cells")[2].getProperty("value"),
                         
-                                        "amountInINR": ononMonetaryItems[0].getAggregation("cells")[3].getProperty("value"),
+        //                                 "amountInINR": ononMonetaryItems[0].getAggregation("cells")[3].getProperty("value"),
                         
-                                        "briefOfTheCase": ononMonetaryItems[0].getAggregation("cells")[4].getProperty("value"),
+        //                                 "briefOfTheCase": ononMonetaryItems[0].getAggregation("cells")[4].getProperty("value"),
                         
-                                        "hasAnAppealBeen": ononMonetaryItems[0].getAggregation("cells")[5].getProperty("value")
+        //                                 "hasAnAppealBeen": ononMonetaryItems[0].getAggregation("cells")[5].getProperty("value")
                         
-                                    },
+        //                             },
                         
-                                    {
+        //                             {
                         
-                                        "type": "Non-Monetary",
+        //                                 "type": "Non-Monetary",
                         
-                                        "typeOfPaidAmount": "Punishment",
+        //                                 "typeOfPaidAmount": "Punishment",
                         
-                                        "ngrbcPrinciple": ononMonetaryItems[1].getAggregation("cells")[1].getProperty("value"),
+        //                                 "ngrbcPrinciple": ononMonetaryItems[1].getAggregation("cells")[1].getProperty("value"),
                         
-                                        "nameOfInstitutions": ononMonetaryItems[1].getAggregation("cells")[2].getProperty("value"),
+        //                                 "nameOfInstitutions": ononMonetaryItems[1].getAggregation("cells")[2].getProperty("value"),
                         
-                                        "amountInINR": ononMonetaryItems[1].getAggregation("cells")[3].getProperty("value"),
+        //                                 "amountInINR": ononMonetaryItems[1].getAggregation("cells")[3].getProperty("value"),
                         
-                                        "briefOfTheCase": ononMonetaryItems[1].getAggregation("cells")[4].getProperty("value"),
+        //                                 "briefOfTheCase": ononMonetaryItems[1].getAggregation("cells")[4].getProperty("value"),
                         
-                                        "hasAnAppealBeen": ononMonetaryItems[1].getAggregation("cells")[5].getProperty("value")
+        //                                 "hasAnAppealBeen": ononMonetaryItems[1].getAggregation("cells")[5].getProperty("value")
                         
-                                    }
+        //                             }
                         
-                                ],
+        //                         ],
                         
-                                "zlegal_compliance_principle1_essential_5": [
+        //                         "zlegal_compliance_principle1_essential_5": [
                         
-                                    {
+        //                             {
                         
-                                        "typeOfWorkers": "Directors",
+        //                                 "typeOfWorkers": "Directors",
                         
-                                        "valueForCurrentFinancialYear": oTableItems[0].getAggregation("cells")[1].getProperty("value"),
+        //                                 "valueForCurrentFinancialYear": oTableItems[0].getAggregation("cells")[1].getProperty("value"),
                         
-                                        "valueForPreviousFinancialYear": oTableItems[0].getAggregation("cells")[2].getProperty("value")
+        //                                 "valueForPreviousFinancialYear": oTableItems[0].getAggregation("cells")[2].getProperty("value")
                         
-                                    },
+        //                             },
                         
-                                    {
+        //                             {
                         
-                                        "typeOfWorkers": "KMPs",
+        //                                 "typeOfWorkers": "KMPs",
                         
-                                        "valueForCurrentFinancialYear": oTableItems[1].getAggregation("cells")[1].getProperty("value"),
+        //                                 "valueForCurrentFinancialYear": oTableItems[1].getAggregation("cells")[1].getProperty("value"),
                         
-                                        "valueForPreviousFinancialYear": oTableItems[1].getAggregation("cells")[2].getProperty("value")
+        //                                 "valueForPreviousFinancialYear": oTableItems[1].getAggregation("cells")[2].getProperty("value")
                         
-                                    },
+        //                             },
                         
-                                    {
+        //                             {
                         
-                                        "typeOfWorkers": "Employees",
+        //                                 "typeOfWorkers": "Employees",
                         
-                                        "valueForCurrentFinancialYear": oTableItems[2].getAggregation("cells")[1].getProperty("value"),
+        //                                 "valueForCurrentFinancialYear": oTableItems[2].getAggregation("cells")[1].getProperty("value"),
                         
-                                        "valueForPreviousFinancialYear": oTableItems[2].getAggregation("cells")[2].getProperty("value")
+        //                                 "valueForPreviousFinancialYear": oTableItems[2].getAggregation("cells")[2].getProperty("value")
                         
-                                    },
+        //                             },
                         
-                                    {
+        //                             {
                         
-                                        "typeOfWorkers": "Workers",
+        //                                 "typeOfWorkers": "Workers",
                         
-                                        "valueForCurrentFinancialYear": oTableItems[3].getAggregation("cells")[1].getProperty("value"),
+        //                                 "valueForCurrentFinancialYear": oTableItems[3].getAggregation("cells")[1].getProperty("value"),
                         
-                                        "valueForPreviousFinancialYear": oTableItems[3].getAggregation("cells")[2].getProperty("value")
+        //                                 "valueForPreviousFinancialYear": oTableItems[3].getAggregation("cells")[2].getProperty("value")
                         
-                                    }
+        //                             }
                         
-                                ],
+        //                         ],
                         
-                                "zlegal_compliance_principle1_essential_6": [
+        //                         "zlegal_compliance_principle1_essential_6": [
                         
-                                    {
+        //                             {
                         
-                                        "detailsOfComplaints": "Number of complaints received in relation to issues of Conflict of Interest of the Directors",
+        //                                 "detailsOfComplaints": "Number of complaints received in relation to issues of Conflict of Interest of the Directors",
                         
-                                        "numberForCurrentFinancialYear": oTable1Items[0].getAggregation("cells")[1].getProperty("value"),
+        //                                 "numberForCurrentFinancialYear": oTable1Items[0].getAggregation("cells")[1].getProperty("value"),
                         
-                                        "remarksForCurrentFinancialYear": oTable1Items[0].getAggregation("cells")[2].getProperty("value"),
+        //                                 "remarksForCurrentFinancialYear": oTable1Items[0].getAggregation("cells")[2].getProperty("value"),
                         
-                                        "numberForPreviousFinancialYear": oTable1Items[0].getAggregation("cells")[3].getProperty("value"),
+        //                                 "numberForPreviousFinancialYear": oTable1Items[0].getAggregation("cells")[3].getProperty("value"),
                         
-                                        "remarksForPreviousFinancialYear": oTable1Items[0].getAggregation("cells")[4].getProperty("value")
+        //                                 "remarksForPreviousFinancialYear": oTable1Items[0].getAggregation("cells")[4].getProperty("value")
                         
-                                    },
+        //                             },
                         
-                                    {
+        //                             {
                         
-                                        "detailsOfComplaints": "Number of complaints received in relation to issues of Conflict of Interest of the KMPs",
+        //                                 "detailsOfComplaints": "Number of complaints received in relation to issues of Conflict of Interest of the KMPs",
                         
-                                        "numberForCurrentFinancialYear": oTable1Items[1].getAggregation("cells")[1].getProperty("value"),
+        //                                 "numberForCurrentFinancialYear": oTable1Items[1].getAggregation("cells")[1].getProperty("value"),
                         
-                                        "remarksForCurrentFinancialYear": oTable1Items[1].getAggregation("cells")[2].getProperty("value"),
+        //                                 "remarksForCurrentFinancialYear": oTable1Items[1].getAggregation("cells")[2].getProperty("value"),
                         
-                                        "numberForPreviousFinancialYear": oTable1Items[1].getAggregation("cells")[3].getProperty("value"),
+        //                                 "numberForPreviousFinancialYear": oTable1Items[1].getAggregation("cells")[3].getProperty("value"),
                         
-                                        "remarksForPreviousFinancialYear": oTable1Items[1].getAggregation("cells")[4].getProperty("value")
+        //                                 "remarksForPreviousFinancialYear": oTable1Items[1].getAggregation("cells")[4].getProperty("value")
                         
-                                    }
+        //                             }
                         
-                                ],
+        //                         ],
                         
-                                "zlegal_compliance_principle1_essential_3": [
+        //                         "zlegal_compliance_principle1_essential_3": [
                         
-                                    {
+        //                             {
                         
-                                        "case_details": "",
+        //                                 "case_details": "",
                         
-                                        "name_regulatory_agencies": ""
+        //                                 "name_regulatory_agencies": ""
                         
-                                    }
+        //                             }
                         
-                                ],
+        //                         ],
                         
-                                "zlegal_compliance_principle7_essential_1": [
+        //                         "zlegal_compliance_principle7_essential_1": [
                         
-                                    {
+        //                             {
                         
-                                        "sr_no": "",
+        //                                 "sr_no": "",
                         
-                                        "name_of_trade_industy_associations": "",
+        //                                 "name_of_trade_industy_associations": "",
                         
-                                        "reach_of_trade_industy_associations": ""
+        //                                 "reach_of_trade_industy_associations": ""
                         
-                                    }
+        //                             }
                         
-                                ],
+        //                         ],
                         
-                                "zlegal_compliance_principle7_essential_2": [
+        //                         "zlegal_compliance_principle7_essential_2": [
                         
-                                    {
+        //                             {
                         
-                                        "name_of_authority": "",
+        //                                 "name_of_authority": "",
                         
-                                        "brief_of_case": "",
+        //                                 "brief_of_case": "",
                         
-                                        "corrective_actions_taken": ""
+        //                                 "corrective_actions_taken": ""
                         
-                                    }
+        //                             }
                         
-                                ],
+        //                         ],
                         
-                                "zlegal_compliance_principle7_leadership_1": [
+        //                         "zlegal_compliance_principle7_leadership_1": [
                         
-                                    {
+        //                             {
                         
-                                        "sr_no": "",
+        //                                 "sr_no": "",
                         
-                                        "public_policy_advocated": "",
+        //                                 "public_policy_advocated": "",
                         
-                                        "method_resorted_for_advocacy": "",
+        //                                 "method_resorted_for_advocacy": "",
                         
-                                        "information_available_in_public_domain": "",
+        //                                 "information_available_in_public_domain": "",
                         
-                                        "frequency_of_review_by_board": "",
+        //                                 "frequency_of_review_by_board": "",
                         
-                                        "web_link": ""
+        //                                 "web_link": ""
                         
-                                    }
+        //                             }
                         
-                                ]
+        //                         ]
                         
-                            }
+        //                     }
                         
-                        };
+        //                 };
 
-                        var appId = that.getOwnerComponent().getManifestEntry("/sap.app/id");
-                        var appPath = appId.replaceAll(".", "/");
-                        var appModulePath = jQuery.sap.getModulePath(appPath);
-                            that.getView().setBusy(true);
+        //                 var appId = that.getOwnerComponent().getManifestEntry("/sap.app/id");
+        //                 var appPath = appId.replaceAll(".", "/");
+        //                 var appModulePath = jQuery.sap.getModulePath(appPath);
+        //                     that.getView().setBusy(true);
 
-                            $.ajax({
-                                url: appModulePath + "/bpmworkflowruntime/v1/xsrf-token",
-                                method: "GET",
-                                headers: {
-                                    "X-CSRF-Token": "Fetch"
-                                },
-                                success: function (result, xhr, data) {
-                                    var token = data.getResponseHeader("X-CSRF-Token");
-                                    if (token === null) return;
+        //                     $.ajax({
+        //                         url: appModulePath + "/bpmworkflowruntime/v1/xsrf-token",
+        //                         method: "GET",
+        //                         headers: {
+        //                             "X-CSRF-Token": "Fetch"
+        //                         },
+        //                         success: function (result, xhr, data) {
+        //                             var token = data.getResponseHeader("X-CSRF-Token");
+        //                             if (token === null) return;
             
-                                    $.ajax({
-                                        url: appModulePath + "/bpmworkflowruntime/v1/workflow-instances",
-                                        type: "POST",
-                                        data: JSON.stringify(workObj),
-                                        headers: {
-                                            "X-CSRF-Token": token,
-                                            "Content-Type": "application/json"
-                                        },
-                                        async: false,
-                                        success: function (data, response) {
-                                            var successMsg;
-                                            that.getView().setBusy(false);
-                                            successMsg = "Request Sent for Approval";
-                                            MessageBox.success(successMsg, {
-                                                icon: MessageBox.Icon.SUCCESS,
-                                                title: "SUCCESS",
-                                                actions: [MessageBox.Action.OK],
-                                                initialFocus: MessageBox.Action.OK,
-                                                onClose: function (Action) {
-                                                    // that.clearForm();
-                                                    that.getView().setBusy(false);
-                                                }
-                                            });
-                                        },
-                                        error: function (e) {
-                                            that.getView().setBusy(false);
-                                            MessageBox.show(JSON.stringify(e), {
-                                                icon: MessageBox.Icon.ERROR,
-                                                title: "ERROR"
-                                            });
-                                        }
-                                    });
-                                        },
-                                        error: function (e) {
-                                            that.getView().setBusy(false);
-                                            MessageBox.show(JSON.stringify(e), {
-                                                icon: MessageBox.Icon.ERROR,
-                                                title: "ERROR"
-                                            });
-                                        }
-                                    });
+        //                             $.ajax({
+        //                                 url: appModulePath + "/bpmworkflowruntime/v1/workflow-instances",
+        //                                 type: "POST",
+        //                                 data: JSON.stringify(workObj),
+        //                                 headers: {
+        //                                     "X-CSRF-Token": token,
+        //                                     "Content-Type": "application/json"
+        //                                 },
+        //                                 async: false,
+        //                                 success: function (data, response) {
+        //                                     var successMsg;
+        //                                     that.getView().setBusy(false);
+        //                                     successMsg = "Request Sent for Approval";
+        //                                     MessageBox.success(successMsg, {
+        //                                         icon: MessageBox.Icon.SUCCESS,
+        //                                         title: "SUCCESS",
+        //                                         actions: [MessageBox.Action.OK],
+        //                                         initialFocus: MessageBox.Action.OK,
+        //                                         onClose: function (Action) {
+        //                                             // that.clearForm();
+        //                                             that.getView().setBusy(false);
+        //                                         }
+        //                                     });
+        //                                 },
+        //                                 error: function (e) {
+        //                                     that.getView().setBusy(false);
+        //                                     MessageBox.show(JSON.stringify(e), {
+        //                                         icon: MessageBox.Icon.ERROR,
+        //                                         title: "ERROR"
+        //                                     });
+        //                                 }
+        //                             });
+        //                                 },
+        //                                 error: function (e) {
+        //                                     that.getView().setBusy(false);
+        //                                     MessageBox.show(JSON.stringify(e), {
+        //                                         icon: MessageBox.Icon.ERROR,
+        //                                         title: "ERROR"
+        //                                     });
+        //                                 }
+        //                             });
 
-            }
-        },
+        //     }
+        // },
         onTemplateDownload : function(){
 
         },
@@ -2529,7 +2529,8 @@ sap.ui.define([
                     // "company_code" : vData[i]?.['Company Code'] || '', // NK
                     // "country" : vData[i]?.['Country'] || '', //NK
                     // "location_text" : vData[i]?.['Location Text'] || '', //NK
-                    "plant_id" : vData[i]?.['Plant Id'] || '', //NK
+                    // "plant_id" : vData[i]?.['Plant Id'] || '', //NK
+                    "plant_id" : this.getView().byId("IdFormSelect").getSelectedItem().getText() || '', //NK
                     "value" : vData[i]?.['Value'] || '', //NK
                     "unit_text" : vData[i]?.['Unit Text'] || '' //NK
                     

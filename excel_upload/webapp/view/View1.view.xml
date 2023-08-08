@@ -1087,8 +1087,9 @@ Others - please specify" level="H2"/>
             <Toolbar id="_IDGenToolbar1">
                 <ToolbarSpacer id="_IDGenToolbarSpacer1"/>
 				<Button id="idEdit" text="Edit" press="onEdit"/>
-                <Button id="idSubmit" text="Submit" visible="false" press="OnSubmit" type="Accept"/>
+                <Button id="idSubmit" text="Submit" visible="false" press="onSubmit" type="Accept"/>
                 <Button id="idCancel" text="Cancel" visible="false" press="onCancel" type="Attention"/>
+				<Button id="idClear" text="clear" visible="false" press="clear" type="Attention"/>
             </Toolbar>
         </footer>
     </Page>
