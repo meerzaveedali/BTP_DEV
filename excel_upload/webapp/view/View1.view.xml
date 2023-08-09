@@ -35,6 +35,7 @@
                         <f:FormElement id="_IDGenFormElement1" label="Business Function">
                         <f:fields>
                             <Select id="id_BF" forceSelection="false" change="fnSelectChange1">
+							 	<core:Item id="_IDGenItem0" key="00" text=""/>
                                 <core:Item id="_IDGenItem1" key="01" text="EHS"/>
                                 <core:Item id="_IDGenItem2" key="02" text="Quality Assurance"/>
                                 <core:Item id="_IDGenItem3" key="03" text="Finance"/>
@@ -307,7 +308,7 @@ taken by any law enforcement agency for the charges of bribery/ corruption" leve
 		<headerToolbar>
 			<OverflowToolbar>
 				<content>
-					<Title text="Details of measures for the well-being of employees" level="H2"/>
+					<Title text="Details of measures for the well-being of other than permanent employees" level="H2"/>
 				</content>
 			</OverflowToolbar>
 		</headerToolbar>
@@ -1083,6 +1084,113 @@ Others - please specify" level="H2"/>
 		<items>
 		</items>
 	</Table>
+
+	<Table id="idSpendTable"
+                             visible="false"
+		inset="false">
+		<headerToolbar>
+			<OverflowToolbar>
+				<content>
+					<Title text="Spending on measures towards well-being of employees and workers (including
+permanent and other than permanent) in the following format" level="H2"/>
+				</content>
+			</OverflowToolbar>
+		</headerToolbar>
+		<columns>
+			<Column>
+				<Text text="" />
+			</Column>
+			<Column>
+				<Text text="FY____ Current Financial Year" />
+			</Column>
+				<Column>
+				<Text text="FY_____ Previous Financial Year" />
+			</Column>
+		</columns>
+		<items>
+		</items>
+	</Table>
+
+		<Table id="idGrossWageTable"
+                             visible="false"
+		inset="false">
+		<headerToolbar>
+			<OverflowToolbar>
+				<content>
+					<Title text="Gross wages paid to females as % of total wages paid by the entity, in the following
+format" level="H2"/>
+				</content>
+			</OverflowToolbar>
+		</headerToolbar>
+		<columns>
+			<Column>
+				<Text text="" />
+			</Column>
+			<Column>
+				<Text text="FY____ Current Financial Year" />
+			</Column>
+				<Column>
+				<Text text="FY_____ Previous Financial Year" />
+			</Column>
+		</columns>
+		<items>
+		</items>
+	</Table>
+
+		<Table id="idCompFiledTable"
+                             visible="false"
+		inset="false">
+		<headerToolbar>
+			<OverflowToolbar>
+				<content>
+					<Title text="Complaints filed under the Sexual Harassment of Women at Workplace (Prevention,
+Prohibition and Redressal) Act, 2013, in the following format:" level="H2"/>
+				</content>
+			</OverflowToolbar>
+		</headerToolbar>
+		<columns>
+			<Column>
+				<Text text="" />
+			</Column>
+			<Column>
+				<Text text="FY____ Current Financial Year" />
+			</Column>
+				<Column>
+				<Text text="FY_____ Previous Financial Year" />
+			</Column>
+		</columns>
+		<items>
+		</items>
+	</Table>
+
+		<Table id="idJobCreationTable"
+                             visible="false"
+		inset="false">
+		<headerToolbar>
+			<OverflowToolbar>
+				<content>
+					<Title text="Job creation in smaller towns – Disclose wages paid to persons employed (including
+employees or workers employed on a permanent or non-permanent / on contract basis)
+in the following locations, as % of total wage cost" level="H2"/>
+				</content>
+			</OverflowToolbar>
+		</headerToolbar>
+		<columns>
+			<Column>
+				<Text text="Location" />
+			</Column>
+			<Column>
+				<Text text="FY____ Current Financial Year" />
+			</Column>
+				<Column>
+				<Text text="FY_____ Previous Financial Year" />
+			</Column>
+		</columns>
+		<items>
+		</items>
+	</Table>
+
+		
                         </content>
         </ScrollContainer>
    
