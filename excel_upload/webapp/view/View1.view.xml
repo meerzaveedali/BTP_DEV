@@ -7,22 +7,7 @@
     xmlns="sap.m">
     <Page id="page" title="{i18n>title}">
         <content>
-        <!-- <f:SimpleForm id="_IDGenSimpleForm1"   editable="true"> 
-        <Label id="_IDGenLabel1" text="Bussiness Function"></Label>
-        <Select   id="id_sel1"  forceSelection="false" width ="40%" 
-            items="{
-                path: 'model1>/ProductCollection',
-                sorter: { path: 'model1>Name' }
-                }">
-                <core:Item id="_IDGenItem1" key="{model1>ProductId1}" text="{model1>Name}"/>
-                </Select>
-        <Label id="_IDGenLabel2" text=""></Label>
-        <Select   id="id_sel2"  forceSelection="false" width ="40%" 
-           >
-                <core:Item id="_IDGenItem12" text="Waste Desposed"/>
-                </Select>
-        <Button id="_IDGenButton2" width="30%" text="Template" icon="sap-icon://download" press="downloadTemplate"/>
-        </f:SimpleForm>  -->
+       
 
         <f:Form id="RiskForm" editable="true">
             <f:layout>
@@ -58,11 +43,13 @@
                                 <core:Item id="_IDGenItem06" key="06" text="Waste Recovered"/>
                                 <core:Item id="_IDGenItem07" key="07" text="Electricity Consumption"/>
                                 <core:Item id="_IDGenItem08" key="08" text="Energy Consumption"/>
-                                <core:Item id="_IDGenItem09" key="09" text="Water Consumed"/>
-                                <core:Item id="_IDGenItem10" key="10" text="Water Withdrawl"/>
-                                <core:Item id="_IDGenItem11" key="11" text="Air Emmission"/>
-                                <core:Item id="_IDGenItem12" key="12" text="Scope2Emissions"/>
-                                <core:Item id="_IDGenItem13" key="13" text="Scope3Emissions"/>
+								<core:Item id="_IDGenItem09" key="09" text="Fuel Consumption"/>
+                                <core:Item id="_IDGenItem10" key="10" text="Water Consumed"/>
+                                <core:Item id="_IDGenItem11" key="11" text="Water Withdrawl"/>
+								<core:Item id="_IDGenItem12" key="12" text="Water Discharge"/>
+                                <core:Item id="_IDGenItem13" key="12" text="Air Emmission"/>
+                                <core:Item id="_IDGenItem14" key="14" text="Scope2Emissions"/>
+                                <core:Item id="_IDGenItem15" key="15" text="Scope3Emissions"/>
                                 
                                 <!-- <core:Item id="_IDGenItem10" key="05" text="Electricity "/> -->
                             </Select>
@@ -77,6 +64,15 @@
                                     uploadUrl=""  uploadProgress = "fnUploadStart" change="fnFileUploadComplete" typeMissmatch="handleTypeMissmatch" 
                                     tooltip="Upload your file to the local server"/>
                             <Button text="Download Template" press="onTemplateDownload" tooltip="Download sample" id="download" icon="sap-icon://download"/>
+                            </f:fields>
+                        </f:FormElement>
+
+						<f:FormElement id="idplantform" label="Palnt ID" visible="false">
+                            <f:fields>
+                                <Select  id="IdFormSelect" class="sapUiSizeCompact" >
+								<core:Item id="_IDplnt1" key="01" text="1001"/>
+								<core:Item id="_IDplnt2" key="01" text="1002"/>
+                                </Select>
                             </f:fields>
                         </f:FormElement>
                     </f:formElements>
@@ -94,7 +90,7 @@
 		<headerToolbar>
 			<OverflowToolbar>
 				<content>
-					<Title text="Monetary" level="H2"/>
+					<Title id="titleMON" text="Monetary" level="H2"/>
 				</content>
 			</OverflowToolbar>
 		</headerToolbar>
@@ -215,7 +211,34 @@ taken by any law enforcement agency for the charges of bribery/ corruption" leve
 		</items>
 	</Table>
 
+	                       <Table id="idQuestionsTable"
+                        visible="false"
+		inset="false">
+		<headerToolbar>
+			<OverflowToolbar>
+				<content>
+					<Title text="Provide the following information relating to data breaches:" level="H2"/>
+				</content>
+			</OverflowToolbar>
+		</headerToolbar>
+		<columns>
+        	<Column>
+				<Text text="" />
+			</Column>
+			<Column>
+				<Text text="" />
+			</Column>
+		</columns>
+		<items>
+		</items>
+	</Table>
 
+
+
+
+	<!--                HR Section             -->
+
+	<VBox>
                        <Table id="idTableSegment"
                         visible="false"
 		inset="false">
@@ -1189,7 +1212,67 @@ in the following locations, as % of total wage cost" level="H2"/>
 		<items>
 		</items>
 	</Table>
+	</VBox>
 
+
+
+	<!--        Procurement    -->
+
+
+
+	<Table id="idInputMaterialTable"
+                             visible="false"
+		inset="false">
+		<headerToolbar>
+			<OverflowToolbar>
+				<content>
+					<Title text="Percentage of input material (inputs to total inputs by value) sourced from suppliers" level="H2"/>
+				</content>
+			</OverflowToolbar>
+		</headerToolbar>
+		<columns>
+			<Column>
+				<Text text="" />
+			</Column>
+			<Column>
+				<Text text="FY____ Current Financial Year" />
+			</Column>
+				<Column>
+				<Text text="FY_____ Previous Financial Year" />
+			</Column>
+		</columns>
+		<items>
+		</items>
+	</Table>
+
+
+		<Table id="idDetailsConcentrationTable"
+                             visible="false"
+		inset="false">
+		<headerToolbar>
+			<OverflowToolbar>
+				<content>
+					<Title text="Provide details of concentration of purchases and sales with trading houses, dealers, and related parties along-with loans and advances and investments, with related parties, in the following format:" level="H2"/>
+				</content>
+			</OverflowToolbar>
+		</headerToolbar>
+		<columns>
+			<Column>
+				<Text text="Parameters" />
+			</Column>
+			<Column>
+				<Text text="Metrics" />
+			</Column>
+			<Column>
+				<Text text="FY____ Current Financial Year" />
+			</Column>
+				<Column>
+				<Text text="FY_____ Previous Financial Year" />
+			</Column>
+		</columns>
+		<items>
+		</items>
+	</Table>
 		
                         </content>
         </ScrollContainer>
@@ -1199,8 +1282,10 @@ in the following locations, as % of total wage cost" level="H2"/>
             <Toolbar id="_IDGenToolbar1">
                 <ToolbarSpacer id="_IDGenToolbarSpacer1"/>
 				<Button id="idEdit" text="Edit" press="onEdit"/>
-                <Button id="idSubmit" text="Submit" visible="false" press="OnSubmit" type="Accept"/>
+                <Button id="idSubmit" text="Submit" visible="false" press="onSubmit" type="Accept"/>
+				<Button id="idSubmitQuantitative" text="Submit" visible="false" press="OnSubmit" type="Accept"/>
                 <Button id="idCancel" text="Cancel" visible="false" press="onCancel" type="Attention"/>
+				<Button id="idClear" text="clear" visible="false" press="clear" type="Attention"/>
             </Toolbar>
         </footer>
     </Page>
