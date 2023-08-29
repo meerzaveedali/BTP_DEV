@@ -1273,6 +1273,85 @@ in the following locations, as % of total wage cost" level="H2"/>
 		<items>
 		</items>
 	</Table>
+
+
+		<!--					 Finance       					-->
+
+
+	<Table id="idRDTable"
+                             visible="false"
+		inset="false">
+		<headerToolbar>
+			<OverflowToolbar>
+				<content>
+					<Title text="Percentage of R and D and capital expenditure (capex) investments in specific technologies to improve the environmental and social impacts of product and processes to total R and D and capex investments made by the entity, respectively." level="H2"/>
+				</content>
+			</OverflowToolbar>
+		</headerToolbar>
+		<columns>
+			<Column>
+				<Text text="" />
+			</Column>
+			<Column>
+				<Text text="Current Financial Year" />
+			</Column>
+			<Column>
+				<Text text="Previous Financial Year" />
+			</Column>
+				<Column>
+				<Text text="Details of improvement in environmental and social aspects" />
+			</Column>
+		</columns>
+		<items>
+		</items>
+	</Table>
+
+	<Table id="idTurnoverTable"
+                             visible="false"
+		inset="false">
+		<headerToolbar>
+			<OverflowToolbar>
+				<content>
+					<Title text="Turnover of products and/ services as a percentage of turnover from all products/service that carry information about: Environmental and social parameters relevant to the product Safe and responsible usage Recycling and/or safe disposal" level="H2"/>
+				</content>
+			</OverflowToolbar>
+		</headerToolbar>
+		<columns>
+			<Column>
+				<Text text="" />
+			</Column>
+			<Column>
+				<Text text="As a percentage of total turnover" />
+			</Column>
+		</columns>
+		<items>
+		</items>
+	</Table>
+
+		<Table id="idAccountTable"
+                             visible="false"
+		inset="false">
+		<headerToolbar>
+			<OverflowToolbar>
+				<content>
+					<Title text="Number of days of accounts payables ((Accounts payable *365) / Cost of goods/services procured) in the following format" level="H2"/>
+				</content>
+			</OverflowToolbar>
+		</headerToolbar>
+		<columns>
+			<Column>
+				<Text text="" />
+			</Column>
+			<Column>
+				<Text text="FY____ Current Financial Year" />
+			</Column>
+				<Column>
+				<Text text="FY_____ Previous Financial Year" />
+			</Column>
+		</columns>
+		<items>
+		</items>
+	</Table>
 		
                         </content>
         </ScrollContainer>

@@ -36,6 +36,7 @@ sap.ui.define([
             this.getView().setModel(oEditModel, "editModel");
             this.getView().setModel(oEditModel,"hrEditModel");
             this.getView().setModel(oEditModel,"procurementEditModel");
+			this.getView().setModel(oEditModel,"financeEditModel");
         },
         fnUploadStart : function(){ // uploadStart event from fileuploader
             oCont.getView().setBusy(true);
@@ -1319,7 +1320,163 @@ sap.ui.define([
                             }
                         });
 
-                     }
+                     } else if(sKey === "03"){
+							var rDTable = this.getView().byId("idRDTable");
+							rDTable.setVisible(true);
+							rDTable.removeAllItems();
+							var turnoverTable= this.getView().byId("idTurnoverTable");
+							turnoverTable.setVisible(true);
+							turnoverTable.removeAllItems();
+							var accountTable = this.getView().byId("idAccountTable");
+							accountTable.setVisible(true);
+							accountTable.removeAllItems();
+	   						var inputMaterialTable = this.getView().byId("idInputMaterialTable");
+	                        inputMaterialTable.setVisible(false);
+	                        var detailsConcentrationTable = this.getView().byId("idDetailsConcentrationTable");
+	                        detailsConcentrationTable.setVisible(false);
+	                        var TableSegment  = this.getView().byId("idTableSegment");
+	                        TableSegment.setVisible(false);
+	                        var PEmpTable = this.getView().byId("idPEmpTable");
+	                        PEmpTable.setVisible(false);
+	                        var NPEmpTable = this.getView().byId("idNPEmpTable");
+	                        NPEmpTable.setVisible(false);
+	                        var WorkerTable = this.getView().byId("idWorkerTable");
+	                        WorkerTable.setVisible(false);
+	                        var NonWorkerTable  = this.getView().byId("idNonWorkerTable");
+	                        NonWorkerTable.setVisible(false);
+	                        var RetireBenfTable = this.getView().byId("idRetireBenfTable");
+	                        RetireBenfTable.setVisible(false);
+	                        var MembershipEmpTable = this.getView().byId("idMembershipEmpTable");
+	                        MembershipEmpTable.setVisible(false);
+	                        var MembershipWorTable = this.getView().byId("idMembershipWorTable");
+	                        MembershipWorTable.setVisible(false);
+	                        var RateofWorkAndLeaveTable = this.getView().byId("idRateofWorkAndLeaveTable");
+	                        RateofWorkAndLeaveTable.setVisible(false);
+	                        var PEmpTrainingTable  = this.getView().byId("idPEmpTrainingTable");
+	                        PEmpTrainingTable.setVisible(false);
+	                        var WorkTrainingTable = this.getView().byId("idWorkTrainingTable");
+	                        WorkTrainingTable.setVisible(false);
+	                        var PerEmpTable  = this.getView().byId("idPerEmpTable");
+	                        PerEmpTable.setVisible(false);
+	                        var PerWorkTable = this.getView().byId("idPerWorkTable");
+	                        PerWorkTable.setVisible(false);
+	                        var EmpHumanRightTable = this.getView().byId("idEmpHumanRightTable");
+	                        EmpHumanRightTable.setVisible(false);
+	                        var WorkHumanRightTable = this.getView().byId("idWorkHumanRightTable");
+	                        WorkHumanRightTable.setVisible(false);
+	                        var PEmpWageTable = this.getView().byId("idPEmpWageTable");
+	                        PEmpWageTable.setVisible(false);
+	                        var WorkWageTable = this.getView().byId("idWorkWageTable");
+	                        WorkWageTable.setVisible(false);
+	                        var WageTable = this.getView().byId("idWageTable");
+	                        WageTable.setVisible(false);
+	                        var ComplaintTable = this.getView().byId("idComplaintTable");
+	                        ComplaintTable.setVisible(false);
+	                        var AssessmentsTable = this.getView().byId("idAssessmentsTable");
+	                        AssessmentsTable.setVisible(false);
+	                        var SpendTable = this.getView().byId("idSpendTable");
+	                        SpendTable.setVisible(false);
+	                        var GrossWageTable = this.getView().byId("idGrossWageTable");
+	                        GrossWageTable.setVisible(false);
+	                        var CompFiledTable = this.getView().byId("idCompFiledTable");
+	                        CompFiledTable.setVisible(false);
+	                        var JobCreationTable = this.getView().byId("idJobCreationTable");
+	                        JobCreationTable.setVisible(false);
+	                        var monetary  = this.getView().byId("idMonetaryTable");
+	                        monetary.setVisible(false);
+	                        var nonMonetary = this.getView().byId("idNonMonetaryTable");
+	                        nonMonetary.setVisible(false);
+	                        var oTable = this.getView().byId("idTable");
+	                        oTable.setVisible(false);
+	                        var oTable1 = this.getView().byId("idTable1");
+	                        oTable1.setVisible(false);
+	                        var idQuestionsTable = this.getView().byId("idQuestionsTable");
+	                        idQuestionsTable.setVisible(false);
+
+	 					var that = this;
+                        that.getView().setBusy(true);
+                        this.oDataModel.read("/qualitative_data_Finance(up__fiscalYear='2030',up__businessFunction='Finance',principle='2',indicator='Essential',questionID='1')/principle2_essential_1", {
+                            success : function(oData){
+                                let aItems = [];
+                                for(let i=0;i<oData.results.length;i++){
+                                    let oItem = new sap.m.ColumnListItem({
+                                        cells: [
+                                          new sap.m.Text({ text: oData.results[i].typeOfInvestment}),
+                                          new sap.m.Input({ value: oData.results[i].valueForCurrentFinancialYear, editable: "{financeEditModel>/edit/editable}"}),
+                                          new sap.m.Input({ value: oData.results[i].valueForPreviousFinancialYear, editable: "{financeEditModel>/edit/editable}"}),
+ 										  new sap.m.Input({ value: oData.results[i].detailsOfImprovements, editable: "{financeEditModel>/edit/editable}"}),
+                                        ]
+                                      });
+                                      if (oData.results[i].position === 0){
+                                        aItems[0] = oItem;
+                                      }
+                                      else if(oData.results[i].position === 1){
+                                        aItems[1] = oItem;
+                                      }  
+                                    }
+                                    for(let i=0;i<aItems.length;i++)
+										rDTable.addItem(aItems[i]);
+
+                                },
+                            error : function(oError){
+                                that.getView().setBusy(false);
+                                debugger;
+                            }
+                        });
+
+                        this.oDataModel.read("/qualitative_data_Finance(up__fiscalYear='2030',up__businessFunction='Finance',principle='9',indicator='Essential',questionID='2')/principle9_essential_2", {
+                            success : function(oData){
+                                let aItems = [];
+                                for(let i=0;i<oData.results.length;i++){
+                                    let oItem = new sap.m.ColumnListItem({
+                                        cells: [
+                                          new sap.m.Text({ text: oData.results[i].nameOfProductOrService}),
+                                          new sap.m.Input({ value: oData.results[i].percentageOfTotalTurnOver, editable: "{financeEditModel>/edit/editable}"}),
+                                        ]
+                                      });
+                                      if (oData.results[i].position === 0){
+                                        aItems[0] = oItem;
+                                      }
+                                      else if(oData.results[i].position === 1){
+                                        aItems[1] = oItem;
+                                      } 
+ 									  else if(oData.results[i].position === 2){
+	                                        aItems[2] = oItem;
+	                                      } 
+                                    }
+                                    for(let i=0;i<aItems.length;i++)
+                                        turnoverTable.addItem(aItems[i]);
+
+                                },
+                            error : function(oError){
+                                that.getView().setBusy(false);
+                                debugger;
+                            }
+                        });
+
+                        this.oDataModel.read("/qualitative_data_Finance(up__fiscalYear='2030',up__businessFunction='Finance',principle='1',indicator='Essential',questionID='8')/principle1_essential_8", {
+                            success : function(oData){
+                                for(let i=0;i<oData.results.length;i++){
+                                    let oItem = new sap.m.ColumnListItem({
+                                        cells: [
+                                          new sap.m.Text({ text: oData.results[i].type}),
+                                          new sap.m.Input({ value: oData.results[i].valueForCurrentFinancialYear, editable: "{financeEditModel>/edit/editable}"}),
+                                          new sap.m.Input({ value: oData.results[i].valueForPreviousFinancialYear, editable: "{financeEditModel>/edit/editable}"}),
+                                        ]
+                                      });
+									accountTable.addItem(oItem);
+									that.getView().setBusy(false);
+							}
+
+                                },
+                            error : function(oError){
+                                that.getView().setBusy(false);
+                                debugger;
+                            }
+                        });
+
+
+					}
         },
         onCancel : function(){
             this.getView().byId("idEdit").setVisible(true);
@@ -1328,6 +1485,7 @@ sap.ui.define([
             this.getView().getModel("editModel").setData({edit:false});
             this.getView().getModel("hrEditModel").setData({edit:false});
             this.getView().getModel("procurementEditModel").setData({edit:false});
+ 			this.getView().getModel("financeEditModel").setData({edit:false});
         },
         onEdit : function(){
             this.getView().byId("idEdit").setVisible(false);
@@ -1343,6 +1501,10 @@ sap.ui.define([
             else if(sKey === "08"){
                 this.getView().getModel("procurementEditModel").setData({edit:true});
             }
+ 			else if(sKey === "03"){
+	                this.getView().getModel("financeEditModel").setData({edit:true});
+	            }
+
         },
         OnSubmit : function() {
             
@@ -5991,9 +6153,6 @@ sap.ui.define([
 
                 var oPayload = { 
 
-                        "fiscalYear": "2030",
-                    
-                        "businessFunction": "Procurement", 
                     
                         "status": "Submitted", 
                     
@@ -6441,7 +6600,329 @@ sap.ui.define([
                                         });
                                     }
                                 });
-            }
+            }else if(sKey === "03"){
+					var rDTable = this.getView().byId("idRDTable").getItems();
+					var turnoverTable= this.getView().byId("idTurnoverTable").getItems();
+					var accountTable = this.getView().byId("idAccountTable").getItems();
+
+					var  oPayload = { 
+
+						
+						    "status": "Submitted", 
+						
+						    "creator_email": "shriyansh.k@bristlecone.com", 
+						
+						    "creator_name": "Shriyansh Keserwani", 
+						
+						    "Finance": [ 
+						
+						        { 
+						
+						            "principle": "2", 
+						
+						            "indicator": "Essential", 
+						
+						            "questionID": "1", 
+						
+						            "principle2_essential_1": [ 
+						
+						                { 
+
+											"position" : 0,
+						
+						                    "typeOfInvestment": "R&D", 
+						
+						                    "valueForCurrentFinancialYear": rDTable[0].getAggregation("cells")[1].getProperty("value"), 
+						
+						                    "valueForPreviousFinancialYear": rDTable[0].getAggregation("cells")[2].getProperty("value"), 
+						
+						                    "detailsOfImprovements": rDTable[0].getAggregation("cells")[3].getProperty("value") 
+						
+						                }, 
+						
+						                { 
+
+											"position" : 1,
+						
+						                    "typeOfInvestment": "Capex", 
+						
+						                    "valueForCurrentFinancialYear": rDTable[1].getAggregation("cells")[1].getProperty("value"), 
+						
+						                    "valueForPreviousFinancialYear": rDTable[1].getAggregation("cells")[2].getProperty("value"), 
+						
+						                    "detailsOfImprovements": rDTable[1].getAggregation("cells")[3].getProperty("value") 
+						
+						                } 
+						
+						            ] 
+						
+						        }, 
+						
+						        { 
+						
+						            "principle": "9", 
+						
+						            "indicator": "Essential", 
+						
+						            "questionID": "2", 
+						
+						            "principle9_essential_2": [ 
+						
+						                { 
+
+											"position" : 0,
+						
+						                    "nameOfProductOrService": "Environmental and social parameters relevant to the product", 
+						
+						                    "percentageOfTotalTurnOver": turnoverTable[0].getAggregation("cells")[1].getProperty("value") 
+						
+						                }, 
+						
+						                { 
+
+											"position" : 1,
+						
+						                    "nameOfProductOrService": "Safe and responsible usage", 
+						
+						                    "percentageOfTotalTurnOver": turnoverTable[1].getAggregation("cells")[1].getProperty("value") 
+						
+						                }, 
+						
+						                { 
+
+											"position" : 2,
+						
+						                    "nameOfProductOrService": "Recycling and/or safe disposal", 
+						
+						                    "percentageOfTotalTurnOver": turnoverTable[2].getAggregation("cells")[1].getProperty("value") 
+						
+						                } 
+						
+						            ] 
+						
+						        }, 
+						
+						
+						        { 
+						
+						            "principle": "1", 
+						
+						            "indicator": "Essential", 
+						
+						            "questionID": "8", 
+						
+						            "principle1_essential_8": [ 
+						
+						                { 
+
+											"position" : 0,
+						
+						                    "type": "Number of days of accounts payables", 
+						
+						                    "valueForCurrentFinancialYear": accountTable[0].getAggregation("cells")[1].getProperty("value"), 
+						
+						                    "valueForPreviousFinancialYear": accountTable[0].getAggregation("cells")[2].getProperty("value") 
+						
+						                } 
+						
+						            ] 
+						
+						        } 
+						
+						    ] 
+						
+						};
+											 
+
+				
+				
+					var that = this;           
+                	this.getView().setBusy(true);
+                	this.oDataModel.update("/qualitative_data(fiscalYear='2030',businessFunction='Finance')", oPayload, {
+                
+                    	success : function(oData){
+                            MessageBox.show("Data Saved Successfully");
+                            that.getView().setBusy(false);
+                            
+                    	},
+    
+                   	 error : function(oError){
+                       	 	MessageBox.show(oError);
+                        	that.getView().setBusy(false);
+                    	}
+                
+                });
+
+			var workObj = { 
+
+				    "definitionId": "eu10.sap-process-automation-q40kapza.zbrsrfinance.zapproval_process_for_finance", 
+				
+				    "context": { 
+				
+				        "zbusiness_function": "Finance", 
+				
+				        "zfinance_creator_email": "shriyansh.k@bristlecone.com", 
+				
+				        "zfinance_creator_name": "Shriyansh Keserwani", 
+				
+				        "zfiscal_year": "2023", 
+				
+				        "zfinance_principle2_essential_1": [ 
+				
+				            { 
+				
+				                "typeOfInvestment": "R&D", 
+				
+				                "valueForCurrentFinancialYear": accountTable[0].getAggregation("cells")[1].getProperty("value"), 
+				
+				                "valueForPreviousFinancialYear": accountTable[0].getAggregation("cells")[2].getProperty("value"), 
+				
+				                "detailsOfImprovements": accountTable[0].getAggregation("cells")[3].getProperty("value") 
+				
+				            }, 
+				
+				            { 
+				
+				                "typeOfInvestment": "Capex", 
+				
+				                "valueForCurrentFinancialYear": accountTable[1].getAggregation("cells")[1].getProperty("value"), 
+				
+				                "valueForPreviousFinancialYear": accountTable[1].getAggregation("cells")[2].getProperty("value"), 
+				
+				                "detailsOfImprovements": accountTable[1].getAggregation("cells")[3].getProperty("value") 
+				
+				            } 
+				
+				        ], 
+				
+				        "zfinance_principle9_essential_2": [ 
+				
+				            { 
+				
+				                "nameOfProductOrService": "Environmental and social parameters relevant to the product", 
+				
+				                "percentageOfTotalTurnOver": accountTable[0].getAggregation("cells")[1].getProperty("value") 
+				
+				            }, 
+				
+				            { 
+				
+				                "nameOfProductOrService": "Safe and responsible usage", 
+				
+				                "percentageOfTotalTurnOver": accountTable[1].getAggregation("cells")[1].getProperty("value") 
+				
+				            }, 
+				
+				            { 
+				
+				                "nameOfProductOrService": "Recycling and/or safe disposal", 
+				
+				                "percentageOfTotalTurnOver": accountTable[2].getAggregation("cells")[1].getProperty("value")
+				
+				            } 
+				
+				        ], 
+			
+				
+				        "zfinance_principle1_essential_8": [ 
+				
+				            { 
+				
+				                "type": "Number of days of accounts payables", 
+				
+				                "valueForCurrentFinancialYear": accountTable[0].getAggregation("cells")[1].getProperty("value"), 
+				
+				                "valueForPreviousFinancialYear": accountTable[0].getAggregation("cells")[2].getProperty("value") 
+				
+				            } 
+				
+				        ], 
+				
+				
+				
+				        "zfinance_principle4_essential_2": [ 
+				
+				            { 
+				
+				                "stakeholder_group": "", 
+				
+				                "identifies_as_vulnerable_marginalized_group": "", 
+				
+				                "channels_of_communication": "", 
+				
+				                "frequency_of_engagement": "", 
+				
+				                "purpose_scope_of_engagement": "" 
+				
+				            } 
+				
+				        ] 
+				
+				    } 
+				
+				} 
+
+
+
+ 					var that = this;    
+                    var appId = that.getOwnerComponent().getManifestEntry("/sap.app/id");
+                    var appPath = appId.replaceAll(".", "/");
+                    var appModulePath = jQuery.sap.getModulePath(appPath);
+                        that.getView().setBusy(true);
+
+                        $.ajax({
+                            url: appModulePath + "/bpmworkflowruntime/v1/xsrf-token",
+                            method: "GET",
+                            headers: {
+                                "X-CSRF-Token": "Fetch"
+                            },
+                            success: function (result, xhr, data) {
+                                var token = data.getResponseHeader("X-CSRF-Token");
+                                if (token === null) return;
+        
+                                $.ajax({
+                                    url: appModulePath + "/bpmworkflowruntime/v1/workflow-instances",
+                                    type: "POST",
+                                    data: JSON.stringify(workObj),
+                                    headers: {
+                                        "X-CSRF-Token": token,
+                                        "Content-Type": "application/json"
+                                    },
+                                    async: false,
+                                    success: function (data, response) {
+                                        var successMsg;
+                                        that.getView().setBusy(false);
+                                        successMsg = "Request Sent for Approval";
+                                        MessageBox.success(successMsg, {
+                                            icon: MessageBox.Icon.SUCCESS,
+                                            title: "SUCCESS",
+                                            actions: [MessageBox.Action.OK],
+                                            initialFocus: MessageBox.Action.OK,
+                                            onClose: function (Action) {
+                                                // that.clearForm();
+                                                that.getView().setBusy(false);
+                                            }
+                                        });
+                                    },
+                                    error: function (e) {
+                                        that.getView().setBusy(false);
+                                        MessageBox.show(JSON.stringify(e), {
+                                            icon: MessageBox.Icon.ERROR,
+                                            title: "ERROR"
+                                        });
+                                    }
+                                });
+                                    },
+                                    error: function (e) {
+                                        that.getView().setBusy(false);
+                                        MessageBox.show(JSON.stringify(e), {
+                                            icon: MessageBox.Icon.ERROR,
+                                            title: "ERROR"
+                                        });
+                                    }
+                                });
+
+			}
         },
         onTemplateDownload : function(){
 
