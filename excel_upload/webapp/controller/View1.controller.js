@@ -6601,6 +6601,7 @@ sap.ui.define([
                                     }
                                 });
             }else if(sKey === "03"){
+					this.getView().getModel("financeEditModel").setData({edit:false});
 					var rDTable = this.getView().byId("idRDTable").getItems();
 					var turnoverTable= this.getView().byId("idTurnoverTable").getItems();
 					var accountTable = this.getView().byId("idAccountTable").getItems();
@@ -6773,11 +6774,11 @@ sap.ui.define([
 				
 				                "typeOfInvestment": "R&D", 
 				
-				                "valueForCurrentFinancialYear": accountTable[0].getAggregation("cells")[1].getProperty("value"), 
+				                "valueForCurrentFinancialYear": rDTable[0].getAggregation("cells")[1].getProperty("value"), 
 				
-				                "valueForPreviousFinancialYear": accountTable[0].getAggregation("cells")[2].getProperty("value"), 
+				                "valueForPreviousFinancialYear": rDTable[0].getAggregation("cells")[2].getProperty("value"), 
 				
-				                "detailsOfImprovements": accountTable[0].getAggregation("cells")[3].getProperty("value") 
+				                "detailsOfImprovements": rDTable[0].getAggregation("cells")[3].getProperty("value") 
 				
 				            }, 
 				
@@ -6785,11 +6786,11 @@ sap.ui.define([
 				
 				                "typeOfInvestment": "Capex", 
 				
-				                "valueForCurrentFinancialYear": accountTable[1].getAggregation("cells")[1].getProperty("value"), 
+				                "valueForCurrentFinancialYear":	rDTable[1].getAggregation("cells")[1].getProperty("value"), 
 				
-				                "valueForPreviousFinancialYear": accountTable[1].getAggregation("cells")[2].getProperty("value"), 
+				                "valueForPreviousFinancialYear":	rDTable[1].getAggregation("cells")[2].getProperty("value"), 
 				
-				                "detailsOfImprovements": accountTable[1].getAggregation("cells")[3].getProperty("value") 
+				                "detailsOfImprovements": rDTable[1].getAggregation("cells")[3].getProperty("value") 
 				
 				            } 
 				
@@ -6801,7 +6802,7 @@ sap.ui.define([
 				
 				                "nameOfProductOrService": "Environmental and social parameters relevant to the product", 
 				
-				                "percentageOfTotalTurnOver": accountTable[0].getAggregation("cells")[1].getProperty("value") 
+				                "percentageOfTotalTurnOver": turnoverTable[0].getAggregation("cells")[1].getProperty("value") 
 				
 				            }, 
 				
@@ -6809,7 +6810,7 @@ sap.ui.define([
 				
 				                "nameOfProductOrService": "Safe and responsible usage", 
 				
-				                "percentageOfTotalTurnOver": accountTable[1].getAggregation("cells")[1].getProperty("value") 
+				                "percentageOfTotalTurnOver": turnoverTable[1].getAggregation("cells")[1].getProperty("value") 
 				
 				            }, 
 				
@@ -6817,7 +6818,7 @@ sap.ui.define([
 				
 				                "nameOfProductOrService": "Recycling and/or safe disposal", 
 				
-				                "percentageOfTotalTurnOver": accountTable[2].getAggregation("cells")[1].getProperty("value")
+				                "percentageOfTotalTurnOver": turnoverTable[2].getAggregation("cells")[1].getProperty("value")
 				
 				            } 
 				
